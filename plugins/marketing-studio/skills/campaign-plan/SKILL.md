@@ -8,7 +8,7 @@ status: draft
 
 ## Output: `marketing/<slug>/PLAN.md`
 1. Goal in numbers (plays, followers, customers in RP, event attendance) and a date.
-2. Audience: who in NDRP and outside it (Discord, Instagram, YouTube, TikTok, Spotify).
+2. Audience: who in the RP server and outside it (Discord, Instagram, YouTube, TikTok, Spotify).
 3. One core message in the brand's voice, plus 3 angles to test.
 4. Channels and formats per channel (in-game ads and radio where the server allows, Discord announcements,
    short-form clips, posters from design-studio).

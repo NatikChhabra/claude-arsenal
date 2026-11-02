@@ -11,8 +11,8 @@ status: draft
 2. List every capability it has. For each: do we already have it (which skill)? would it make our output better or
    save real time at equal quality?
 3. Check the deal-breakers: licence forbids public or commercial use; needs NVIDIA-only CUDA with no ROCm/DirectML/CPU
-   path; sends private files to a service without the owner's OK; archived and unmaintained; would install into
-   `F:\AI Models\coding\` or `F:\AI Models\sirf-timepass\`.
+   path; sends private files to a service without the owner's OK; archived and unmaintained; would install anywhere under
+   `F:\AI Models\` other than `arsenal\`.
 4. Verdict `ADOPT`, `TRIAL`, `WATCH` or `SKIP` (meanings in GROWTH.md). Prefer rebuilding a capability inside our skill
    over a bare copy of someone else's workflow.
 5. Record it: one row in `registry/tools.md` (or `registry/local-models.md` for models) with a `recheck` date for

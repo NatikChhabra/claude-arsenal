@@ -40,4 +40,4 @@ Restart Claude Code afterwards. `/plugin` lists what is installed.
 1. Never break what already works. Additive changes, on a branch, through a pull request.
 2. Every tool we adopt gets a registry row with a verdict and a reason.
 3. No AI slop: anything that ships must not read, look or sound machine-made.
-4. `NatikChhabra/sirf-timepass` is a read-only reference. Nothing here writes to it.
+4. The owner's other repos are read-only references. Nothing here writes to them.

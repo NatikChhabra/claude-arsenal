@@ -2,7 +2,7 @@
 
 | file | question it answers |
 |---|---|
-| 00_sirf_timepass_lessons.md | Which patterns from the owner's working YouTube system should the arsenal reuse? |
+| 00_patterns_to_reuse.md | Which proven patterns from the owner's other systems should the arsenal reuse? |
 | 01_vocals_for_non_singers.md | How does a guitarist who can't sing get vocals that sound great and still feel like his song? |
 | 02_music_video_pipeline.md | What does a top music-video pipeline for GTA RP footage need? |
 

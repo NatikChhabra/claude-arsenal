@@ -6,10 +6,11 @@
 
 Checks: marketplace.json parses and every listed plugin exists with a matching plugin.json (name + version);
 every plugin directory is listed; every SKILL.md has frontmatter with `name` (matching its folder) and `description`,
-and a `status:` line (draft|beta|stable); skill names are unique; registry verdicts are known values.
+and a `status:` line (draft|beta|stable); skill names are unique; registry verdicts are known values; no banned names.
 Standard library only.
 """
 import datetime
+import hashlib
 import json
 import pathlib
 import re
@@ -18,6 +19,9 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 STATUSES = {"draft", "beta", "stable"}
 VERDICTS = {"ADOPT", "TRIAL", "WATCH", "SKIP"}
+# Names the owner wants kept out of this repo (owner, 2 Nov 2026). Stored as hashes so the names never appear here.
+# A word (or two adjacent words joined) whose sha256[:16] is in this set is refused. Add one: hashlib.sha256(b"word").hexdigest()[:16]
+BANNED = {"26fa1ef0060cbe67", "4099acf831f06493", "723b00fcb4a6b77b", "8c962913fcb7b0d6"}
 errors = []
 
 
@@ -110,11 +114,23 @@ def check_registry(due):
     return n
 
 
+def check_banned():
+    for f in ROOT.rglob("*"):
+        if ".git" in f.parts or not f.is_file() or f.suffix not in {".md", ".json", ".py", ".yml", ".txt"}:
+            continue
+        for i, line in enumerate(f.read_text(encoding="utf-8", errors="ignore").splitlines(), 1):
+            words = re.findall(r"[a-z0-9]+", line.lower())
+            grams = words + [a + b for a, b in zip(words, words[1:])]
+            if any(hashlib.sha256(g.encode()).hexdigest()[:16] in BANNED for g in grams):
+                err(f"{f.relative_to(ROOT)}:{i}: banned name (see BANNED in scripts/validate.py)")
+
+
 def main():
     due = "--due" in sys.argv
     check_marketplace()
     skills = check_skills()
     rows = check_registry(due)
+    check_banned()
     for e in errors:
         print("ERROR", e)
     print(f"{'FAIL' if errors else 'PASS'}: {skills} skills, {rows} registry rows, {len(errors)} errors")

@@ -24,7 +24,7 @@ The goal: a toolkit that gets better every time it is used, until it is the best
 checklist passes without fixes). Promote in the same PR that records the real use.
 
 ## A repo or tool the owner sends
-Treat it like sirf-timepass treats one: learn everything it does, map each capability to an arsenal skill or tool
+Learn everything it does, map each capability to an arsenal skill or tool
 (adopt, rebuild better, or skip with a reason), never a bare copy. Record it in `registry/tools.md`.
 
 ## Re-check cadence

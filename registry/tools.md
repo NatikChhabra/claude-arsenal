@@ -16,7 +16,7 @@ Facts checked 2 Nov 2026 unless the row says otherwise. `recheck` = when a TRIAL
 | Ableton MCP (`ahujasid/ableton-mcp`) | Claude drives Ableton Live: tracks, MIDI clips, instruments, arrangement, tempo | MIT | Live 10+, Python 3.8+, uv; telemetry on by default (set `ABLETON_MCP_DISABLE_TELEMETRY=true`) | TRIAL (if he uses Ableton) | 2026-12-01 | github.com/ahujasid/ableton-mcp |
 | REAPER MCP servers | Claude drives REAPER | various | REAPER | WATCH (several young projects; pick one after a test) | 2026-12-01 | search "reaper mcp" |
 | Spotify Basic Pitch | audio -> MIDI for his guitar parts | Apache-2.0 | CPU | TRIAL | 2026-12-01 | github.com/spotify/basic-pitch |
-| UVR MDX-Net / Demucs | stem separation | MIT | CPU, DirectML/ROCm | ADOPT idea (sirf-timepass `stems.py` already proves it on his PC) | - | sirf-timepass research/83 |
+| UVR MDX-Net / Demucs | stem separation | MIT | CPU, DirectML/ROCm | ADOPT idea (already proven on his PC in another project) | - | github.com/Anjok07/ultimatevocalremovergui |
 | Matchering | reference-matched mastering | GPL-3.0 | CPU | TRIAL (starting point only) | 2026-12-01 | github.com/sergree/matchering |
 | Neural Amp Modeler | guitar amp/cab capture and playback | MIT | Windows plugin | TRIAL | 2026-12-01 | github.com/sdatkinson/neural-amp-modeler |
 
@@ -25,7 +25,7 @@ Facts checked 2 Nov 2026 unless the row says otherwise. `recheck` = when a TRIAL
 |---|---|---|---|---|---|---|
 | anthropics/skills (frontend-design, canvas-design, brand-guidelines, theme-factory, algorithmic-art) | craft guidance for layouts, posters and generative art | Apache-2.0 for most skills | Claude Code plugin: `/plugin marketplace add anthropics/skills` | TRIAL | 2026-12-01 | github.com/anthropics/skills |
 | HTML/SVG + Playwright render | exact-text, editable posters and covers rendered to PNG | - | cloud container or PC | ADOPT (default method in `rp-graphics`) | - | - |
-| ComfyUI (already on his PC, ROCm) | local image generation for backgrounds/textures | GPL-3.0 | RX 7800 XT | TRIAL (behind the no-AI-slop check) | 2026-12-01 | sirf-timepass research/82 |
+| ComfyUI (already on his PC, ROCm) | local image generation for backgrounds/textures | GPL-3.0 | RX 7800 XT | TRIAL (behind the no-AI-slop check) | 2026-12-01 | github.com/comfyanonymous/ComfyUI |
 
 ## Marketing
 | name | what it does for us | licence | runs on | verdict | recheck | source |
@@ -35,4 +35,4 @@ Facts checked 2 Nov 2026 unless the row says otherwise. `recheck` = when a TRIAL
 ## Arsenal plumbing
 | name | what it does for us | licence | runs on | verdict | recheck | source |
 |---|---|---|---|---|---|---|
-| skill-creator (claude-plugins-official) | write, test and tune skill descriptions | Anthropic | Claude Code plugin | ADOPT (sirf-timepass uses it) | - | anthropics/claude-plugins-official |
+| skill-creator (claude-plugins-official) | write, test and tune skill descriptions | Anthropic | Claude Code plugin | ADOPT (already used in his other projects) | - | anthropics/claude-plugins-official |

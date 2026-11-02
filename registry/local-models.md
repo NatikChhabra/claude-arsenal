@@ -1,11 +1,10 @@
 # Local models
 
-Root: `F:\AI Models\`. Owner's rule (from sirf-timepass research/82): other projects use these folders, don't disturb them.
+Root: `F:\AI Models\`. Owner's rule: other projects use these folders, don't disturb them.
 
 | folder | owner | rule |
 |---|---|---|
-| `F:\AI Models\coding\` | his coding project | never touch |
-| `F:\AI Models\sirf-timepass\` | sirf-timepass channel | never touch |
+| every other folder (e.g. `coding\`) | his other projects | never touch |
 | `F:\AI Models\ollama-models\`, `blobs\` | Ollama | read only; no machine-wide setting changes |
 | `F:\AI Models\arsenal\` | **this repo** (create on first install) | arsenal models go here, one subfolder per tool |
 

@@ -17,7 +17,7 @@ Turns what a session learned into a lasting improvement, through a PR on `NatikC
    - a skill used successfully on real work -> promote `draft` -> `beta` (or `beta` -> `stable`) and say what it was used on.
 3. List registry rows whose `recheck` date has passed (`python scripts/validate.py --due`) and refresh any the session can.
 4. Bump the touched plugins' versions, add a CHANGELOG line, run `python scripts/validate.py`.
-5. Branch, commit, PR. Never push to `main`. Never touch `NatikChhabra/sirf-timepass`.
+5. Branch, commit, PR. Never push to `main`. Never touch the owner's other repos.
 
 ## Guardrails
 - Additive by default. Removing or rewriting a working step needs evidence in the PR description.
