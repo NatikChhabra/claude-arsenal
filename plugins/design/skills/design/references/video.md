@@ -117,6 +117,13 @@ Read it as direction, not law: the video's topic rides along with its card.
 5. Finish last, over the whole frame: one curves pass + 1-2% grain + one soft vignette (kept inside the >= 35 delta-E feed separation).
 - A generic offset drop shadow alone = FAIL. Dark subjects recolour toward their bright in-game colour so they pop.
 
+### 1.11b Getting a clean cut-out from video
+1. Pull frames from a full-resolution source section, not thumbnails (thumbnails carry burned-in badges and are low-res). Rank candidates by sharpness (variance of the Laplacian) and drop motion-blurred frames before looking.
+2. Pick frames where the subject is alone on a plain or contrasting ground and fills the frame; the cut-out must not need an upscale (> 1.15x never ships).
+3. Matte with BiRefNet (`rembg`, session `birefnet-general-lite`): on cartoon and CGI frames it held clean edges where `isnet-general-use` failed (green character on a green ground, glow outlines).
+4. Keep only the subject: the alpha blob under a seed point on the subject; a neighbour touching it goes by colour (keep the subject's own palette in the zone where they meet). Check at 200% on a mid-grey and a dark ground: no halo, fringe, foreign sliver or hard cut except the frame edge.
+5. A subject cut by the frame edge is placed against that same screen edge and never lifts off it (SKILL.md, Characters).
+
 ### 1.12 Frozen brand art and props
 - A brand character comes only from its approved source (a code-built vector or the approved sticker PNGs). Never redraw it, AI-regenerate it, squash, stretch or deform it: uniform scale, tilt and move only.
 - In a thumbnail it fills >= 45% of the frame height (>= 55% as the focal point), touches the scene (a scene layer over part of it + a contact shadow) and sits IN the relation with the threat, never as a corner reaction. A sticker face vanishes at phone size (at 60 px tall terrified, scared, shock and gasp look the same), so emotion comes from pose, size and contact.

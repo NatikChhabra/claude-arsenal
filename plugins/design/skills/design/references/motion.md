@@ -25,6 +25,7 @@ Use when: adding, choosing, coding or reviewing any animation, transition, gestu
 - Never `ease-in` on UI; it feels laggy at the start where the eye is. Only exception: a permanent removal ≤200ms. This is a UI rule. In video (overlays, captions, graphics rendered into a frame) the exit mirrors the entrance and runs quicker: entrance `power3.out` with a long settle, exit `power2.in` / `power3.in` in 10-12 frames at 60 fps (~0.17-0.2s; only a snap exit runs shorter), holds and pushes `sine.inOut`, one curve shared by every channel of a move, linear only for a real clock or a constant-speed thing (`edit.md`).
 - Never the weak built-ins (`ease`, `ease-in-out` keywords) for travel; use the tokens. Never bounce or elastic on standard controls.
 - Reversible transitions (open/close) use the same path in both directions (in from the right, out to the right); mirror the curve.
+- Multi-keyframe Web Animations: keep the animation's own `easing` linear and put the curve on each keyframe. An iteration easing warps time, so keyframe offsets stop being times, and any sound or effect scheduled at "offset x duration" lands off the visible hit (measured 220-350 ms off).
 - Don't hand-roll new curves; pick from the set below or a curve tool (easing.dev, easings.co).
 
 ```css
@@ -387,6 +388,7 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
 ## 14. Verify motion
 
 - Review motion in slow motion (2-5x via DevTools Animations panel) and frame by frame; review again the next day with fresh eyes. Test gestures on a real phone.
+- Frame by frame without DevTools: `tools/taste/motion.mjs` films the page on a virtual clock into time-stamped contact sheets, with key presses and scripted moves on cue (`tools.md`). Open every sheet.
 - Before screenshots, wait for reveals to finish: `document.getAnimations()` idle (3s cap). Capture with motion on and with reduced motion on; reduced motion must leave no first-screen text hidden.
 - Scroll pages fail silently: sample ≥16 scroll positions per process.md §9 (Drive the states). A clean build proves nothing here.
 

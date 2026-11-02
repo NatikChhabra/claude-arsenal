@@ -13,6 +13,7 @@ All checkers live under `${CLAUDE_SKILL_DIR}/tools/` (the skill folder printed a
 | App/dashboard/tool screens | add `--app` to lint and inspect |
 | HTML rendered into video or thumbnails (overlays, title cards, captions, motion graphics) | add `--video` to lint, preflight and inspect, then judge the rendered frames by `video.md` and `edit.md` |
 | Rendered video, stills, thumbnails, covers (no HTML) | these checkers don't apply: use the frame checks, feed test and blind readers in `video.md` and the video QC in `edit.md` |
+| Anything that moves (entrances, rewards, game juice, idle loops, remote or key input) | add `motion.mjs` and open every sheet (`--tv` for anything shown on a television) |
 | Code that can't render (fragments, templates) | lint + preflight only, and say so in the report |
 
 ## lint (static, zero deps)
@@ -108,6 +109,18 @@ node ${CLAUDE_SKILL_DIR}/tools/taste/inspect.mjs <url | path/to/index.html> [--a
 - **`--video` (or `"kind": "video"`):** text-shadow is allowed. Neutral scrims and vignettes pass in every mode; a coloured gradient still fails. Use it for overlay and title-card pages at the exact frame they render at (`--widths 1920x1080` or `1080x1920`).
 - **Page-mode floors are Persuade taste:** ≥4 real pictures, ≥8 moving elements, video. For Read, Experience and Video surfaces, or a deliberately type-only page, pass `--allow few-pictures,still-page,no-footage` and say why in the report. A video overlay or title card is not a page: also allow `first-action,name-only-title`, which it trips by design (tested on a bare title card at 1920x1080 and 1080x1920: 0 FAIL). The picture and motion floors only run at widths ≥1100.
 - **Ignore any `scripts/assets.mjs` advice in its output.** That fetcher was deliberately not vendored because it uses the network. Source images per the imagery order in `pages.md`.
+
+## motion (real browser, frame by frame)
+
+```bash
+node ${CLAUDE_SKILL_DIR}/tools/taste/motion.mjs <url | path/to/index.html[#hash]> [--size 1920x1080] [--fps 10] [--seconds 6] [--at "ArrowDown@3.4,Enter@4.2,js:startMove()@2"] [--tv] [--out DIR] [--keep-frames]
+```
+- **What it is for:** motion.md §14 asks for motion reviewed frame by frame. This films the page on a virtual clock and lays the frames out as contact sheets (6 x 5 tiles, each stamped with its time), so an entrance, a reward or a key press can be judged beat by beat instead of from memory.
+- **How the clock works:** a shim injected before the page's own scripts drives `setTimeout`, `setInterval`, `requestAnimationFrame`, `performance.now`, `Date.now` and every CSS and Web Animation from one clock that only moves between captures. Every frame is exactly on its beat and screenshots never jitter. Chrome's own virtual-time policy is not used: new headless stops painting while it is paused. Not virtualised: Workers, audio clocks, `document.timeline.currentTime`, and an animation the page itself paused (the shim drives it anyway).
+- **Events:** `--at` fires keys (`ArrowDown`, `Enter`, `Escape`, `" "`, a letter) or `js:<expression>` (no commas) at page-clock seconds, for remote and keyboard paths, or to trigger an idle move on cue.
+- **`--tv`:** also writes `tv-NN.jpg`, the same frames as an old television shows them: soft and with 5% overscan cut from every edge. Use it for any 10-foot surface (layout.md, experience.md §7).
+- **Output:** `sheet-NN.jpg` (and `tv-NN.jpg`) in `--out` (default `.design-check/motion/`), plus every page error. Exit 0 clean, 1 on any page error, 2 on bad arguments. Full-size frames are kept only with `--keep-frames`.
+- **Read the sheets for:** a frame where the focal point is hidden or covered; particles crossing text being read; a character squashed or stretched (SKILL.md, Characters); overshoot beyond the weight limits; a beat that lands with no visible cause; an entrance that leaves the first screen blank too long; anything still moving at rest that should not be.
 
 ## Other checks without a script
 

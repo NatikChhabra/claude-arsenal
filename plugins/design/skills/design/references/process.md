@@ -137,6 +137,10 @@ Use when: starting, building, checking, critiquing, redesigning or reporting on 
 - Keep files ≤~1000 lines; split by coupling. Serve over http://localhost, never file://. It must not crash on load.
 - After the build, document the world (DESIGN.md is written from what was built, never before: `systems.md`).
 
+## 8b. Briefing a sub-agent
+- A sub-agent that builds or judges a direction gets the rules, not just the taste words: copy the relevant lines from `tells.md` and the mode file into its brief. An owner's loose word ("comic", "crazy animation") briefed raw produced the AI-rendition cluster three rounds running.
+- Every variant a reviewer judges is captured on a fresh page and the captured state is asserted (`data-*` attribute, title). A hash-only navigation does not reload the page; one review pack showed one hero for all six and the review was void.
+
 ## 9. Verification gate
 
 Nothing is "done" until every line below passed on the final build. An unanswered line is not done; "n/a" only when the element does not exist. Commands and flags: `tools.md`.
