@@ -1,0 +1,36 @@
+{
+  "name": "claude-arsenal",
+  "owner": {
+    "name": "NatikChhabra"
+  },
+  "metadata": {
+    "description": "Natik's growing toolkit of Claude Code skills and plugins.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "arsenal-core",
+      "source": "./plugins/arsenal-core",
+      "description": "Keeps the arsenal growing: intake for new tools and repos, the update loop, registry upkeep.",
+      "version": "0.1.0"
+    },
+    {
+      "name": "music-studio",
+      "source": "./plugins/music-studio",
+      "description": "Songwriting, vocals for a guitarist who can't sing, production, mixing, mastering and music videos.",
+      "version": "0.1.0"
+    },
+    {
+      "name": "design-studio",
+      "source": "./plugins/design-studio",
+      "description": "Posters, brand kits and social graphics for roleplay characters and in-world businesses.",
+      "version": "0.1.0"
+    },
+    {
+      "name": "marketing-studio",
+      "source": "./plugins/marketing-studio",
+      "description": "Campaign plans, release rollouts and social copy for music, characters and RP businesses.",
+      "version": "0.1.0"
+    }
+  ]
+}

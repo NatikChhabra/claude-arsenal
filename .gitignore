@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+# large binaries and models never live in git
+*.wav
+*.mp3
+*.flac
+*.mp4
+*.mkv
+*.safetensors
+*.ckpt
+*.onnx
+*.gguf
+.claude/settings.local.json
