@@ -3,7 +3,7 @@
 Natik's personal toolkit of Claude Code skills, plugins, MCP servers and local AI tools.
 It is built to grow: every project and side project that uses it should leave it a little better.
 
-**Current focus:** music making, music videos, design and marketing for roleplay (NewDay RP).
+**Current focus:** music making, music videos, design and marketing.
 **Status:** groundwork. The structure, rules and research are in place; most skills are `draft` and get filled in as real work starts.
 
 ## Install (any project, any machine)
