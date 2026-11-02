@@ -1,8 +1,8 @@
 # claude-arsenal
 
-Eight Claude Code plugins from real, daily-used projects: a strict design standard with local checkers, a full
-YouTube creator pipeline, video editing, personal edits, an exam study system, music making, marketing, and working
-rules with safety hooks. Several projects feed it: each one leaves it a little better (`GROWTH.md`, skill
+Nine Claude Code plugins from real, daily-used projects: a strict design standard with local checkers, a full
+YouTube creator pipeline, video editing, personal edits, an exam study system, music making, marketing, research
+paper release and outreach, and working rules with safety hooks. Several projects feed it: each one leaves it a little better (`GROWTH.md`, skill
 `arsenal-update`).
 
 ## Plugins
@@ -15,8 +15,9 @@ rules with safety hooks. Several projects feed it: each one leaves it a little b
 | [personal-edits](plugins/personal-edits/README.md) | Private birthday, roast and farewell edits at a published-video bar |
 | [study](plugins/study/README.md) | A mistake-driven board-exam study system for an Obsidian or markdown vault, with Anki decks |
 | [workflow](plugins/workflow/README.md) | How Claude works on any project: rules, session start and end, tool changes, two safety hooks |
-| [music-studio](plugins/music-studio/README.md) | Songs from an idea, vocals for a guitarist who can't sing, production, mix, master, music videos (draft) |
-| [marketing-studio](plugins/marketing-studio/README.md) | Campaign plans, release rollouts and per-platform copy in the brand's voice (draft) |
+| [music-studio](plugins/music-studio/README.md) | Songs from an idea, vocals for a guitarist who can't sing (Hindi too), production, mix, master, music videos, with 3 tested tools |
+| [marketing-studio](plugins/marketing-studio/README.md) | Release rollouts with sourced platform deadlines, campaign plans and per-platform copy, with 2 tested tools |
+| [research](plugins/research/README.md) | A paper to a citable preprint and profiles, honest outreach, and the author's own contribution |
 
 Each skill carries `status: draft` (outline, untested), `beta` (used on real work) or `stable`.
 
@@ -97,20 +98,27 @@ Each skill carries `status: draft` (outline, untested), `beta` (used on real wor
 ### music-studio
 | Skill | What it does |
 |---|---|
-| [song-from-idea](plugins/music-studio/skills/song-from-idea/SKILL.md) | From a character, story beat, mood or riff to a song sheet: structure, chords, lyrics, melody guide |
-| [vocal-route](plugins/music-studio/skills/vocal-route/SKILL.md) | Pick and run one of five vocal routes when the writer won't be the final sung voice |
-| [guitar-capture](plugins/music-studio/skills/guitar-capture/SKILL.md) | Record, clean and map guitar parts: tempo grid, chords, MIDI, tone |
-| [produce-arrange](plugins/music-studio/skills/produce-arrange/SKILL.md) | Build the arrangement around guitar and vocal, optionally driving a DAW through MCP |
-| [mix-master](plugins/music-studio/skills/mix-master/SKILL.md) | Mix stems and master to -14 LUFS, true peak -1 dBTP, numbers measured and logged |
-| [music-video](plugins/music-studio/skills/music-video/SKILL.md) | Treatment, in-game shoot, beat map, edit, 16:9 master and native 9:16 cuts |
-| [music-review](plugins/music-studio/skills/music-review/SKILL.md) | Score hook, lyrics, vocal, guitar, mix, video and rights before delivery |
+| [song-from-idea](plugins/music-studio/skills/song-from-idea/SKILL.md) | From a character, story beat or riff to a SONG.md: inventory, form with first-chorus time, chords, hook first, lyrics through lyric_lint and a blind reader |
+| [vocal-route](plugins/music-studio/skills/vocal-route/SKILL.md) | Five vocal routes picked by language, melody fidelity and release terms (Hindi included), proved on one chorus with blind listeners |
+| [guitar-capture](plugins/music-studio/skills/guitar-capture/SKILL.md) | Record to a click, beat and bar map (beatmap.py), chord chart, MIDI sketch, NAM/TONE3000 tone |
+| [produce-arrange](plugins/music-studio/skills/produce-arrange/SKILL.md) | Energy map per section, then the arrangement in REAPER (or Ableton) driven through MCP; mute tests; clean stems |
+| [mix-master](plugins/music-studio/skills/mix-master/SKILL.md) | Mix and master gated by loudness.py: integrated, true peak, the encoded file and the phone-speaker vocal check |
+| [music-video](plugins/music-studio/skills/music-video/SKILL.md) | Rights path first (Rockstar excludes music videos), treatment, shot list, beat-locked edit measured cut by cut, native 9:16, Canvas |
+| [music-review](plugins/music-studio/skills/music-review/SKILL.md) | Measured gates plus scored rows with evidence, human blind listeners, fresh blind readers, ship at 8.5 |
 
 ### marketing-studio
 | Skill | What it does |
 |---|---|
-| [campaign-plan](plugins/marketing-studio/skills/campaign-plan/SKILL.md) | Goal in numbers, audience, one message and 3 angles, channels, schedule, measures |
-| [release-rollout](plugins/marketing-studio/skills/release-rollout/SKILL.md) | Assets, distribution, metadata, teasers, launch posts and +2/+7 day follow-ups |
-| [social-copy](plugins/marketing-studio/skills/social-copy/SKILL.md) | Per-platform captions and ad text in the brand's voice, 3 angles, one pick |
+| [campaign-plan](plugins/marketing-studio/skills/campaign-plan/SKILL.md) | Goal with a baseline, audiences by why they care, one message and 3 angles, channels in and out of the server, decisions per read-out |
+| [release-rollout](plugins/marketing-studio/skills/release-rollout/SKILL.md) | Releasability gate (distributor AI policy, AI Persona badge), dated calendar from rollout.py, pitch, day 1/7/28 read-outs |
+| [social-copy](plugins/marketing-studio/skills/social-copy/SKILL.md) | One version per platform with a concrete fact, 3 options and a pick, copy_lint and a blind reader; never posts |
+
+### research
+| Skill | What it does |
+|---|---|
+| [paper-release](plugins/research/skills/paper-release/SKILL.md) | Audit, Zenodo software and preprint DOIs, ORCID, Google Scholar, LinkedIn, arXiv with each platform's traps |
+| [research-outreach](plugins/research/skills/research-outreach/SKILL.md) | Researchers, conference chairs and press: official addresses, one question, plain AI disclosure, follow-up rules |
+| [author-ownership](plugins/research/skills/author-ownership/SKILL.md) | Short Socratic sessions and the author's own paragraph when an AI agent did much of the work |
 
 ## Hooks and scripts
 
@@ -124,6 +132,8 @@ Each skill carries `status: draft` (outline, untested), `beta` (used on real wor
 | [creator/skills/](plugins/creator/skills/) | `ship_score.py`, `title.py`, `chapters.py`, `deadair.py`, `retention.py`, `hookscore.py`, `swipe.py` |
 | [video-edit/scripts/job.py](plugins/video-edit/scripts/job.py) | Run long renders and transcriptions detached from the session |
 | [study/scripts/](plugins/study/scripts/) | 20 vault, PDF, diagram and Anki deck scripts, all configured by `study.json` |
+| [music-studio/tools/](plugins/music-studio/tools/) | `lyric_lint.py` (lyrics gate), `loudness.py` (LUFS, true peak, phone-speaker vocal check), `beatmap.py` (beats, bars, sections, cut-on-grid check) |
+| [marketing-studio/tools/](plugins/marketing-studio/tools/) | `rollout.py` (dated release calendar with Spotify's floors), `copy_lint.py` (promo copy gate) |
 
 Every command-line script answers `--help` (`decklib.py` and `studycfg.py` are libraries).
 
@@ -140,7 +150,7 @@ claude plugin marketplace add NatikChhabra/claude-arsenal
 claude plugin install design@claude-arsenal
 ```
 Swap `design` for any plugin: `creator`, `video-edit`, `personal-edits`, `study`, `workflow`, `music-studio`,
-`marketing-studio`. Restart Claude Code after installing a plugin with hooks (`workflow`).
+`marketing-studio`, `research`. Restart Claude Code after installing a plugin with hooks (`workflow`).
 
 ### Per project
 Commit this to the project's `.claude/settings.json` so everyone who opens it gets the same plugins:

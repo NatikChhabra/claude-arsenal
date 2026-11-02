@@ -11,3 +11,12 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/validate.py
+      - run: python plugins/workflow/scripts/skill_lint.py plugins
+      - run: python plugins/workflow/hooks/test_hooks.py
+      - name: music and marketing tool selftests (stdlib + ffmpeg)
+        run: |
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          python plugins/music-studio/tools/lyric_lint.py --selftest
+          python plugins/music-studio/tools/loudness.py --selftest
+          python plugins/marketing-studio/tools/rollout.py --selftest
+          python plugins/marketing-studio/tools/copy_lint.py --selftest
