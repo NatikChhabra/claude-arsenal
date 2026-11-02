@@ -1,5 +1,9 @@
 # Vocals for a guitarist who can't sing (2 Nov 2026)
 
+> Updated the same day by research/03_vocal_tools.md (tool-by-tool facts, Hindi support, terms) and the vocal-route
+> skill's references/routes.md. Where this note and those differ, they win: Seed-VC is archived, Udio can't export,
+> and no commercial singing synth sings Hindi.
+
 ## The problem
 The owner plays guitar, writes, and loves singing, but his sung pitch and tone aren't release quality. The goal is a
 vocal that sounds great AND keeps the song his: his melody, words, phrasing and guitar.
