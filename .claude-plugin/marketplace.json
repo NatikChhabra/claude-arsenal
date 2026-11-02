@@ -3,7 +3,7 @@
   "owner": {
     "name": "NatikChhabra"
   },
-  "description": "Eight Claude Code plugins: a house design standard with checkers, a YouTube creator pipeline, video editing, personal edits, an exam study system, music making, marketing, and working rules with safety hooks.",
+  "description": "Nine Claude Code plugins: a house design standard with checkers, a YouTube creator pipeline, video editing, personal edits, an exam study system, music making, marketing, research papers and outreach, and working rules with safety hooks.",
   "plugins": [
     {
       "name": "design",
@@ -44,6 +44,11 @@
       "name": "marketing-studio",
       "source": "./plugins/marketing-studio",
       "description": "Campaign plans, release rollouts and per-platform social copy for songs, characters and in-world businesses, in the brand's own voice."
+    },
+    {
+      "name": "research",
+      "source": "./plugins/research",
+      "description": "Take a finished research paper public and into circulation: Zenodo DOIs, ORCID, Google Scholar, LinkedIn and arXiv; honest outreach to researchers, conference chairs and news desks; and building the author's own understanding and contribution when an AI agent did much of the work."
     }
   ]
 }

@@ -1,8 +1,8 @@
 # claude-arsenal
 
-Eight Claude Code plugins from real, daily-used projects: a strict design standard with local checkers, a full
-YouTube creator pipeline, video editing, personal edits, an exam study system, music making, marketing, and working
-rules with safety hooks. Several projects feed it: each one leaves it a little better (`GROWTH.md`, skill
+Nine Claude Code plugins from real, daily-used projects: a strict design standard with local checkers, a full
+YouTube creator pipeline, video editing, personal edits, an exam study system, music making, marketing, research
+paper release and outreach, and working rules with safety hooks. Several projects feed it: each one leaves it a little better (`GROWTH.md`, skill
 `arsenal-update`).
 
 ## Plugins
@@ -17,6 +17,7 @@ rules with safety hooks. Several projects feed it: each one leaves it a little b
 | [workflow](plugins/workflow/README.md) | How Claude works on any project: rules, session start and end, tool changes, two safety hooks |
 | [music-studio](plugins/music-studio/README.md) | Songs from an idea, vocals for a guitarist who can't sing, production, mix, master, music videos (draft) |
 | [marketing-studio](plugins/marketing-studio/README.md) | Campaign plans, release rollouts and per-platform copy in the brand's voice (draft) |
+| [research](plugins/research/README.md) | A paper to a citable preprint and profiles, honest outreach, and the author's own contribution |
 
 Each skill carries `status: draft` (outline, untested), `beta` (used on real work) or `stable`.
 
@@ -112,6 +113,13 @@ Each skill carries `status: draft` (outline, untested), `beta` (used on real wor
 | [release-rollout](plugins/marketing-studio/skills/release-rollout/SKILL.md) | Assets, distribution, metadata, teasers, launch posts and +2/+7 day follow-ups |
 | [social-copy](plugins/marketing-studio/skills/social-copy/SKILL.md) | Per-platform captions and ad text in the brand's voice, 3 angles, one pick |
 
+### research
+| Skill | What it does |
+|---|---|
+| [paper-release](plugins/research/skills/paper-release/SKILL.md) | Audit, Zenodo software and preprint DOIs, ORCID, Google Scholar, LinkedIn, arXiv with each platform's traps |
+| [research-outreach](plugins/research/skills/research-outreach/SKILL.md) | Researchers, conference chairs and press: official addresses, one question, plain AI disclosure, follow-up rules |
+| [author-ownership](plugins/research/skills/author-ownership/SKILL.md) | Short Socratic sessions and the author's own paragraph when an AI agent did much of the work |
+
 ## Hooks and scripts
 
 | Path | What it does |
@@ -140,7 +148,7 @@ claude plugin marketplace add NatikChhabra/claude-arsenal
 claude plugin install design@claude-arsenal
 ```
 Swap `design` for any plugin: `creator`, `video-edit`, `personal-edits`, `study`, `workflow`, `music-studio`,
-`marketing-studio`. Restart Claude Code after installing a plugin with hooks (`workflow`).
+`marketing-studio`, `research`. Restart Claude Code after installing a plugin with hooks (`workflow`).
 
 ### Per project
 Commit this to the project's `.claude/settings.json` so everyone who opens it gets the same plugins:
