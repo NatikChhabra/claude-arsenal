@@ -1,8 +1,0 @@
-{
-  "name": "arsenal-core",
-  "version": "0.1.0",
-  "description": "Keeps the arsenal growing: intake for new tools and repos, the update loop, registry upkeep.",
-  "author": {
-    "name": "NatikChhabra"
-  }
-}
