@@ -45,6 +45,20 @@ Each one cost real time to establish. Most are Windows-specific.
 - **Every worktree shares one git stash stack.** Never a bare `git stash pop`: you may pop another session's work.
   Prefer a temporary WIP commit.
 
+## Connectors (mail, browser)
+- **The Gmail connector rewrites every link in a draft.** `create_draft` and `update_draft` turn each URL (with or
+  without `https://`, in plain or HTML bodies, even inside `<a href>`) into a `https://www.google.com/url?q=...`
+  redirect, which looks like phishing to the reader. Fix each draft in the Gmail web UI: select the broken URL and
+  retype the real one with keystrokes, then Save and close. Editing the DOM text alone often does not save. Verify
+  by re-reading the draft through the connector (its message id changes when a save landed). Replies that quote an
+  earlier clean message keep that quote's links; a body with no links needs no fix.
+- **Tell the owner not to send a draft until it is verified.** Drafts sent before the fix went out with redirect links.
+- **Check which account the mail connector is signed in to** before drafting; it can differ from the account the
+  owner means.
+- **A Gmail compose window can open minimised** when reached by URL; typing then goes nowhere. Restore it by clicking
+  its title bar (found by its accessible "Compose: <subject>" heading), then check the body's height before typing.
+- **The browser extension disconnects at times.** Save state first; never leave a half-fixed draft unlabelled.
+
 ## Notes apps (Obsidian)
 - **Obsidian has its own index scope**, separate from git and Claude. Exclude archives and tool folders with
   `userIgnoreFilters` in `.obsidian/app.json`. Obsidian skips dot-folders, so heavy tool folders go in `.name/`.
