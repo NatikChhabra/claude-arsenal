@@ -40,6 +40,7 @@ The other plugins in this marketplace point here for every visual, motion and so
 node tools/taste/lint.mjs <files|dirs> [--app|--video] [--json]       # static anti-slop scan
 node tools/preflight.mjs <files|dirs> [--video]                       # dashes, focus, z-index, scroll listeners
 node tools/taste/inspect.mjs <url|index.html> [--app|--video] [--widths 1440,768,390|1920x1080]   # real browser
+node tools/taste/motion.mjs <url|index.html> [--fps 10] [--seconds 6] [--at "Enter@3.5"] [--tv]     # motion, frame by frame
 ```
 - Node 22+. The inspector drives a local headless Chrome, Edge, Brave or Chromium over CDP; set `CHROME_PATH` when none
   is on the usual paths. It writes `.design-check/inspect/` in the current folder: gitignore it or delete it after.

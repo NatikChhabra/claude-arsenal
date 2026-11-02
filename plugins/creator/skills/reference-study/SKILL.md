@@ -13,7 +13,7 @@ Reference, never copy: take the principles; the result must still feel like him.
 ## Steps
 1. **Already done?** Search the project's research notes for the video id first. If it has a note, read it and only add
    what's new.
-2. **Download** to its own fresh folder (public video only; `yt-dlp -f "bv*[height<=1080]+ba" <url>` + subs if any).
+2. **Download** to its own fresh folder (public video only; `yt-dlp --js-runtimes node --remote-components ejs:github -f "bv*[height<=1080]+ba" <url>`; without the two flags YouTube downloads fail with "This video is not available" (yt-dlp 2025.12+, checked 2 Nov 2026) + subs if any).
 3. **Measure:** if the project has a breakdown tool, run it; otherwise by hand with ffmpeg: cuts per minute and shot
    lengths (`select='gt(scene,0.3)'`), loudness (`ebur128`), pauses (`silencedetect`), added sound hits per minute (count
    by ear on 2-3 sample minutes), thumbnail colours. Time-labelled contact sheets of the whole runtime.

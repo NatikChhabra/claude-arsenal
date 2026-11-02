@@ -51,6 +51,8 @@ Facts and sources: research/03_vocal_tools.md (vocals), research/04_production_a
 |---|---|---|---|---|---|---|
 | anthropics/skills (frontend-design, canvas-design, brand-guidelines, theme-factory, algorithmic-art) | craft guidance for layouts, posters and generative art | Apache-2.0 for most skills | Claude Code plugin: `/plugin marketplace add anthropics/skills` | TRIAL | 2026-12-01 | github.com/anthropics/skills |
 | HTML/SVG + Playwright render | exact-text, editable posters and covers rendered to PNG | - | cloud container or PC | ADOPT (design skill, references/decks.md; the inspector renders in real Chrome) | - | - |
+| rembg + BiRefNet (`birefnet-general-lite`) | clean cut-outs of characters from cartoon and CGI video frames | MIT (rembg), MIT (BiRefNet) | CPU, ~200 MB model on first use | ADOPT (design video.md §1.11b; beat isnet-general-use on green-on-green and glow edges, 2 Nov 2026) | - | github.com/danielgatis/rembg |
+| yt-dlp with EJS (`--js-runtimes node --remote-components ejs:github`) | download public YouTube sections for references and frames | Unlicense | any, needs Node | ADOPT (creator reference-study; without the flags downloads fail "video not available", 2 Nov 2026) | 2026-12-01 | github.com/yt-dlp/yt-dlp/wiki/EJS |
 | ComfyUI (already on his PC, ROCm) | local image generation for backgrounds/textures | GPL-3.0 | RX 7800 XT | TRIAL (behind the no-AI-slop check) | 2026-12-01 | github.com/comfyanonymous/ComfyUI |
 
 ## Marketing

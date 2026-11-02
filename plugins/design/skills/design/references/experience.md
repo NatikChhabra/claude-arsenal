@@ -27,6 +27,7 @@ Use when: the surface is played, performed or practised (games, toys, music and 
 - Confetti only for real milestones, once per trigger, skipped on bulk repeats. Reward bursts are one-shot, never looping.
 - Vary the presentation of frequent rewards (2-4 variants, random particle seeds, pitch steps); identical fanfares become noise. Vary presentation, never fairness.
 - Never block input during a reward. The next action is available on frame 1; the reward plays around it.
+- Make the user the cause of the biggest moment: the rare-tier set piece fires from the one real action, aims at it and completes it (the app opens on the impact frame), and idle or timed moves stay smaller than that. Keys that do nothing become small toy reactions, with the full move rate-limited (every third press, at most one per 2.5 s).
 - Celebration copy names the real achievement with numbers ("12 clean chord changes in a row", "Best run: 94% on time"), never "Awesome!!" (`copy.md`).
 
 **Layered celebration timeline** (medium tier):
@@ -82,6 +83,7 @@ animate(el, { scaleY:[1,.85,1.12,1], scaleX:[1,1.15,.92,1] },
 - Burst: radial velocity 5-10, gravity 0.3/frame, life -0.02/frame, alpha and scale track life, all × `ticker.deltaTime` (1.0 at 60fps). Remove the ticker and destroy when all are dead.
 - Counts: confetti ≤150 on mobile; ≤40 for small rewards; <1000 total on mobile 3D.
 - Never particles or moving backgrounds behind text being read.
+- On weak devices (TV sticks, old phones) draw particles on one canvas from sprites pre-drawn once at load, not as DOM nodes: every animated DOM particle becomes its own GPU layer. Measured on a TV stick: 26 DOM particles cost 49 ms of main thread and 145 ms of GPU raster on the impact frame; one canvas about 1 ms a frame.
 - Tools: `canvas-confetti` with `disableForReducedMotion:true`; Pixi v8 `ParticleContainer` for heavy bursts; GSAP Physics2DPlugin for DOM particles.
 
 **Combo and streak escalation**
@@ -100,6 +102,7 @@ animate(el, { scaleY:[1,.85,1.12,1], scaleX:[1,1.15,.92,1] },
 - Utility: in menus and chrome, sound and haptics only for success, error, commit, snap; on the play surface the per-hit tick is the core loop. Over-feedback trains people to ignore all of it.
 - No UI sound without consent on the web: default off, one visible mute toggle, remembered. Where sound is the product (music tools, games), it starts on the user's first play action.
 - Separate volumes: music, effects, voice. In game UI, duck music 3-6dB under key effects. Pool ≤8 voices. Voice-led video is different: music sits 10 LU under speech in gaps and 18 LU under it while someone talks (`edit.md`).
+- An impact must land on the target speaker: a TV or phone speaker plays almost nothing below ~150 Hz, so a sine thud alone reaches the sofa as a faint hiss. Layer a 1-8 ms high-passed transient, a 90-260 Hz body and, only as a tail, the sub.
 - UI sounds 50-200ms. Rewards rise (major intervals); errors are low, soft and short, never buzzers. Randomise pitch ±3-5% and gain ±10% to avoid the machine-gun effect. These tick and blip rules are for app and game UI only; in a video edit, synth pops and blips are banned and every sound is a real, nameable recording (`edit.md`).
 - Instrument and reference sounds are real samples (a recorded open string pitch-shifted, or a CC0 sample set whose licence you read), never a synth imitation. Never a TTS voice where a person is expected.
 - Music tools: never play reward sounds over the user's own playing or a mic input being analysed. Use visuals mid-phrase; sound between attempts, in key if tonal.
@@ -159,6 +162,13 @@ animate(el, { scaleY:[1,.85,1.12,1], scaleX:[1,1.15,.92,1] },
 - One "now" layer at full strength; "next" dimmed but ≥3:1; everything else quiet or gone. Never make the player read a sentence mid-action: encode by position, shape, size, colour together. Text belongs between attempts.
 - Big moves in the periphery only when they are signal. Ambient motion near the focus point is noise.
 - TV / 10-foot: min 24px at 1080p, 5% safe area on every edge.
+- A web page as a TV launcher (Fire TV, Android TV, a WebView host), all measured on a real stick:
+  - `<meta name="viewport" content="width=1920">` plus `setUseWideViewPort(true)` in the host; without them a DPR-2 stick lays the page out at 960 CSS px, zoomed into a corner.
+  - Bundle the fonts and every asset in the app: a launcher paints at power-on, often before Wi-Fi is up. Serve them from a fake https origin (`shouldInterceptRequest`), not `file://`.
+  - `setMediaPlaybackRequiresUserGesture(false)` or the power-on sound is silent and then piles up on the first key press. Gate every sound on `AudioContext.state === "running"`.
+  - Pause everything when hidden (`WebView.onPause()` + `pauseTimers()` in the host, `visibilitychange` in the page) so nothing plays behind the app it launched; replay the entrance from the host on screen-on.
+  - Old TVs through a composite converter: judge every screen and motion sheet with `motion.mjs --tv` (soft, 5% overscan). The converter often runs PAL 50 Hz; fast spins strobe, so prefer fewer degrees per frame.
+  - Measure on the device: attach DevTools over adb (`webview_devtools_remote_<pid>`) and record rAF frame times and a trace. Desktop numbers say nothing about a TV stick.
 - Test: screenshot, view at 50% size from arm's length, or stand at the real distance. If the "now" item is not found in under 0.5s, enlarge it or remove competitors.
 
 ## 8. Reduced motion and accessibility
