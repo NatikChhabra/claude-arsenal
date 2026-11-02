@@ -1,6 +1,6 @@
 ---
 name: song-from-idea
-description: Take a song from an idea (a character, an RP story beat, a mood, a guitar riff) to a written song with structure, lyrics and chords. Use when the owner wants to write a song or start a music project.
+description: "Take a song from an idea (a character, an RP story beat, a mood, a guitar riff) to a written song with structure, lyrics and chords. Use when the owner wants to write a song or start a music project."
 ---
 # Song from idea
 

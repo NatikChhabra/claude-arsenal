@@ -1,6 +1,6 @@
 ---
 name: <kebab-case-name>
-description: <What it does and WHEN to use it, one or two sentences. This line decides when Claude picks the skill.>
+description: "<What it does, then 'Use for ...' with the phrases a user types. Under 900 characters. This line decides when Claude picks the skill.>"
 ---
 # <Title>
 

@@ -1,0 +1,5 @@
+{
+  "fast": {"m": "<models>/<moe-model>-IQ3_S.gguf", "c": 32768, "note": "MoE, ~70 tok/s on a 16 GB GPU: bulk drafting"},
+  "smart": {"m": "<models>/<dense-model>-IQ4_XS.gguf", "c": 8192, "note": "dense, slower, better reasoning and code"},
+  "writer": {"m": "<models>/<instruct-model>-IQ4_XS.gguf", "c": 16384, "note": "writing and tone second opinion"}
+}

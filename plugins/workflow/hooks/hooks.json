@@ -1,0 +1,29 @@
+{
+  "description": "secret_guard blocks secrets in git, deletes git can't undo, work-losing git commands and curl-to-shell; context_guard nudges a hand-off at measured context sizes. Set WORKFLOW_PYTHON=python (settings.json env) where uv is not installed.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${WORKFLOW_PYTHON:-uv run --no-project python} \"${CLAUDE_PLUGIN_ROOT}/hooks/secret_guard.py\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${WORKFLOW_PYTHON:-uv run --no-project python} \"${CLAUDE_PLUGIN_ROOT}/hooks/context_guard.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

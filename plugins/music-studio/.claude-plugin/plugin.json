@@ -1,8 +1,19 @@
 {
   "name": "music-studio",
-  "version": "0.1.0",
-  "description": "Songwriting, vocals for a guitarist who can't sing, production, mixing, mastering and music videos.",
+  "description": "Songwriting, vocals for a guitarist who can't sing, guitar capture, production, mixing, mastering and music videos, with a self-review before delivery.",
   "author": {
     "name": "NatikChhabra"
-  }
+  },
+  "license": "MIT",
+  "repository": "https://github.com/NatikChhabra/claude-arsenal",
+  "keywords": [
+    "music",
+    "songwriting",
+    "vocals",
+    "guitar",
+    "mixing",
+    "mastering",
+    "music-video",
+    "ai-music"
+  ]
 }

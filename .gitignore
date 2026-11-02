@@ -2,6 +2,9 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+.design-check/
+.claude/settings.local.json
+plugins/workflow/scripts/llm.presets.json
 # large binaries and models never live in git
 *.wav
 *.mp3
@@ -12,4 +15,3 @@ Thumbs.db
 *.ckpt
 *.onnx
 *.gguf
-.claude/settings.local.json

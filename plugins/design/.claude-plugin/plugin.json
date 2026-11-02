@@ -1,0 +1,21 @@
+{
+  "name": "design",
+  "description": "One house design standard for anything visual (sites, apps, dashboards, games, decks, thumbnails, video text and motion) with anti-slop rules, exact values and three local checkers: a linter, a preflight and a real-browser inspector.",
+  "author": {
+    "name": "NatikChhabra"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/NatikChhabra/claude-arsenal",
+  "keywords": [
+    "design",
+    "ui",
+    "ux",
+    "frontend",
+    "css",
+    "accessibility",
+    "motion",
+    "thumbnails",
+    "anti-slop",
+    "lint"
+  ]
+}

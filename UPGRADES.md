@@ -1,0 +1,34 @@
+# Upgrades
+
+| name | link | decision | where it went |
+|---|---|---|---|
+| claude-code-safety-net (kenryu42, MIT) | https://github.com/kenryu42/claude-code-safety-net | ADOPTED (idea, own code): block git commands that lose uncommitted or pushed work and downloads piped into a shell; its `npx -y @latest` installer and Node runtime not taken | plugins/workflow/hooks/secret_guard.py (`loses_work`), 23 new checks in hooks/test_hooks.py, README + hooks.json |
+| superpowers: verification-before-completion, systematic-debugging (obra, MIT) | https://github.com/obra/superpowers | ADOPTED (ideas, rewritten): evidence named in every done line, no "should work", helper reports checked in the diff, root cause first, stop after 3 failed fixes | plugins/workflow/skills/working-rules (rule 7, new 7b) |
+| superpowers: writing-skills (obra, MIT) | https://github.com/obra/superpowers | ADOPTED (idea): a discipline skill is kept only after a without/with pressure test shows it holds | plugins/workflow/skills/tool-change step 4 |
+| agnix (agent-sh, MIT/Apache) | https://github.com/agent-sh/agnix | ADOPTED (idea, own stdlib code): frontmatter and link rules; the Rust binary and npm/brew installs not taken | plugins/workflow/scripts/skill_lint.py |
+| Schliff (Zandereins, MIT) | https://github.com/Zandereins/schliff | ADOPTED (idea): size budget and padding warnings; its 1,000-token SKILL.md budget rejected (our skills carry steps inline by design, 300-line cap kept) | plugins/workflow/scripts/skill_lint.py |
+| SkillSpector (NVIDIA, Apache-2.0) | https://github.com/NVIDIA/SkillSpector | ADOPTED (idea): supply-chain and injection tells in skills; the tool itself rejected (sends dependency lists to api.osv.dev and file contents to an LLM by default) | plugins/workflow/scripts/skill_lint.py |
+| ui-craft tokens_lint (educlopez, MIT) | https://github.com/educlopez/ui-craft | ADOPTED (idea): raw colour, radius and z-index values outside the token block; installer downloads a binary and self-updates, not taken | plugins/design/skills/design/references/tools.md "Other checks" |
+| security-guidance (Anthropic official plugin) | https://github.com/anthropics/claude-plugins-official/tree/main/plugins/security-guidance | REJECTED to vendor: Anthropic Commercial Terms, not open source; its diff and commit reviews send code to a model endpoint. Fine to install alongside as a companion | none |
+| discernment-nudge (anthropics/skills) | https://github.com/anthropics/skills/tree/main/skills/discernment-nudge | REJECTED: covered by working-rules 2 (never a yes-man) and research-claims tags; a once-per-chat question list adds noise to bullet reports | none |
+| hookify, claude-md-management, session-report (Anthropic official) | https://github.com/anthropics/claude-plugins-official | REJECTED: generic hook authoring and CLAUDE.md upkeep; tool-change, drift-sweep and context_guard already do this with measured thresholds | none |
+| Dippy, GouvernAI, Gryph, Node9 | https://github.com/ldayton/Dippy | REJECTED: auto-approve or policy engines with their own runtimes; secret_guard covers the irreversible cases with zero dependencies | none |
+| claude-youtube (agricidaniel), youtube-strategy (dgalarza), yt-packaging (jeremylongshore) | https://github.com/agricidaniel/claude-youtube | REJECTED: title + thumbnail + hook as one unit, A/B variants and competitor title scans are already in creator yt-package, thumbnail, publish-meta and growth-gate, with measured gates these lack | none |
+| AI thumbnail generators (muapi-youtube-thumbnail, youtube-thumbnail-design) | https://github.com/SamurAIGPT/Generative-Media-Skills | REJECTED: paid image APIs and AI-made faces; our cards use the real picture and pass blind readers | none |
+| Anki and flashcard skills (dashed anki-flashcards, terkelg anki-markdown, szeyu flashcard-creator) | https://github.com/szeyu/vibe-study-skills | REJECTED: generic card rules or AnkiConnect with the desktop app running; study exam-deck already caps cards per chapter and verifies coverage, leaks and size | none |
+| StyleSeed, atelier, OneRedOak design-review | https://github.com/OneRedOak/claude-code-workflows | REJECTED: their rule sets and Playwright review loop are a subset of design (lint, preflight, real-browser inspector, blind review) | none |
+| agentcairn, vir, claude-code-tools session continuity | https://github.com/pchalasani/claude-code-tools | REJECTED: extra memory stores and MCP servers; the hand-off that replaces STATUS plus context_guard is the measured pattern | none |
+
+## Merges (2 Nov 2026)
+
+Two builds of this repo met: the groundwork (arsenal-core, design-studio, music-studio, marketing-studio, registry,
+research, validator, CI) and the six extracted plugins. Each overlap was judged on coverage, accuracy, tested tooling
+and quality; the better one is the base and the other's unique strengths were folded in, rewritten.
+
+| Overlap | Verdict | Why | Folded in |
+|---|---|---|---|
+| design-studio (brand-kit, design-brief, design-review, rp-graphics) vs design | design is the base; design-studio removed | design-studio: 4 draft outlines (~65 lines, untested, no tools). design: a full rule set with 16 references, a linter, a preflight and a real-browser inspector, used on real work | brief fields incl. "what would make it fail" (process.md §1); the `brands/<name>/BRAND.md` brand kit with 3 personality words and 5 would-say / 5 never-say lines (systems.md); cover 3000x3000 and in-game billboard sizes, HTML/SVG rendered to PNG for exact text, AI only for backgrounds, "set beside the last three" (decks.md) |
+| arsenal-core (arsenal-update, tool-intake) vs workflow | workflow is the base; arsenal-core removed | arsenal-core: 2 draft outlines. workflow: 6 skills, 2 tested hooks (48 checks), a skill linter | tool-intake's deal-breakers, the ADOPT/TRIAL/WATCH/SKIP verdict and the registry row (tool-change "Verdict"); arsenal-update rewritten as a workflow skill with the privacy step and both checkers |
+| marketing-studio social-copy vs design references/copy.md | both kept | different jobs: copy.md is interface words, social-copy is promotional posts per platform | marketing skills now read the brand kit from design |
+| music-studio music-video vs design edit.md / video.md | both kept | music-video owns the song workflow; picture, text and motion rules stay only in design | music-video QA points to edit.md and video.md |
+| scripts/validate.py vs workflow skill_lint.py | both kept, both in CI | validate checks the repo (marketplace, registry, banned names, dashes); skill_lint checks skill content (YAML, links, supply-chain tells) | validate: no `version` fields, YAML block descriptions, 20-1024 chars, more file types; every skill got a `status:` line |

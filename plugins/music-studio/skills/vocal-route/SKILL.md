@@ -1,6 +1,6 @@
 ---
 name: vocal-route
-description: Choose and run the best way to get great vocals on a song when the owner (a guitarist who can't sing) won't be the final sung voice. Use whenever a song needs vocals.
+description: "Choose and run the best way to get great vocals on a song when the owner (a guitarist who can't sing) won't be the final sung voice. Use whenever a song needs vocals."
 ---
 # Vocal route
 

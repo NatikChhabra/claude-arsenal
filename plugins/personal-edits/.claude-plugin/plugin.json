@@ -1,0 +1,17 @@
+{
+  "name": "personal-edits",
+  "description": "Private birthday, roast, anniversary and farewell edits for friends and family at a published-video bar: beat plan, one-word questions, preview, blind, design and sound reviews, phone-sized delivery and a per-person playbook.",
+  "author": {
+    "name": "NatikChhabra"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/NatikChhabra/claude-arsenal",
+  "keywords": [
+    "video",
+    "editing",
+    "birthday",
+    "montage",
+    "personal",
+    "privacy"
+  ]
+}

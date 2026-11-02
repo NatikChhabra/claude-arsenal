@@ -4,12 +4,15 @@
     python scripts/validate.py          # check everything, exit 1 on any error
     python scripts/validate.py --due    # also list registry rows whose recheck date has passed
 
-Checks: marketplace.json parses and every listed plugin exists with a matching plugin.json (name + version);
-every plugin directory is listed; every SKILL.md has frontmatter with `name` (matching its folder) and `description`,
-and a `status:` line (draft|beta|stable); skill names are unique; registry verdicts are known values.
+Checks: marketplace.json parses and every listed plugin exists with a matching plugin.json name; no `version` in
+either (the commit SHA versions installs, so a forgotten bump can never freeze anyone on an old copy); every plugin
+directory is listed; every SKILL.md has frontmatter with `name` (matching its folder) and a `description` of 20-1024
+characters, and a `status:` line (draft|beta|stable); skill names are unique; registry verdicts are known values;
+no banned names; no em or en dashes in any text file.
 Standard library only.
 """
 import datetime
+import hashlib
 import json
 import pathlib
 import re
@@ -18,6 +21,12 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 STATUSES = {"draft", "beta", "stable"}
 VERDICTS = {"ADOPT", "TRIAL", "WATCH", "SKIP"}
+# Names the owner wants kept out of this repo (owner, 2 Nov 2026). Stored as hashes so the names never appear here.
+# A word (or two adjacent words joined) whose sha256[:16] is in this set is refused. Add one: hashlib.sha256(b"word").hexdigest()[:16]
+BANNED = {"26fa1ef0060cbe67", "4099acf831f06493", "723b00fcb4a6b77b", "8c962913fcb7b0d6",
+          "8bf5453195690212", "df0e05c13e273c88", "b0bbbd6e3daf2912", "c31b01d0933056e1", "78abdcf66d82b90d",
+          "46d02049c145a9ee", "eccc02f79462e505"}  # second and third lines: more private names (2 Nov 2026)
+TEXT = {".md", ".json", ".py", ".yml", ".yaml", ".txt", ".mjs", ".js", ".ps1", ".sh", ".toml", ".html", ".css"}
 errors = []
 
 
@@ -29,11 +38,14 @@ def frontmatter(text):
     m = re.match(r"^---\n(.*?)\n---\n", text, re.S)
     if not m:
         return None
-    out = {}
+    out, key = {}, None
     for line in m.group(1).splitlines():
-        if ":" in line:
+        if key and line[:1] in (" ", "	"):  # continuation of a folded (>-) or literal (|) block value
+            out[key] = (out[key] + " " + line.strip()).strip()
+        elif ":" in line:
             k, v = line.split(":", 1)
-            out[k.strip()] = v.strip()
+            key, v = k.strip(), v.strip()
+            out[key] = "" if v in (">", ">-", "|", "|-") else v
     return out
 
 
@@ -56,10 +68,8 @@ def check_marketplace():
         meta = json.loads(pj.read_text(encoding="utf-8"))
         if meta.get("name") != name:
             err(f"{pj.relative_to(ROOT)}: name {meta.get('name')!r} != marketplace {name!r}")
-        if not re.fullmatch(r"\d+\.\d+\.\d+", str(meta.get("version", ""))):
-            err(f"{pj.relative_to(ROOT)}: version must be semver")
-        if p.get("version") and p["version"] != meta.get("version"):
-            err(f"plugin {name}: marketplace version {p['version']} != plugin.json {meta.get('version')}")
+        if "version" in meta or "version" in p:
+            err(f"plugin {name}: drop `version` (plugin.json and marketplace.json); the commit versions installs")
     for d in sorted((ROOT / "plugins").iterdir()):
         if d.is_dir() and d.name not in listed:
             err(f"plugins/{d.name} is not listed in marketplace.json")
@@ -77,8 +87,8 @@ def check_skills():
         name = fm.get("name", "")
         if name != sk.parent.name:
             err(f"{rel}: name {name!r} must match folder {sk.parent.name!r}")
-        if len(fm.get("description", "")) < 20:
-            err(f"{rel}: description missing or too short")
+        if not 20 <= len(fm.get("description", "")) <= 1024:
+            err(f"{rel}: description missing, too short or over 1024 characters")
         m = re.search(r"^status:\s*(\w+)", text, re.M)
         if not m or m.group(1) not in STATUSES:
             err(f"{rel}: needs a 'status: draft|beta|stable' line")
@@ -110,11 +120,25 @@ def check_registry(due):
     return n
 
 
+def check_banned():
+    for f in ROOT.rglob("*"):
+        if ".git" in f.parts or not f.is_file() or f.suffix not in TEXT:
+            continue
+        for i, line in enumerate(f.read_text(encoding="utf-8", errors="ignore").splitlines(), 1):
+            if "\u2014" in line or "\u2013" in line:
+                err(f"{f.relative_to(ROOT)}:{i}: em or en dash (use a comma, colon or parentheses)")
+            words = re.findall(r"[a-z0-9]+", line.lower())
+            grams = words + [a + b for a, b in zip(words, words[1:])]
+            if any(hashlib.sha256(g.encode()).hexdigest()[:16] in BANNED for g in grams):
+                err(f"{f.relative_to(ROOT)}:{i}: banned name (see BANNED in scripts/validate.py)")
+
+
 def main():
     due = "--due" in sys.argv
     check_marketplace()
     skills = check_skills()
     rows = check_registry(due)
+    check_banned()
     for e in errors:
         print("ERROR", e)
     print(f"{'FAIL' if errors else 'PASS'}: {skills} skills, {rows} registry rows, {len(errors)} errors")

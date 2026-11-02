@@ -1,0 +1,19 @@
+{
+  "name": "study",
+  "description": "A mistake-driven board-exam study system for an Obsidian or markdown vault: mark answers, log mistakes by type, post-mortem papers, sync fixes into chapter notes, audit tallies, and build capped Anki decks with coverage and leak checks.",
+  "author": {
+    "name": "NatikChhabra"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/NatikChhabra/claude-arsenal",
+  "keywords": [
+    "study",
+    "exams",
+    "obsidian",
+    "anki",
+    "flashcards",
+    "notes",
+    "education",
+    "students"
+  ]
+}

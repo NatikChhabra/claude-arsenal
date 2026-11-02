@@ -1,6 +1,6 @@
 ---
 name: produce-arrange
-description: Build the full arrangement around the guitar and vocal (drums, bass, keys, FX) in a DAW, optionally driving Ableton or REAPER through an MCP server. Use after the song sheet and guitar parts exist.
+description: "Build the full arrangement around the guitar and vocal (drums, bass, keys, FX) in a DAW, optionally driving Ableton or REAPER through an MCP server. Use after the song sheet and guitar parts exist."
 ---
 # Produce and arrange
 

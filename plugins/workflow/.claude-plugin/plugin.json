@@ -1,0 +1,20 @@
+{
+  "name": "workflow",
+  "description": "How Claude works on any project: working rules, session start and end, safe tool changes, drift sweeps, tagged research claims, a secret and delete guard hook, a context hand-off hook, a skill linter and a local-LLM offload kit.",
+  "author": {
+    "name": "NatikChhabra"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/NatikChhabra/claude-arsenal",
+  "keywords": [
+    "workflow",
+    "hooks",
+    "safety",
+    "git",
+    "secrets",
+    "skills",
+    "lint",
+    "sessions",
+    "productivity"
+  ]
+}

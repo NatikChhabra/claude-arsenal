@@ -1,0 +1,10 @@
+{
+  "secret_guard": {
+    "secret_files": [".api_token.json"],
+    "extra_patterns": [],
+    "protected_paths": ["vault", "tools/models"],
+    "private_ids_file": "~/.config/<project>/private_ids.json",
+    "private_id_kinds": ["account", "added"]
+  },
+  "drift_files": ["CLAUDE.md", "NEXT_STEPS.md", "QUALITY.md", ".claude/skills/*/SKILL.md"]
+}

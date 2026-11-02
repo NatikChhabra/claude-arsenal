@@ -3,34 +3,47 @@
   "owner": {
     "name": "NatikChhabra"
   },
-  "metadata": {
-    "description": "Natik's growing toolkit of Claude Code skills and plugins.",
-    "version": "0.1.0"
-  },
+  "description": "Eight Claude Code plugins: a house design standard with checkers, a YouTube creator pipeline, video editing, personal edits, an exam study system, music making, marketing, and working rules with safety hooks.",
   "plugins": [
     {
-      "name": "arsenal-core",
-      "source": "./plugins/arsenal-core",
-      "description": "Keeps the arsenal growing: intake for new tools and repos, the update loop, registry upkeep.",
-      "version": "0.1.0"
+      "name": "design",
+      "source": "./plugins/design",
+      "description": "One house design standard for anything visual (sites, apps, dashboards, games, decks, thumbnails, video text and motion) with anti-slop rules, exact values and three local checkers: a linter, a preflight and a real-browser inspector."
+    },
+    {
+      "name": "creator",
+      "source": "./plugins/creator",
+      "description": "Run a YouTube channel as a system: topic picks, pre-production packs, Shorts and Reels, thumbnails, titles and metadata, a growth gate, blind final review, browser release, retros and weekly reviews, plus yt-* audit, chapter, retention, SEO and outlier tools."
+    },
+    {
+      "name": "video-edit",
+      "source": "./plugins/video-edit",
+      "description": "Edit voice-led gameplay and commentary videos: recording intake with a privacy scan, comedic rough cuts from an EDL, cinematic VO films, scripted voice-over sessions, and a detached job runner for long renders and transcriptions."
+    },
+    {
+      "name": "personal-edits",
+      "source": "./plugins/personal-edits",
+      "description": "Private birthday, roast, anniversary and farewell edits for friends and family at a published-video bar: beat plan, one-word questions, preview, blind, design and sound reviews, phone-sized delivery and a per-person playbook."
+    },
+    {
+      "name": "study",
+      "source": "./plugins/study",
+      "description": "A mistake-driven board-exam study system for an Obsidian or markdown vault: mark answers, log mistakes by type, post-mortem papers, sync fixes into chapter notes, audit tallies, and build capped Anki decks with coverage and leak checks."
+    },
+    {
+      "name": "workflow",
+      "source": "./plugins/workflow",
+      "description": "How Claude works on any project: working rules, session start and end, safe tool changes, drift sweeps, tagged research claims, a secret and delete guard hook, a context hand-off hook, a skill linter and a local-LLM offload kit."
     },
     {
       "name": "music-studio",
       "source": "./plugins/music-studio",
-      "description": "Songwriting, vocals for a guitarist who can't sing, production, mixing, mastering and music videos.",
-      "version": "0.1.0"
-    },
-    {
-      "name": "design-studio",
-      "source": "./plugins/design-studio",
-      "description": "Posters, brand kits and social graphics for roleplay characters and in-world businesses.",
-      "version": "0.1.0"
+      "description": "Songwriting, vocals for a guitarist who can't sing, guitar capture, production, mixing, mastering and music videos, with a self-review before delivery."
     },
     {
       "name": "marketing-studio",
       "source": "./plugins/marketing-studio",
-      "description": "Campaign plans, release rollouts and social copy for music, characters and RP businesses.",
-      "version": "0.1.0"
+      "description": "Campaign plans, release rollouts and per-platform social copy for songs, characters and in-world businesses, in the brand's own voice."
     }
   ]
 }

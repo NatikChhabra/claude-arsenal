@@ -1,8 +1,17 @@
 {
   "name": "marketing-studio",
-  "version": "0.1.0",
-  "description": "Campaign plans, release rollouts and social copy for music, characters and RP businesses.",
+  "description": "Campaign plans, release rollouts and per-platform social copy for songs, characters and in-world businesses, in the brand's own voice.",
   "author": {
     "name": "NatikChhabra"
-  }
+  },
+  "license": "MIT",
+  "repository": "https://github.com/NatikChhabra/claude-arsenal",
+  "keywords": [
+    "marketing",
+    "campaign",
+    "release",
+    "social",
+    "copywriting",
+    "launch"
+  ]
 }

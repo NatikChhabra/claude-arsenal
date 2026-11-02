@@ -1,6 +1,6 @@
 ---
 name: music-review
-description: Self-review a song or music video against the arsenal's quality bar before showing it to the owner. Use before any music delivery.
+description: "Self-review a song or music video against the arsenal's quality bar before showing it to the owner. Use before any music delivery."
 ---
 # Music review
 

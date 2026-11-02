@@ -1,0 +1,21 @@
+{
+  "name": "video-edit",
+  "description": "Edit voice-led gameplay and commentary videos: recording intake with a privacy scan, comedic rough cuts from an EDL, cinematic VO films, scripted voice-over sessions, and a detached job runner for long renders and transcriptions.",
+  "author": {
+    "name": "NatikChhabra"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/NatikChhabra/claude-arsenal",
+  "keywords": [
+    "video",
+    "editing",
+    "gameplay",
+    "commentary",
+    "roughcut",
+    "voiceover",
+    "edl",
+    "transcription",
+    "ffmpeg",
+    "whisper"
+  ]
+}
