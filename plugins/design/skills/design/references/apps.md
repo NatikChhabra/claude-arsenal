@@ -188,6 +188,36 @@ Use when building or reviewing any screen people work in repeatedly: app screens
 - No pagination on overviews: cap rows, "View all" + total. Full list screens: total above, sticky header, "1-50 of 1,284" with page or load more.
 - More than ~6 comparable items: cards become a table, unless each item holds an image, chart, controls or wrapping text.
 
+## Spreadsheets, ledgers and record books
+
+A sheet someone else will open (a licence office, an auditor, a client) is a document, not a database dump. It should
+read like a small business's own books.
+
+- **Blank stays blank.** Every filler formula is guarded so an unused row shows nothing:
+  `=IF(AND(I5="",J5=""),"",SUM(I$5:I5)-SUM(J$5:J5))`. Never a column of `0`, never a formula that reads the header row
+  (the `#VALUE!` in row 1 of a running balance). Fill guarded formulas far enough for years of use (~1000 rows).
+- **Money sits at the right edge** in the order in, out, balance, right-aligned in one currency format with negatives in
+  brackets (`$#,##0;($#,##0);$0`). A right-aligned number never touches a left-aligned text column: reorder, or
+  centre the text column after it.
+- **Header block, then one frozen header row.** Business name (one size up, bold), one quiet owner and scope line,
+  totals top right (small grey label over a bold value), a short spacer, then the column headers. Freeze through the
+  header row so names and totals stay on screen.
+- **Brand at ~3%.** A pale tint of the brand colour on the header row and one rule in the full colour under it and
+  under the headline total. Gridlines off, one hairline per row. No zebra stripes, no dark slab headers, no dashed
+  borders, no all-caps.
+- **Dropdowns for every closed set** (In/Out, category, status, pay basis) with a plain-words error. Amounts validated
+  as non-negative numbers; direction comes from the column or the In/Out cell, never a minus sign.
+- **Catch mistakes without red.** Conditional format in a pale amber: money typed in the wrong column for its In/Out,
+  and dimmed or struck-through rows for cancelled jobs and staff who left.
+- **Link the tabs instead of double entry.** A job's "paid so far" is a `SUMIF` over the ledger by job number, so a
+  payment is typed once.
+- **Plain headers in sentence case** ("Client or payee", "Still owed"), no units in brackets when the format already
+  shows them.
+- **Google Sheets delivery:** build the .xlsx (openpyxl), keep to formulas both apps share (no `ARRAYFORMULA`,
+  no open ranges like `H5:H`), then in the live sheet use File, Import, Upload, "Replace spreadsheet": the share link
+  stays the same. Before handing over, fill a copy with test rows, recalculate (LibreOffice headless) and look at a
+  render of every tab.
+
 ## Lists and list-detail
 - Overview lists show 2-5 rows; dashboards per card 2-3 figures + ≤2 example rows + "View all (n)".
 - Selection: whole row is the hit target; selected row in a list that drives a detail pane takes the `--active` fill (same as the nav pill), distinct from hover and focus ring. Space selects, Shift-click extends, Ctrl/Cmd toggles.
