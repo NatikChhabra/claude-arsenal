@@ -20,3 +20,4 @@ jobs:
           python plugins/music-studio/tools/loudness.py --selftest
           python plugins/marketing-studio/tools/rollout.py --selftest
           python plugins/marketing-studio/tools/copy_lint.py --selftest
+          python plugins/workflow/scripts/redact.py --selftest

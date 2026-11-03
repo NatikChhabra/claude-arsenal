@@ -94,6 +94,7 @@ Each skill carries `status: draft` (outline, untested), `beta` (used on real wor
 | [drift-sweep](plugins/workflow/skills/drift-sweep/SKILL.md) | Find contradictions between rule files after a rule changed |
 | [research-claims](plugins/workflow/skills/research-claims/SKILL.md) | Tag every claim CONFIRMED, INFERRED or DEBUNKED with its source and when it is true |
 | [arsenal-update](plugins/workflow/skills/arsenal-update/SKILL.md) | Feed what a session learned back into this marketplace, privacy-checked, through a PR |
+| [pre-report-secrets-scan](plugins/workflow/skills/pre-report-secrets-scan/SKILL.md) | Redact secrets and personal data from a log, bug report or issue before it is shared, with a findings list |
 
 ### music-studio
 | Skill | What it does |
@@ -126,6 +127,7 @@ Each skill carries `status: draft` (outline, untested), `beta` (used on real wor
 |---|---|
 | [workflow/hooks/secret_guard.py](plugins/workflow/hooks/secret_guard.py) | PreToolUse: blocks secrets in git, deletes git can't undo, work-losing git commands, downloads piped into a shell |
 | [workflow/hooks/context_guard.py](plugins/workflow/hooks/context_guard.py) | PostToolUse: says when to hand off at measured context sizes; never blocks |
+| [workflow/scripts/redact.py](plugins/workflow/scripts/redact.py) | First-pass secrets scan for text about to be shared: typed placeholders, findings without values, a self-check pass |
 | [workflow/scripts/skill_lint.py](plugins/workflow/scripts/skill_lint.py) | Lints every SKILL.md: frontmatter, links, dashes, size, supply-chain and injection tells |
 | [workflow/scripts/](plugins/workflow/scripts/) | Local-LLM offload kit: `llm.ps1`, `ask.py`, `batch.py` |
 | [design/skills/design/tools/](plugins/design/skills/design/tools/) | `taste/lint.mjs`, `preflight.mjs`, `taste/inspect.mjs` (headless browser) |

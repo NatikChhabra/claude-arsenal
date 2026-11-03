@@ -33,7 +33,7 @@
     {
       "name": "workflow",
       "source": "./plugins/workflow",
-      "description": "How Claude works on any project: working rules, session start and end, safe tool changes, drift sweeps, tagged research claims, a secret and delete guard hook, a context hand-off hook, a skill linter and a local-LLM offload kit."
+      "description": "How Claude works on any project: working rules, session start and end, safe tool changes, drift sweeps, tagged research claims, a pre-share secrets scan, a secret and delete guard hook, a context hand-off hook, a skill linter and a local-LLM offload kit."
     },
     {
       "name": "music-studio",
