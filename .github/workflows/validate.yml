@@ -21,3 +21,11 @@ jobs:
           python plugins/marketing-studio/tools/rollout.py --selftest
           python plugins/marketing-studio/tools/copy_lint.py --selftest
           python plugins/workflow/scripts/redact.py --selftest
+      - name: design, video-edit and beatmap selftests (numpy, OCR, librosa)
+        env:
+          STILL_CHECK_DEPS: "1"
+        run: |
+          python -m pip install -q pillow numpy scipy rapidocr-onnxruntime librosa soundfile
+          python plugins/design/skills/design/tools/still_check.py --selftest
+          python plugins/video-edit/tools/watch.py --selftest
+          python plugins/music-studio/tools/beatmap.py --selftest

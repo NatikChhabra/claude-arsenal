@@ -201,7 +201,7 @@ At most 3 flashes in any 1 s, measured on whole-frame luma (ITU-R BT.1702, Ofcom
 - Breath holds 0.3-1.5 times a minute where the VO stops for 8-14 s (a reference's biggest replay peaks were exactly these). No static wide over 2 s: a living window = median shift >= 0.45 px/frame at 480 px wide, or median frame diff >= 3.0. Pro trailers measured 0% static holds.
 - VO rhythm: 125-165 words per minute of runtime, sentence median 8-11 words, a "but" turn more than once a minute. VO slot = 0.5 s lead (0.3 on a hard cut) + the read + 0.5-0.8 s tail of real picture.
 - Films feel grand: grade, bars, wide holds, the live voice under game and music; a brand mascot stays out of the film body.
-- LUTs: only your own baked LUTs (an S-curve with toe, highlight shoulder and roll-off, split tone), never stock, each A/B'd on its footage first (a "film" LUT crushed night shadows from 43.7% to 45.5%, so that film kept a plain EQ grade).
+- LUTs: only your own baked LUTs (an S-curve with toe, highlight shoulder and roll-off, split tone), never stock, each A/B'd on its footage first (a "film" LUT crushed night shadows from 43.7% to 45.5%, so that film kept a plain EQ grade). Bake them with video-edit `scripts/lut.py` (film, film_night, warm_day).
 - Personal edits: punchy grade, light grain and glow are fine.
 
 ## 7. Video QC (before any review ask)

@@ -5,8 +5,10 @@ order, the pass marks and the prompts. No gate stands alone: one feed-rank gate 
 0/10 (bright colour fools rankers); T1 + T4 + T10 together sorted all 6 of his rated cards right (video.md §6.6).
 
 ## 4a. The measured gate (every variant)
-If the project has a thumbnail checker, run it per variant with its own title and words; otherwise downscale to 168x94
-(suggested) and 246x138 (search) and measure the floors by hand: video.md §1.8 (headline height, words, glyph contrast)
+Run the design plugin's checker per variant with its own title and words:
+`python <design skill>/tools/still_check.py A.png B.png C.png --as thumbnail --title "<its title>" --words "<its words>"
+[--frame <the real frame>] [--vs <the last 8 approved>] [--mock feed.png]` (the feed mock wants the topic's 6 top
+thumbnails in `--vs`). Without Python, downscale to 168x94 (suggested) and 246x138 (search) and measure the floors by hand: video.md §1.8 (headline height, words, glyph contrast)
 and §1.9 (feed separation, colourfulness, gloss, badge corner, top half, focal regions, elements, subject height).
 FAIL = rebuild before any reader sees it; WARN = fix when cheap, say which. A FLOOR, not a CTR predictor: a card the
 creator scored 0/10 measured 9.3, because its miss was the idea.

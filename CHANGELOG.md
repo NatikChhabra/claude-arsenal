@@ -1,6 +1,23 @@
 # Changelog
 
 ## Unreleased
+- design: after a BBQ hiring poster was sent back as "low effort AI", the design skill now covers ads properly.
+  New `references/ads.md` (business inventory first, one vernacular from the business's world, one line and one
+  subject, real over generated, one motion the place owns then a long hold, in-game placement, a 5-step review) and an
+  "Ads, posters and animated loops" block in `tells.md`. The skill's description and mode table now name posters,
+  hiring and business ads, in-game/RP signs and GIF loops, so it loads for them. New `tools/still_check.py`: the pixel
+  gate for any finished still or loop at its real viewing size (thumbnail, ad, ingame, cover, story profiles): headline
+  size, fine print, word wall, glyph contrast, one subject, clutter, AI gloss and palette, AI provenance, sameness,
+  faked platform UI; animations add WCAG flashes, particle fields, whole-frame motion, the loop seam and the upload
+  budget. Generalised from the owner's proven thumbnail gate (calibrated on 290 real cards). On the rejected poster it
+  scored 4.9: a 58-word wall FAIL, plus particle field, fine print, no subject, text on text and AI provenance WARNs.
+  creator `thumbnail` gates now run it instead of "if the project has a checker".
+- video-edit: new `tools/watch.py` (the watch pack: a whole render as one time-aligned text timeline with DEAD,
+  OVERLOAD, STEP, UNCUED, FLASH, FROZEN, SILENCE and, with a beat map, OFFBEAT flags, plus contact sheets for the worst
+  windows) wired into roughcut gates, creator final-review and music-studio music-video; new `scripts/lut.py` (our own
+  film LUTs), referenced from design edit.md and music-video. Both rebuilt from the owner's working edit pipeline as
+  standalone tools.
+- CI also runs the still_check, watch and beatmap selftests (closes the beatmap gap noted below).
 - workflow: new `android-adb-drive` skill (beta, used for real on 2026-11-03) with `scripts/adb_drive.py`: taps only when the
   app owns the screen and no notification banner is down (two real mis-taps started a call and opened an SMS), saves and
   restores the settings it changes, lists the screen as tappable labels. Stdlib; `--selftest` runs without a phone.

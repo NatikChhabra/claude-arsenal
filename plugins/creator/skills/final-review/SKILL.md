@@ -27,8 +27,8 @@ Score computer: `ship_score.py` (next to this file).
 - Long jobs (render, transcribe, QC) run detached; read the log tail and the FAIL/WARN lines when they end.
 
 ## 2. Score it, then have it scored blind
-- Watch every file whole, picture + sound, full runtime. If the project has a watch-pack tool, read its report top to
-  bottom and every flagged strip; otherwise pull a frame sheet per minute and listen through. Never score from the
+- Watch every file whole, picture + sound, full runtime. Run the video-edit watch pack (`uv run --no-project --with numpy python <video-edit plugin>/tools/watch.py <mp4> --words <words.json> --sheets`),
+  read watch.md top to bottom and every sheet it lists; otherwise pull a frame sheet per minute and listen through. Never score from the
   transcript or stills alone.
 - Self-score on the scorecards rows that apply. Every row >= 8.5, else fix and re-render (the changed parts, then one
   full render).

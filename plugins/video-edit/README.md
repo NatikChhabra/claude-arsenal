@@ -41,6 +41,22 @@ python scripts/job.py selftest                       # starts two tiny jobs, che
   = no pid was written within 30 s.
 - Read the log tail and its warning lines when a job ends. Never poll a running job; never re-run a passing one.
 
+## tools/watch.py (the watch pack)
+Claude can't play a video, so this turns a whole render into one time-aligned text pack: every 0.5 s, the words, the
+picture (cut, still/slow/fast, frozen) and the sound (momentary LUFS, hits, silence), with flags where timing breaks
+(DEAD, OVERLOAD, STEP, UNCUED, FLASH, FROZEN, SILENCE, OFFBEAT with a beat map). Needs numpy and ffmpeg.
+```
+uv run --no-project --with numpy python tools/watch.py <video> [--words words.json] [--beats beatmap.json] [--sheets]
+uv run --no-project --with numpy python tools/watch.py --selftest
+```
+Read watch.md top to bottom before any review; open a sheet only where the text points. It adds to watching the render
+at 1x, never replaces it.
+
+## scripts/lut.py (our own LUTs)
+Bakes film-style .cube LUTs (luminance S-curve with toe and shoulder, highlight roll-off, split tone): `film`,
+`film_night`, `warm_day`. Stdlib only. `python scripts/lut.py film --out luts`, then
+`ffmpeg -vf "lut3d=file=luts/film.cube:interp=tetrahedral"`. A/B each on its own footage first (design edit.md).
+
 ## Optional tools the skills mention
 ffmpeg / ffprobe (probe, cut, `ebur128` loudness, `blackdetect`, `freezedetect`), Whisper or WhisperX (word-aligned
 transcripts), a second ASR model as a second ear, jrgillick/laughter-detection (MIT), an OCR engine for the privacy scan,

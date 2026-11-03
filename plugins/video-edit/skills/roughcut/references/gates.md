@@ -16,7 +16,9 @@ references/edit.md.
    sound hole is filled with the game's own sound, not a louder bed.
 3. **Watch it whole:** picture and sound, full runtime, at 1x, never only the transcript or stills. Then a 1 fps contact
    sheet end to end: no menus or HUD junk left, memes land on meaning, the brand character's faces match the creator's
-   mood, text readable on a phone.
+   mood, text readable on a phone. Then the watch pack: `uv run --no-project --with numpy python
+   ${CLAUDE_SKILL_DIR}/../../tools/watch.py <render.mp4> --words <words.json> --sheets` and read watch.md top to
+   bottom (DEAD, STEP, UNCUED, FLASH, FROZEN, SILENCE flags; each fixed or defended in one line).
    **Every join, on the RENDER:** a strip of frames + waveform at each cut, +-1.5 s, read from the rendered file (not
    the source): no visual jump the cut did not mean, no waveform spike, no caption hidden under an overlay, no overlay
    off its moment. Read consecutive frames (not a sparse sheet) around every cut, entrance, exit and flash: a 1-3 frame
