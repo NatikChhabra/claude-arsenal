@@ -100,8 +100,12 @@ def main(argv):
         p.error('need --serial (or ADB_SERIAL) and a command')
     cmd, rest = a.cmd[0], a.cmd[1:]
     if cmd == 'ui':
-        adb(a.serial, 'shell', 'uiautomator', 'dump', '/sdcard/adb_drive_ui.xml')
-        for t, x, y, s in labels(adb(a.serial, 'shell', 'cat', '/sdcard/adb_drive_ui.xml')):
+        # /data/local/tmp, not /sdcard: the dump holds whatever is on screen, so it is deleted at once
+        dump = '/data/local/tmp/adb_drive_ui.xml'
+        adb(a.serial, 'shell', 'uiautomator', 'dump', dump)
+        xml = adb(a.serial, 'shell', 'cat', dump)
+        adb(a.serial, 'shell', 'rm', '-f', dump, check=False)
+        for t, x, y, s in labels(xml):
             print(f'{t[:48]:<48} @ {x},{y} {s}')
     elif cmd == 'tap':
         if not a.pkg:
