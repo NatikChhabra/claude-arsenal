@@ -1,6 +1,6 @@
 ---
 name: design
-description: House design standard, the process, anti-slop rules, exact values and local checkers every visual job follows. Use for writing, restyling or reviewing anything visual (websites, landing pages, apps, dashboards, settings, components, CSS, games, celebrations, 3D, slide decks, prototypes, emails, OG images, claude.ai artifacts), for video work (thumbnails, Shorts/Reel covers, in-video text, overlays, captions, motion graphics, composites, edit feel), and before giving any design feedback. Load it before the first line. Covers type, colour, layout, motion, UX, copy, brand characters, video text and motion, scoring and the ship bar; lint, preflight and a real-browser inspector must pass before work is called done.
+description: House design standard, the process, anti-slop rules, exact values and local checkers every visual job follows. Use for writing, restyling or reviewing anything visual (websites, landing pages, apps, dashboards, settings, components, CSS, games, celebrations, 3D, slide decks, prototypes, emails, OG images, claude.ai artifacts), for graphics (posters, flyers, hiring and business ads, menus, Discord and social posts, in-game or RP signs and billboards, GIF loops), for video work (thumbnails, Shorts/Reel covers, in-video text, overlays, captions, motion graphics, composites, edit feel), and before giving any design feedback. Load it before the first line. Covers type, colour, layout, motion, UX, copy, brand characters, video text and motion, scoring and the ship bar; lint, preflight and a real-browser inspector must pass before work is called done.
 ---
 
 # Design
@@ -35,6 +35,7 @@ My house standard for anything people look at: pages, apps, games, decks, thumbn
 | Operate | apps, dashboards, tools, settings, admin | quiet, dense, ~3% colour, one star element | feedback only, no entrances | `apps.md` |
 | Read | docs, articles, long-form | calm, typographic | almost none | `typography.md`, `layout.md` |
 | Experience | games, music/learning apps, toys, celebrations, 3D | loud where earned | juice on rewards, ceremonies | `experience.md` |
+| Ad | posters, flyers, hiring and business ads, menus, in-game and RP signs and billboards, animated GIF/MP4 loops | loud, one subject, one line, real business inventory, one vernacular | one motion the place owns, then a long hold | `ads.md`, `decks.md` |
 | Video | thumbnails, Shorts/Reel covers, in-video text, captions, overlays, motion graphics, composites, edit feel | loud, read at phone size, one focal point per moment | eased and weighted, on the hit frame, exits mirror entrances | `video.md`, `edit.md` |
 
 A product site that shows its app is Persuade; the interface fragments inside it follow Operate. An HTML overlay template rendered into video is Video, not Persuade.
@@ -106,6 +107,7 @@ Every scored row ≥8.5 (8.5 = meets the published spec or the pro reference; `p
 | `references/edit.md` | Video mode: motion for video, camera, sound feel, music levels, film look, video QC |
 | `references/copy.md` | headlines, CTAs, errors, empty states, app words, formatting |
 | `references/systems.md` | brand identity, brand characters and app icons, tokens, DESIGN.md templates, brand-system lessons, brand library fetch, style by domain |
+| `references/ads.md` | business, hiring and event ads, in-game and RP signs: inventory, vernacular, words, real over generated, one motion idea, review |
 | `references/decks.md` | slides, prototypes, presenting variations, email, OG images, print |
 | `references/tools.md` | checker commands, flags, what they check, when to use which |
 
@@ -115,6 +117,7 @@ Every scored row ≥8.5 (8.5 = meets the published spec or the pro reference; `p
 node ${CLAUDE_SKILL_DIR}/tools/taste/lint.mjs <files|dirs> [--app|--video]   # static anti-slop scan
 node ${CLAUDE_SKILL_DIR}/tools/preflight.mjs <files|dirs> [--video]          # em dash, focus, z-index, scroll listeners
 node ${CLAUDE_SKILL_DIR}/tools/taste/inspect.mjs <url|index.html> [--app|--video] [--widths 1440,768,390|1920x1080]   # real Chrome: measures + screenshots
+python ${CLAUDE_SKILL_DIR}/tools/still_check.py <png|jpg|gif|mp4 ...> --as thumbnail|ad|ingame|cover|story [--words "..."] [--vs last pieces]   # finished graphic at its real viewing size
 ```
 
-Use `--app` for Operate screens and `--video` for HTML that renders into video or thumbnails (or set `"kind"` in `.design-check/direction.json`). The inspector writes to `.design-check/inspect/` in the project: open every screenshot it lists, then delete the folder (or gitignore it) when done. The checkers encode a strict house taste. A deliberate exception gets a `design-ignore` comment (the old `taste-skill-ignore` still works) and a one-sentence reason in the report. Rendered video and stills are judged by the frame checks in `video.md` and `edit.md`. Details in `references/tools.md`.
+Use `--app` for Operate screens and `--video` for HTML that renders into video or thumbnails (or set `"kind"` in `.design-check/direction.json`). The inspector writes to `.design-check/inspect/` in the project: open every screenshot it lists, then delete the folder (or gitignore it) when done. The checkers encode a strict house taste. A deliberate exception gets a `design-ignore` comment (the old `taste-skill-ignore` still works) and a one-sentence reason in the report. Every finished still or loop (thumbnail, poster, ad, sign, cover, GIF) passes `still_check.py` with 0 FAIL before anyone sees it; rendered video is also judged by the frame checks in `video.md` and `edit.md`. Details in `references/tools.md`.

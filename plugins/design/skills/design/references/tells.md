@@ -256,6 +256,17 @@ Banned shapes:
 - Polishing a look that a redesign is replacing; silently changing copy, routes, form names or claims.
 - Code tells: z-index 999/9999 instead of a token scale; `html { font-size: 62.5% }`; `var(--x)` that never resolves; leftover `{{placeholder}}`; judging the dev server instead of the production build.
 
+## Ads, posters and animated loops
+- A word wall: a whole job listing, perks list or menu on the image (over ~18 words; 40+ is a FAIL in still_check).
+- Four equal boxes and no subject; "NOW HIRING!" under a logo with a subtitle and a perks row; "Join the crew!" lines.
+- A category novelty font (flame letters for BBQ, rope for western, drips for horror) or a third typeface.
+- Particle fields (embers, sparks, dust, bokeh, snow), smoke or fog drifting over text, a pulsing glow or light sweep on
+  the headline, lens flares, shimmer, steam on everything, slow zoom on the whole poster, floating or bobbing parts.
+- A "grunge overlay" texture sprayed on top instead of the texture of a real medium (ink, paper, letterboard, vinyl).
+- Invented jobs, pay, perks, prices, phone numbers or ratings designed in as if real.
+- Letters drawn by an image model; an AI-generated "food photo" when the game or the business has the real item.
+- Escape: one vernacular from the business's world, one line, one real subject, one motion the place owns (`ads.md`).
+
 ## Fast scan (run on every screenshot before showing work)
 1. Could a competitor's name replace ours and the page still work?
 2. Centred headline + subtitle + two buttons + grid below?

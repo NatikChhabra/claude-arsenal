@@ -58,7 +58,11 @@ will appear. Unclear = ask the owner once with the three options and a recommend
 - Video QC table: design references/edit.md §7 (loudness, true peak, black and frozen frames, flashes <= 3 per
   second, A/V sync, identity redacted). The audio in the video is the mastered song: re-measure with
   `tools/loudness.py` on the rendered file.
-- Watch the whole render, picture and sound, start to end, before any review ask.
+- Watch the whole render, picture and sound, start to end, before any review ask. Then the watch pack with the beat
+  map: `uv run --no-project --with numpy python ${CLAUDE_SKILL_DIR}/../../../video-edit/tools/watch.py <render.mp4>
+  --beats <map.json> --sheets` (DEAD, FLASH, FROZEN, OFFBEAT flags; a held shot the treatment planned is defended in one line).
+- Grade with our own LUTs only: `python ${CLAUDE_SKILL_DIR}/../../../video-edit/scripts/lut.py film --out luts`, A/B on the
+  real footage (design references/edit.md, film look).
 - Skill music-review: every row >= 8.5, plus a fresh blind review of the video by a reviewer with no build context.
 
 ## Deliver

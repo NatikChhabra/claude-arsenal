@@ -9,7 +9,7 @@ paper release and outreach, and working rules with safety hooks. Several project
 
 | Plugin | What it is for |
 |---|---|
-| [design](plugins/design/README.md) | One design standard for anything visual, with a linter, a preflight and a real-browser inspector |
+| [design](plugins/design/README.md) | One design standard for anything visual (pages to posters, in-game ads and thumbnails), with a linter, a preflight, a real-browser inspector and a finished-graphic checker |
 | [creator](plugins/creator/README.md) | Run a YouTube channel (long videos, Shorts, Reels) as a system: pick, plan, package, review, release, learn |
 | [video-edit](plugins/video-edit/README.md) | Voice-led gameplay and commentary edits: intake, rough cut, VO film, VO session, detached jobs |
 | [personal-edits](plugins/personal-edits/README.md) | Private birthday, roast and farewell edits at a published-video bar |
@@ -26,7 +26,7 @@ Each skill carries `status: draft` (outline, untested), `beta` (used on real wor
 ### design
 | Skill | What it does |
 |---|---|
-| [design](plugins/design/skills/design/SKILL.md) | House standard for every visual job: modes, process, anti-slop rules, exact values, checkers, ship bar |
+| [design](plugins/design/skills/design/SKILL.md) | House standard for every visual job, posters and business ads included: modes, process, anti-slop rules, exact values, checkers, ship bar |
 
 ### creator
 | Skill | What it does |
@@ -131,9 +131,11 @@ Each skill carries `status: draft` (outline, untested), `beta` (used on real wor
 | [workflow/scripts/redact.py](plugins/workflow/scripts/redact.py) | First-pass secrets scan for text about to be shared: typed placeholders, findings without values, a self-check pass |
 | [workflow/scripts/skill_lint.py](plugins/workflow/scripts/skill_lint.py) | Lints every SKILL.md: frontmatter, links, dashes, size, supply-chain and injection tells |
 | [workflow/scripts/](plugins/workflow/scripts/) | Local-LLM offload kit: `llm.ps1`, `ask.py`, `batch.py` |
-| [design/skills/design/tools/](plugins/design/skills/design/tools/) | `taste/lint.mjs`, `preflight.mjs`, `taste/inspect.mjs` (headless browser) |
+| [design/skills/design/tools/](plugins/design/skills/design/tools/) | `taste/lint.mjs`, `preflight.mjs`, `taste/inspect.mjs` (headless browser), `taste/motion.mjs`, `still_check.py` (finished thumbnails, posters, ads, in-game signs and GIF loops at real viewing size, AI-template flags) |
 | [creator/skills/](plugins/creator/skills/) | `ship_score.py`, `title.py`, `chapters.py`, `deadair.py`, `retention.py`, `hookscore.py`, `swipe.py` |
 | [video-edit/scripts/job.py](plugins/video-edit/scripts/job.py) | Run long renders and transcriptions detached from the session |
+| [video-edit/tools/watch.py](plugins/video-edit/tools/watch.py) | The watch pack: a whole render as one time-aligned text timeline with DEAD, STEP, UNCUED, FLASH, FROZEN, SILENCE, OFFBEAT flags |
+| [video-edit/scripts/lut.py](plugins/video-edit/scripts/lut.py) | Our own film LUTs (S-curve with toe and shoulder, highlight roll-off, split tone) |
 | [study/scripts/](plugins/study/scripts/) | 20 vault, PDF, diagram and Anki deck scripts, all configured by `study.json` |
 | [music-studio/tools/](plugins/music-studio/tools/) | `lyric_lint.py` (lyrics gate), `loudness.py` (LUFS, true peak, phone-speaker vocal check), `beatmap.py` (beats, bars, sections, cut-on-grid check) |
 | [marketing-studio/tools/](plugins/marketing-studio/tools/) | `rollout.py` (dated release calendar with Spotify's floors), `copy_lint.py` (promo copy gate) |

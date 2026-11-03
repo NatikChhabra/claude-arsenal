@@ -12,7 +12,7 @@ All checkers live under `${CLAUDE_SKILL_DIR}/tools/` (the skill folder printed a
 | Anything renderable (page, app screen, artifact HTML) | add `inspect.mjs` and open every screenshot |
 | App/dashboard/tool screens | add `--app` to lint and inspect |
 | HTML rendered into video or thumbnails (overlays, title cards, captions, motion graphics) | add `--video` to lint, preflight and inspect, then judge the rendered frames by `video.md` and `edit.md` |
-| Rendered video, stills, thumbnails, covers (no HTML) | these checkers don't apply: use the frame checks, feed test and blind readers in `video.md` and the video QC in `edit.md` |
+| Finished stills and loops: thumbnails, posters, ads, in-game signs, covers, story frames, GIF/MP4 loops | `still_check.py --as <profile>` (0 FAIL), then the frame checks, feed test and blind readers in `video.md` / `ads.md`; rendered video also gets the video QC in `edit.md` |
 | Anything that moves (entrances, rewards, game juice, idle loops, remote or key input) | add `motion.mjs` and open every sheet (`--tv` for anything shown on a television) |
 | Code that can't render (fragments, templates) | lint + preflight only, and say so in the report |
 
@@ -122,6 +122,28 @@ node ${CLAUDE_SKILL_DIR}/tools/taste/motion.mjs <url | path/to/index.html[#hash]
 - **Output:** `sheet-NN.jpg` (and `tv-NN.jpg`) in `--out` (default `.design-check/motion/`), plus every page error. Exit 0 clean, 1 on any page error, 2 on bad arguments. Full-size frames are kept only with `--keep-frames`.
 - **Read the sheets for:** a frame where the focal point is hidden or covered; particles crossing text being read; a character squashed or stretched (SKILL.md, Characters); overshoot beyond the weight limits; a beat that lands with no visible cause; an entrance that leaves the first screen blank too long; anything still moving at rest that should not be.
 
+## still_check (finished graphics, Python)
+
+```bash
+python ${CLAUDE_SKILL_DIR}/tools/still_check.py FILE [FILE ...] --as thumbnail|ad|ingame|cover|story \
+  [--words "<exact words>"] [--title "<video title>"] [--numbers-ok "<where each number is true>"] \
+  [--frame <real source frame>] [--vs <last pieces or rivals>] [--mock lineup.png] [--budget-mb 10] [--json]
+python ${CLAUDE_SKILL_DIR}/tools/still_check.py --selftest
+```
+- Re-runs itself under `uv` with pillow, numpy, scipy and rapidocr-onnxruntime when they are missing (CPU, ~1 s a
+  still); ffmpeg reads MP4/MOV/WEBM.
+- Measures the graphic at the profile's real viewing sizes: headline height, fine print, word count, glyph contrast,
+  one subject, focal regions, clutter, colourfulness and the oversaturated AI gloss, clipped or overlapping text,
+  thumbnail-only rows (duration badge, TV top half, title repeat, faked platform UI), and slop (dashes, the banned
+  words in `tells.md`, unsourced numbers, AI provenance, the AI palette vs `--frame`, dHash sameness vs `--vs`).
+- Animations add: WCAG flashes, particle fields, whole-frame motion, the loop seam and the upload budget; the still rows
+  run on the rest frame.
+- A floor, not taste: calibrated on 290 real YouTube thumbnails, where no pixel feature separated winners from losers
+  but the FAIL rate halved. The stranger read decides the idea. First real use: the rejected BBQ hiring poster scored
+  4.9 (58-word wall FAIL; particle field, fine print, no subject, text on text and AI provenance WARN).
+- `--mock` builds a line-up of ours among the `--vs` pieces (dark and light grounds) for a blind reader; the key is
+  printed, never drawn.
+
 ## Other checks without a script
 
 - **Raw values outside tokens** ("a raw value in a component is a second system"): list colours, radii and z-indexes
@@ -134,7 +156,7 @@ node ${CLAUDE_SKILL_DIR}/tools/taste/motion.mjs <url | path/to/index.html[#hash]
 - **Reduced motion:** use the browser pane's emulation or `matchMedia` overrides; the reduced state must equal the finished state.
 - **Real viewport:** when the product targets a specific screen (an Electron window, a 720px laptop, a phone), add that width to `--widths`.
 - **Animation review:** see the Before | After | Why standard in `motion.md`; video motion is reviewed frame by frame per `edit.md`.
-- **Thumbnails and covers:** the 168px feed mock, safe-zone check, word count and blind readers in `video.md`.
+- **Thumbnails and covers:** `still_check.py` first, then the safe-zone check and blind readers in `video.md`.
 
 ## Not adopted (and why)
 
