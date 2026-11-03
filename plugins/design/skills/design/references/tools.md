@@ -167,3 +167,15 @@ python ${CLAUDE_SKILL_DIR}/tools/still_check.py --selftest
 - **dembrandt extractor:** unpinned `npx -y`, a stealth anti-bot mode, and loose robots.txt handling. Extract design systems by hand (`systems.md`).
 - **img2threejs installer:** an unpinned `@latest` install that edits `~/.claude/settings.json` permissions. The pipeline and gates are in `experience.md`.
 - **The upstream `assets.mjs` / `draw.mjs` and an `upstream-drift.sh` script:** network or maintainer-only.
+
+## paper_kit (physical print layers, Python)
+
+```bash
+python ${CLAUDE_SKILL_DIR}/tools/paper_kit.py sheet|tape|stamp|mark OUT.png [--paper butcher|kraft|newsprint|bone] \
+  [--size WxH] [--stains 2] [--voids 0.09] [--text "OWNER NAME"] [--angle -24] [--opacity .2] [--seed N]
+python ${CLAUDE_SKILL_DIR}/tools/paper_kit.py --selftest
+```
+- Deterministic per `--seed`; re-runs under `uv` with numpy, pillow and scipy when missing.
+- `sheet`, `tape` and `stamp` build the sheet-on-a-wall vernacular in `ads.md` section 8; `mark` is the tiled sample
+  watermark. The docstring holds the HTML recipe (multiply, soft-light overlay, data: URI masks).
+- The finished piece still goes through `still_check.py`; the kit makes it real, the gate checks it reads.
