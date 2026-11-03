@@ -94,3 +94,41 @@ brief, and commit every choice to it (type, paper, colour, texture, how text is 
    a template next to the real ones, change the layout, not the shade.
 5. Score with `process.md` and ship only at the bar. The report names every placeholder (roles, pay, contacts) that
    still needs the owner's real info.
+
+## 8. Made, not generated: the sheet-on-a-wall recipe and the AI-feel fixes
+Learned on a hiring poster that passed every meter and a blind 2x2 against the business's old piece, and still
+"felt AI" to the owner. A poster that looks generated is usually too even, too centred and lit by nothing.
+- **Build it as a physical object.** `tools/paper_kit.py` makes the layers: `sheet` (torn top edge, tooth, fibres, one
+  fold, lobed grease stains with a tide line, never round grey blobs), `tape` (torn ends), `stamp` (an ink mask whose
+  voids follow paper tooth and a rocked hand pressure). Sheet on a rotated div with a two-layer drop shadow; brand art
+  and type printed into it with `mix-blend-mode: multiply`; the same sheet again on top at `soft-light` ~0.75 so stains,
+  fold and tooth run across the ink. CSS masks and SVG noise maps go in as `data:` URIs (Chrome blocks `file://`).
+- **Use their assets, cut from what they already have.** Their old GIF or screenshot holds the logo, wordmark and
+  background: flood-fill the logo out, mask the wordmark by its colour, keep their wall or wood. Do not redraw or
+  restyle a logo the owner asked to keep; print it into the paper and leave it.
+- **Break the symmetry.** Nothing sits dead centre: logo and wordmark a few px off and tilted under 1.5 degrees, the
+  stamp off-axis at 4-7 degrees, tapes at clearly different angles and lengths. `inspect` will WARN `off-centre`:
+  defend it as the point.
+- **Give it one light.** A warm light from one side (a baked radial PNG, not a CSS gradient, which `inspect` fails),
+  a darker lifted corner with its own soft shadow, and a soft-light curl across the sheet. Uniform vignettes read as a
+  filter.
+- **Handwriting is never a font at rest.** Per-letter jitter (baseline, rotation, scale, skew, stroke weight 0.3-1.9
+  px), per-line tilt, and a small displacement map (`feImage` noise + `feDisplacementMap`, scale 3-5; `feTurbulence`
+  is a preflight ban) so repeated letters never match. Re-read the smallest line after: past scale ~4 an "n" turns
+  into an "r".
+- **Stamps were pressed.** Rounded corners, a wobbled border, a faint double strike (a 3-4 px offset text-shadow at
+  ~0.2), the stamp lands once with a 1-2 px sheet dip on contact, then holds.
+- **Test it like a stranger.** A fresh reader gets the image only: "which parts look AI or pasted in, worst first" and
+  a 2x2 "which is the amateur one" against the business's previous piece. Fix what is named, except the client's own
+  brand art, which stays as given and is noted in the report.
+
+### Samples sent before a deal: watermark them
+A spec piece sent to a business is watermarked so it can't be used unpaid, and the clean master is kept apart.
+- `paper_kit.py mark OUT.png --text "<owner name>"` tiles the name diagonally over the whole frame (light fill, dark
+  stroke, so it shows on dark and light ground). In an HTML loop, build the same rows in the page and drift them one
+  tile per loop so no two frames share a clean pixel; add one larger "SAMPLE · NAME" pass through the main message.
+  Over the logo and headline, never only a corner, which a crop removes.
+- Write artist and copyright into the file (`ffmpeg -metadata artist=... -metadata copyright=...`).
+- Deliver `_SAMPLE` files and a separate `clean_master/`. Say plainly that no watermark is impossible to remove; this
+  one costs a redraw of most of the piece. A drifting mark grows a GIF (about 6x here): send the MP4 when the GIF passes
+  the upload cap.

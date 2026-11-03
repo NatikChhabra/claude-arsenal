@@ -118,6 +118,7 @@ node ${CLAUDE_SKILL_DIR}/tools/taste/lint.mjs <files|dirs> [--app|--video]   # s
 node ${CLAUDE_SKILL_DIR}/tools/preflight.mjs <files|dirs> [--video]          # em dash, focus, z-index, scroll listeners
 node ${CLAUDE_SKILL_DIR}/tools/taste/inspect.mjs <url|index.html> [--app|--video] [--widths 1440,768,390|1920x1080]   # real Chrome: measures + screenshots
 python ${CLAUDE_SKILL_DIR}/tools/still_check.py <png|jpg|gif|mp4 ...> --as thumbnail|ad|ingame|cover|story [--words "..."] [--vs last pieces]   # finished graphic at its real viewing size
+python ${CLAUDE_SKILL_DIR}/tools/paper_kit.py sheet|tape|stamp|mark OUT.png   # paper, tape, stamp ink and sample watermark layers for print-look ads (ads.md 8)
 ```
 
 Use `--app` for Operate screens and `--video` for HTML that renders into video or thumbnails (or set `"kind"` in `.design-check/direction.json`). The inspector writes to `.design-check/inspect/` in the project: open every screenshot it lists, then delete the folder (or gitignore it) when done. The checkers encode a strict house taste. A deliberate exception gets a `design-ignore` comment (the old `taste-skill-ignore` still works) and a one-sentence reason in the report. Every finished still or loop (thumbnail, poster, ad, sign, cover, GIF) passes `still_check.py` with 0 FAIL before anyone sees it; rendered video is also judged by the frame checks in `video.md` and `edit.md`. Details in `references/tools.md`.

@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+- design: ads that pass every meter can still "feel AI". New `ads.md` section 8 (build the poster as a physical sheet,
+  cut the client's assets from their old piece, break symmetry, one light and a lifted corner, handwriting that never
+  repeats a glyph, pressed stamps, the stranger "which parts look AI" read) and a sample-watermark rule: owner name
+  tiled over the whole piece, drifting per frame in loops, metadata, clean master kept apart. New `tools/paper_kit.py`
+  (sheet, tape, stamp ink mask, tiled watermark; deterministic; selftest in CI). On the BBQ hiring poster the blind 2x2
+  picked the business's old GIF as the amateur one, and still_check scored the new piece 8.9.
 - design: after a BBQ hiring poster was sent back as "low effort AI", the design skill now covers ads properly.
   New `references/ads.md` (business inventory first, one vernacular from the business's world, one line and one
   subject, real over generated, one motion the place owns then a long hold, in-game placement, a 5-step review) and an
