@@ -32,7 +32,7 @@ My house standard for anything people look at: pages, apps, games, decks, thumbn
 | Mode | Surfaces | Boldness | Motion | Read |
 |---|---|---|---|---|
 | Persuade | marketing, landing, portfolio, product site | high, one idea from the subject | entrances, 2-3 scroll scenes, one signature move | `pages.md` |
-| Operate | apps, dashboards, tools, settings, admin | quiet, dense, ~3% colour, one star element | feedback only, no entrances | `apps.md` |
+| Operate | apps, dashboards, tools, settings, admin, spreadsheets and ledgers | quiet, dense, ~3% colour, one star element | feedback only, no entrances | `apps.md` |
 | Read | docs, articles, long-form | calm, typographic | almost none | `typography.md`, `layout.md` |
 | Experience | games, music/learning apps, toys, celebrations, 3D | loud where earned | juice on rewards, ceremonies | `experience.md` |
 | Ad | posters, flyers, hiring and business ads, menus, in-game and RP signs and billboards, animated GIF/MP4 loops | loud, one subject, one line, real business inventory, one vernacular | one motion the place owns, then a long hold | `ads.md`, `decks.md` |
@@ -101,7 +101,7 @@ Every scored row ≥8.5 (8.5 = meets the published spec or the pro reference; `p
 | `references/motion.md` | easing, durations, springs, gestures, scroll-driven, reduced motion, libraries, review standard |
 | `references/components.md` | IA, nav, forms, buttons and states, overlays, notifications, loading, empty, accessibility, icons, illustration |
 | `references/pages.md` | Persuade pages: argument, hero, sections, imagery, video, scroll stories, SEO, Web Vitals |
-| `references/apps.md` | Operate screens: shell, KPIs, charts, tables, settings, chat and AI, native mobile, desktop |
+| `references/apps.md` | Operate screens: shell, KPIs, charts, tables, spreadsheets and ledgers, settings, chat and AI, native mobile, desktop |
 | `references/experience.md` | games and game UI, rewards, juice, celebrations, XP and streaks, 3D, canvas, read-at-distance |
 | `references/video.md` | Video mode: thumbnails, Shorts/Reel covers, captions and overlays, composites, feed tests, blind readers |
 | `references/edit.md` | Video mode: motion for video, camera, sound feel, music levels, film look, video QC |

@@ -1,6 +1,11 @@
 # Changelog
 
 ## Unreleased
+- design: new "Spreadsheets, ledgers and record books" section in `apps.md` (blank-safe running balance, money at the
+  right edge, frozen header block with totals, brand at ~3%, dropdowns and amber mistake flags, SUMIF links between
+  tabs, Google Sheets "Replace spreadsheet" import that keeps the share link). Learned rebuilding a business
+  transaction sheet whose first balance cell read the header (`#VALUE!`) and whose filler formulas showed 0 down every
+  empty row.
 - design: ads that pass every meter can still "feel AI". New `ads.md` section 8 (build the poster as a physical sheet,
   cut the client's assets from their old piece, break symmetry, one light and a lifted corner, handwriting that never
   repeats a glyph, pressed stamps, the stranger "which parts look AI" read) and a sample-watermark rule: owner name
