@@ -14,6 +14,7 @@ code.
 | `skills/session-end/` | Hand-off that replaces the last STATUS, preferences written verbatim, new skills, drift sweep, commit + push, one bullet message, close the thread |
 | `skills/tool-change/` | Safe tool, hook or gate changes; a verdict (ADOPT, TRIAL, WATCH, SKIP) for an outside tool; adopting a repo at full capability via a capability matrix (`references/repo-capabilities.md`) |
 | `skills/arsenal-update/` | Feeds what a session learned back into this marketplace: the home for each lesson, privacy, the checks, a PR |
+| `skills/pre-report-secrets-scan/` | Before a log, stack trace, env dump or bug report is pasted, posted or emailed: a redacted copy, a findings list that never shows a value, UNSURE flags for the user, a rotate reminder |
 | `skills/drift-sweep/` | One read-only helper finds contradictions between rule files after a rule changed (the first sweep found 25, 2 HIGH) |
 | `skills/research-claims/` | CONFIRMED / INFERRED / DEBUNKED on every claim, read the whole source, say when a claim is true |
 | `hooks/secret_guard.py` | PreToolUse on Bash/PowerShell: blocks git add/commit/push carrying secret files, token-shaped strings or private names; blocks `git clean -x`, recursive deletes through protected paths, git commands that throw away uncommitted or pushed work (`reset --hard`, `checkout --`, `restore`, `clean -f`, `stash clear`, `branch -D`, `push --force` without a lease) and a download piped into a shell |
@@ -21,6 +22,7 @@ code.
 | `hooks/test_hooks.py` | Feeds both hooks fake JSON on stdin (48 checks) |
 | `templates/CLAUDE.template.md` | A project CLAUDE.md skeleton: repeat-rules table, the one goal, hard rules, skills table, always, improvement loop |
 | `templates/workflow.example.json` | Example per-project config for the hooks and the drift sweep |
+| `scripts/redact.py` | The scan behind pre-report-secrets-scan: secret_guard's key patterns plus report-only shapes (JWT, auth headers, URL passwords, webhooks, private IPs, internal hosts, emails, home-path usernames, high-entropy look-alikes); same value = same placeholder everywhere; rescans its own output. Stdlib, `--check`, `--selftest` |
 | `scripts/skill_lint.py` | Lints every SKILL.md under a folder: frontmatter (`name` = folder, kebab-case, description under 1024 chars with triggers), missing linked files, unlinked references, em/en dashes, size, placeholders, supply-chain and prompt-injection tells. Stdlib, `--selftest` |
 | `scripts/` (offload) | Local-LLM offload kit: `llm.ps1` (start llama.cpp), `ask.py` (one prompt), `batch.py` (a template over a JSON list, resumable) |
 | `docs/gotchas.md` | Claude Code and Windows gotchas that cost real time |

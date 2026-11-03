@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- workflow: new `pre-report-secrets-scan` skill (draft, the owner's own) with `scripts/redact.py`, a stdlib first pass that
+  reuses `secret_guard`'s key patterns, adds report-only shapes, never prints a value and rescans its own output. CI runs
+  its selftest.
 - music-studio and marketing-studio rebuilt to the arsenal's bar: all 10 skills rewritten as full workflows with gates,
   references and review rubrics, from 3 new research files (182 sourced, tagged claims: vocal tools 2026, production
   and video, release marketing). New tested tools: `lyric_lint.py`, `loudness.py` (with the phone-speaker vocal check),
