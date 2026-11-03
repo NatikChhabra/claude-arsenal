@@ -133,15 +133,35 @@ def check_banned():
                 err(f"{f.relative_to(ROOT)}:{i}: banned name (see BANNED in scripts/validate.py)")
 
 
+def check_selftests():
+    """Run --selftest for every plugins/*/scripts/*.py that has one. Scripts there are stdlib-only by
+    convention, so this runs in CI's plain Python with no installs (tools/ selftests that need ffmpeg or
+    numpy are listed in the workflow file instead)."""
+    import subprocess
+    n = 0
+    for f in sorted(ROOT.glob("plugins/*/scripts/*.py")):
+        if "--selftest" not in f.read_text(encoding="utf-8", errors="ignore"):
+            continue
+        n += 1
+        try:
+            r = subprocess.run([sys.executable, str(f), "--selftest"], capture_output=True, text=True, timeout=120)
+            if r.returncode != 0:
+                err(f"{f.relative_to(ROOT)}: --selftest failed: {(r.stderr or r.stdout).strip()[-300:]}")
+        except subprocess.TimeoutExpired:
+            err(f"{f.relative_to(ROOT)}: --selftest took over 120 s")
+    return n
+
+
 def main():
     due = "--due" in sys.argv
     check_marketplace()
     skills = check_skills()
     rows = check_registry(due)
     check_banned()
+    tests = check_selftests()
     for e in errors:
         print("ERROR", e)
-    print(f"{'FAIL' if errors else 'PASS'}: {skills} skills, {rows} registry rows, {len(errors)} errors")
+    print(f"{'FAIL' if errors else 'PASS'}: {skills} skills, {rows} registry rows, {tests} script selftests, {len(errors)} errors")
     sys.exit(1 if errors else 0)
 
 
