@@ -3,7 +3,10 @@
 ## Unreleased
 - workflow: new `android-adb-drive` skill (beta, used for real on 2026-11-03) with `scripts/adb_drive.py`: taps only when the
   app owns the screen and no notification banner is down (two real mis-taps started a call and opened an SMS), saves and
-  restores the settings it changes, lists the screen as tappable labels. Stdlib; `--selftest` runs without a phone (not in CI yet: adding it needs the `workflow` token scope).
+  restores the settings it changes, lists the screen as tappable labels. Stdlib; `--selftest` runs without a phone.
+- `scripts/validate.py` now runs the `--selftest` of every stdlib script in `plugins/*/scripts/` (adb_drive,
+  redact, skill_lint), so CI covers new scripts without a workflow-file edit. `music-studio/tools/beatmap.py` has a
+  selftest that no CI step runs yet (it needs numpy, librosa and soundfile): add it to the ffmpeg step when convenient.
 - workflow: new `pre-report-secrets-scan` skill (draft, the owner's own) with `scripts/redact.py`, a stdlib first pass that
   reuses `secret_guard`'s key patterns, adds report-only shapes, never prints a value and rescans its own output. CI runs
   its selftest.
