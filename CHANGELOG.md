@@ -6,6 +6,27 @@
   tabs, Google Sheets "Replace spreadsheet" import that keeps the share link). Learned rebuilding a business
   transaction sheet whose first balance cell read the header (`#VALUE!`) and whose filler formulas showed 0 down every
   empty row.
+- music-studio: new `gear-pick` skill (beta) for buying an instrument or gear setup: questions once, his real
+  listening history instead of a typed song list, the whole-setup budget (an electric needs an amp or an ASIO interface
+  plus a cable), prices read on product pages (store search cards show stale prices), and one pick, never tiers. New
+  `tools/listening_taste.py` reads the songs he plays from a Feishin player cache (play-queue JSON plus the Snappy and
+  V8 query cache; LevelDB .log records rejoined across blocks and .ldb tables decoded, so the queue survives a
+  compaction; Latin-1 and UTF-16 strings read as stored; stdlib only, selftest in CI). On a real cache it listed 54
+  songs with play counts. Registry: Guitar Rig 7 Player (TRIAL). From a real purchase where two tiered answers were
+  sent back with "give me one guitar", and where a strap and cable added at the end flipped the pick.
+- research: `author-ownership` gains a one-sitting version (Introduction, Limitations, Conclusion and contribution
+  statement, three questions each), "fix the reason, keep the point" with numbers read from result files, and a rule
+  never to write an author's overclaimed contribution: check it against the git history, the paper's disclosure and
+  what venues were told. From a real session where the author's first answer overclaimed and three venues already
+  knew the AI's role.
+- design + video-edit: the spoken launch ad. New `ads.md` section 9 (one scene per spoken claim, the problem as an object,
+  a signed quote to prove a boast, the number built in step with the voice, and nine craft rules each taken from a blind
+  reviewer's note: visible motion, no hard zooms, ghost-then-fill numbers, one caption baseline and plate, offer
+  margins, badge placement). New `tools/scene_frames.mjs` renders a page with `render(t)` plus a cue file to exact
+  frames and an mp4. New `video-edit/tools/vo_bestof.py` builds one VO from the best take of each line with word times
+  for captions (selftest in CI; reproduced the real launch-ad cut to the millisecond). `pages.md`: a price calculator
+  that shows the discounted deposit, shared plan terms said once, gallery reveals after decode, and tap-to-copy contact
+  with no app hand-off. Over three blind rounds the ad went from about 7.2 to 7.6-8.4 and the site from 7.8 to 8.0.
 - design: ads that pass every meter can still "feel AI". New `ads.md` section 8 (build the poster as a physical sheet,
   cut the client's assets from their old piece, break symmetry, one light and a lifted corner, handwriting that never
   repeats a glyph, pressed stamps, the stranger "which parts look AI" read) and a sample-watermark rule: owner name

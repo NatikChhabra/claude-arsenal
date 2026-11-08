@@ -31,8 +31,21 @@ understood everything" is not evidence; what the author can explain and write is
 5. **Write their paragraph.** Turn their explanations into an interpretation or discussion paragraph: fix facts and
    grammar only, keep their ideas and order, mark what was changed, and ask them to confirm each sentence is
    something they believe and can explain.
+   - **One-sitting version** (when the author wants it all done at once): four parts, three questions each,
+     all three answered in one message: Introduction (what earlier work did with the baseline, why the reference
+     choice matters, who should care), Limitations (the AI system's own role in the study, use versus adoption of a
+     style, scope of the data), Conclusion (the result in two sentences, one question for future work), and the
+     contribution statement. Save each paragraph to a file as soon as it is drafted.
+   - **Fix the reason, keep the point.** When the author reaches a true conclusion by a wrong reason ("that model
+     barely matters, it is a small one"), give the true reason with the number read from the result files ("it is
+     one of 19 models; without it the gap is still X"), and say what does depend on it.
 6. **Make it visible in the paper:** the author's paragraph goes into the Discussion; where possible the author
    re-runs a key result and checks the numbers; the AI-use statement says what the author validated and wrote.
+   - **Never write an overclaimed contribution.** Under pressure an author may say "I did everything, the AI only
+     wrote code". Check every claim against the record (git history, the paper's own disclosure, what venues were
+     already told) and write only what is true. Say plainly why: a statement that contradicts a public record is
+     what sinks a paper, and the honest "disclosed, then learned and wrote these sections" is the stronger story.
+     Also correct statements the work has made stale (for example "not checked by a human" after the author did).
 7. **Save** a file listing what the author can now explain, their hypotheses and the paragraph, for the next session.
 
 ## Review before delivery
