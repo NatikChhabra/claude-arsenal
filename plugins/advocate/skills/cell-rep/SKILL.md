@@ -40,6 +40,13 @@ If the user runs a live meeting assistant that listens and answers on screen, se
 - The mode prompt opens with **DEFAULT MODE: CELL REP**: unless a case number or client is named, every transcript is a
   new cell rep, and saved cases are **background only** ("never bring their facts into a cell rep"). A saved case
   labelled "ACTIVE CASE" leaked its facts into unrelated reps.
+- The mode prompt says **who is being asked**. On the first live rep, an officer asked the advocate for ID and a
+  security search before entering the cells, and the helper told him to refuse "without probable cause". That is
+  facility security, not a search of the client: the advocate complies politely. Search rights are argued only for the
+  client, and a search incident to a lawful arrest needs no warrant. The angles there are probable cause for the arrest
+  and how far the search went.
+- After each rep, read the helper's question/answer log and grade a few answers against the law. Fast, relevant
+  answers can still be wrong about who is speaking to whom.
 - The first line of each answer is the one sentence to say now. Then 1 to 3 lines of authority (section, months, fine).
 - Answer from the user's own plan (account mode) with thinking off. Measured: time to first word dropped from 9.5 s to about 3 s.
 - Launch through one shortcut that starts the helper before the assistant. If the assistant is opened on its own,
