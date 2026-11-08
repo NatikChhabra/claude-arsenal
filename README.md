@@ -108,6 +108,7 @@ Each skill carries `status: draft` (outline, untested), `beta` (used on real wor
 | [mix-master](plugins/music-studio/skills/mix-master/SKILL.md) | Mix and master gated by loudness.py: integrated, true peak, the encoded file and the phone-speaker vocal check |
 | [music-video](plugins/music-studio/skills/music-video/SKILL.md) | Rights path first (Rockstar excludes music videos), treatment, shot list, beat-locked edit measured cut by cut, native 9:16, Canvas |
 | [music-review](plugins/music-studio/skills/music-review/SKILL.md) | Measured gates plus scored rows with evidence, human blind listeners, fresh blind readers, ship at 8.5 |
+| [gear-pick](plugins/music-studio/skills/gear-pick/SKILL.md) | One instrument or gear setup to buy: a few questions, his real listening history (listening_taste.py), the whole-setup budget, prices read on product pages, one pick |
 
 ### marketing-studio
 | Skill | What it does |
