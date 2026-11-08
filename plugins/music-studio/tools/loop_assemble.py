@@ -24,8 +24,10 @@ How it places audio: each recorded bar is found to the millisecond (his own timi
 before its downbeat and crossfaded onto the grid, so loops line up with the click and with each other. A run that
 ends on the part's last bar keeps the recorded ring (tail_s), faded out; otherwise the ring stops at the next bar.
 
-Prints a report and fails (exit 1) when a part can't be found reliably, drifts more than 0.5% from the click, is
-clipped, or is too quiet. Fix those by re-recording that part, not by editing.
+Prints a report and fails (exit 1) when a part can't be found reliably, misses a quarter of its notes or has many
+notes the tab doesn't (wrong part), has a bar over 70 ms off the beat, when the take drifts more than 0.75% from the
+click, is clipped or too quiet, or when the click itself is in the recording (plan "click": {"hz": [1000, 1600],
+"count_in_beats": 8} names the click tones; checked on the count-ins). Fix those by re-recording that part, not by editing.
 Needs numpy and soundfile (scipy for resampling if files differ in sample rate).
 """
 import json, os, sys
@@ -89,7 +91,12 @@ def best_offset(env, pat, lo, hi):
     if hi <= lo:
         return None, 0.0, 0.0
     seg = env[lo:hi + len(pat)]
-    c = np.correlate(seg, pat, 'valid')
+    if len(pat) * (len(seg) - len(pat) + 1) < 2e6:
+        c = np.correlate(seg, pat, 'valid')
+    else:                                                      # long patterns (a whole take): FFT correlation
+        nf = 1 << int(np.ceil(np.log2(len(seg) + len(pat))))
+        full = np.fft.irfft(np.fft.rfft(seg, nf) * np.conj(np.fft.rfft(pat, nf)), nf)
+        c = full[:len(seg) - len(pat) + 1]
     k = int(np.argmax(c))
     if 0 < k < len(c) - 1:                                     # parabolic peak for sub-frame accuracy
         a, b, d = c[k - 1], c[k], c[k + 1]
@@ -101,11 +108,11 @@ def best_offset(env, pat, lo, hi):
     return lo + k + frac, float(c[k]), float((c[k] - med) / mad)
 
 
-def locate(env, rate, onsets_s, lo_s, hi_s, weights=None):
+def locate(env, rate, onsets_s, lo_s, hi_s, weights=None, ratios=None):
     """Find downbeat time and tempo ratio of a part. Returns (downbeat_s, ratio, zscore)."""
     import numpy as np
     best = (None, 1.0, -1e9, 0.0)
-    for r in np.arange(0.985, 1.0151, 0.001):
+    for r in (np.arange(0.985, 1.0151, 0.001) if ratios is None else ratios):
         off, sc, z = best_offset(env, pattern(onsets_s, rate, r, weights=weights), int(lo_s * rate), int(hi_s * rate))
         if off is not None and sc > best[2]:
             best = (off, r, sc, z)
@@ -113,8 +120,9 @@ def locate(env, rate, onsets_s, lo_s, hi_s, weights=None):
     return (off / rate if off is not None else None), float(r), z
 
 
-def bar_starts(env, rate, d, r, bar_s, bars, onsets_beats, beat_s, bpb=4, win=0.05):
+def bar_starts(env, rate, d, r, bar_s, bars, onsets_beats, beat_s, bpb=4, win=None):
     """Refine every bar's downbeat inside +-win around the tempo line."""
+    win = win or min(0.12, beat_s / 4)                         # under an eighth note either way
     out = []
     for k in range(bars + 1):
         guess = d + k * bar_s * r
@@ -122,7 +130,8 @@ def bar_starts(env, rate, d, r, bar_s, bars, onsets_beats, beat_s, bpb=4, win=0.
         if k < bars and ob:
             rel = [o - k * bar_s for o in ob]
             if min(rel) < 0.01:                                # only refine when the bar starts with a note
-                off, _, _ = best_offset(env, pattern(rel, rate, r), int((guess - win) * rate), int((guess + win) * rate))
+                wk = win if len(rel) >= 3 else min(win, 0.05)  # one strum or roll: a later string must not win
+                off, _, _ = best_offset(env, pattern(rel, rate, r), int((guess - wk) * rate), int((guess + wk) * rate))
                 if off is not None:
                     out.append(off / rate)
                     continue
@@ -149,45 +158,108 @@ def assemble(plan, base_dir='.', stems=False):
             files[p] = {'x': x, 'clipped': clipped, 'env': envelope(x, sr)}
         c['_path'] = p
     rate = sr / HOP
-    # one offset per shared file, from every part with at_s
+    # one offset and one tempo per shared file, from every part with at_s (take time = a + rg * track time)
     group = {}
     for name, c in plan['clips'].items():
         if 'at_s' in c:
             group.setdefault(c['_path'], []).append(c)
-    shift = {}
+    gmap = {}
     for p, cs in group.items():
         if len(cs) < 2:
             continue
-        on = sorted(c['at_s'] + o * beat_s for c in cs for o in split(c.get('onsets', range(c['bars'] * bpb)))[0])
-        t0 = on[0]
-        off, _, _ = best_offset(files[p]['env'], pattern([o - t0 for o in on], rate), 0, len(files[p]['env']))
-        shift[p] = off / rate - t0 if off is not None else 0.0
+        on, wt = [], []
+        for c in cs:
+            b, w = split(c.get('onsets', range(c['bars'] * bpb)))
+            on += [c['at_s'] + o * beat_s for o in b]
+            wt += w
+        t0 = min(on)
+        best = (None, 1.0, -1e9)
+        for rg in np.arange(0.985, 1.0151, 0.0005):
+            off, sc, _ = best_offset(files[p]['env'], pattern([o - t0 for o in on], rate, rg, weights=wt), 0, len(files[p]['env']))
+            if off is not None and sc > best[2]:
+                best = (off, rg, sc)
+        if best[0] is not None:
+            rg = float(best[1])
+            gmap[p] = (best[0] / rate - rg * t0, rg)
+            report.append(f'{os.path.basename(p)}: whole take {100 * (1 / rg - 1):+.2f}% against the click')
+            if abs(rg - 1) > 0.0075:
+                problems.append(f'{os.path.basename(p)}: the whole take is {100 * (1 / rg - 1):+.2f}% off the click; '
+                                're-record with the click in one ear')
+            ck = plan.get('click')
+            if ck:                                             # click heard by the mic gets looped with the part
+                x = files[p]['x']
+                w = int(0.03 * sr)
+                tone, gap = {h: [] for h in ck['hz']}, {h: [] for h in ck['hz']}
+                for c in cs:
+                    for k in range(1, ck.get('count_in_beats', 8) + 1):
+                        for dst, tt in ((tone, c['at_s'] - k * beat_s), (gap, c['at_s'] - (k - 0.5) * beat_s)):
+                            i0 = int((gmap[p][0] + rg * tt) * sr)
+                            if 0 <= i0 and i0 + w <= len(x):
+                                spec = np.abs(np.fft.rfft(x[i0:i0 + w] * np.hanning(w), 8192))
+                                for h in ck['hz']:
+                                    b0 = int(h * 8192 / sr)
+                                    dst[h].append(spec[b0 - 3:b0 + 4].max())
+                lift = max((20 * np.log10((np.median(tone[h]) + 1e-12) / (np.median(gap[h]) + 1e-12))
+                            for h in ck['hz'] if tone[h] and gap[h]), default=0.0)
+                report.append(f'{os.path.basename(p)}: click in the mic {lift:+.1f} dB')
+                if lift > 6:
+                    problems.append(f'{os.path.basename(p)}: the click is in the recording ({lift:.0f} dB); play it in '
+                                    'earphones, not a speaker, or it loops with the guitar')
     found = {}
     for name, c in plan['clips'].items():
         f = files[c['_path']]
         beats, wts = split(c.get('onsets', range(c['bars'] * bpb)))
         ons = [o * beat_s for o in beats]
-        if 'at_s' in c and c['_path'] in shift:                # less than an eighth note either way: no 8th slips
-            centre = c['at_s'] + shift[c['_path']]
+        grouped = 'at_s' in c and c['_path'] in gmap
+        if grouped:                                            # less than an eighth note either way: no 8th slips
+            a, rg = gmap[c['_path']]
+            centre = a + rg * c['at_s']
             lo, hi = centre - min(0.12, beat_s / 4), centre + min(0.12, beat_s / 4)
+            ratios = np.arange(rg - 0.003, rg + 0.00301, 0.0005)
         else:
-            lo, hi = 0, len(f['x']) / sr
-        d, r, z = locate(f['env'], rate, ons, lo, hi, wts)
+            lo, hi, ratios = 0, len(f['x']) / sr, None
+        d, r, z = locate(f['env'], rate, ons, lo, hi, wts, ratios)
         if d is None:
             problems.append(f'{name}: not found')
             continue
+        if grouped:                                            # judge the match against shifts up to 1.5 s away
+            _, _, z = best_offset(f['env'], pattern(ons, rate, r, weights=wts), int((d - 1.5) * rate), int((d + 1.5) * rate))
         starts = bar_starts(f['env'], rate, d, r, bar_s, c['bars'], beats, beat_s, bpb)
         dev = [1000 * (starts[k] - (d + k * bar_s * r)) for k in range(c['bars'] + 1)]
         seg = f['x'][int(d * sr):int((d + c['bars'] * bar_s) * sr)]
         peak = 20 * np.log10(np.abs(seg).max() + 1e-12) if len(seg) else -120
+        # notes heard where the tab has them (recall) and notes the tab doesn't have (extra)
+        e = f['env']
+        i0, i1 = int((d - 0.05) * rate), int((d + c['bars'] * bar_s * r) * rate)
+        part = e[max(0, i0):max(0, i1)]
+        hit = 0
+        top = part.max() if len(part) else 1.0
+        for o in ons:
+            k = int((d + o * r) * rate)
+            if 0 <= k < len(e) and e[max(0, k - 14):k + 15].max() > 0.2 * top:
+                hit += 1
+        recall = hit / max(1, len(ons))
+        floor = 6 * (np.median(part) + 1e-9)                   # ignore noise wiggles in quiet parts
+        pk = [k for k in range(1, len(part) - 1) if part[k] > max(0.5 * top, floor) and part[k] >= part[k - 1] and part[k] >= part[k + 1]]
+        tt = [(max(0, i0) + k) / rate for k in pk]             # a strum or a roll spreads up to 0.2 s after its onset
+        near = [any(-0.06 < t - (d + o * r) < 0.2 for o in ons) for t in tt]
+        extra = 1 - (sum(near) / len(near)) if near else 0.0
         found[name] = (f['x'], starts)
         line = (f'{name:12s} downbeat {d:7.3f} s  tempo {100 * (1 / r - 1):+5.2f}%  match {z:5.1f}  '
-                f'bar wobble {max(abs(v) for v in dev):3.0f} ms  peak {peak:6.1f} dBFS')
+                f'bar wobble {max(abs(v) for v in dev):3.0f} ms  notes {100 * recall:3.0f}%  extra {100 * extra:3.0f}%  '
+                f'peak {peak:6.1f} dBFS')
         report.append(line)
         if z < 6:
             problems.append(f'{name}: weak match ({z:.1f}); check it is the right part, or re-record over the click')
-        if abs(r - 1) > 0.005:
+        if recall < 0.75:
+            problems.append(f'{name}: only {100 * recall:.0f}% of the tab\'s notes heard; wrong part, or notes missed')
+        if extra > 0.4 and len(near) - sum(near) >= 6 and recall < 0.9:
+            problems.append(f'{name}: {100 * extra:.0f}% of the notes heard are not in the tab; wrong part?')
+        if not grouped and abs(r - 1) > 0.0075:
             problems.append(f'{name}: {100 * (1 / r - 1):+.2f}% off the click; re-record with the click in one ear')
+        bad = [k + 1 for k in range(c['bars']) if abs(dev[k]) > 70]
+        if bad:
+            problems.append(f'{name}: bar {bad} lands over 70 ms off the beat; re-record that part')
         if peak < -30:
             problems.append(f'{name}: quiet ({peak:.0f} dBFS); move the mic closer or play harder')
     for p, f in files.items():
@@ -220,11 +292,13 @@ def assemble(plan, base_dir='.', stems=False):
                     src1 = starts[cb + 1] - 0.003
                 dst0 = (e['at'] + k) * bar_s - PRE
                 seg = x[max(0, int(src0 * sr)):int(src1 * sr)].copy()
-                if dst0 < 0:
-                    seg, dst0 = seg[int(-dst0 * sr):], 0.0
+                head = True
+                if dst0 < 0:                                   # song starts here: keep the attack whole
+                    seg, dst0, head = seg[int(-dst0 * sr):], 0.0, False
                 a = int(XF * sr)
                 if len(seg) > 2 * a:
-                    seg[:a] *= np.linspace(0, 1, a)
+                    if head:
+                        seg[:a] *= np.linspace(0, 1, a)
                     if not last:
                         seg[-a:] *= np.linspace(1, 0, a)
                 if last:

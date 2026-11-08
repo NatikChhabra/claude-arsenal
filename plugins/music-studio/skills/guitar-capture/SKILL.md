@@ -67,6 +67,17 @@ asked: "ask me more questions rather than guessing".
   - Before he records, test the whole plan on a Karplus-Strong render of the record track with human timing (latency,
     0.2% slow, 6 ms jitter). Check that every bar lands within 20 ms of the grid, that loop joins have no gaps, that
     the drop bar is silent, and that the times printed on the sheet match the track.
+  - Then stress it before trusting it: late and early starts, a player 0.4-0.8% fast or slow, 15 ms sloppiness,
+    noise, 50 Hz hum, quiet, clipped, one dead channel, 48 kHz, click in the mic, a missing part, the wrong part,
+    missed notes, one bar 90 ms late, and one part redone in its own file, plus random mixes of these. Each case must
+    pass clean or be caught with the right fix. The first run caught real bugs: on a whole take, a 0.4% tempo error
+    let parts slip by an eighth note (now one offset and one tempo for the whole take), and a roll bar locked onto a
+    later string.
+  - Check the guide synth too: plain Karplus-Strong with an integer delay was up to 36 cents sharp on high notes,
+    and white-noise excitation made it far brighter than a real acoustic (compare long-term spectra with his own
+    take). Resample to the exact pitch, low-pass the excitation, and add a body resonance.
+  - Slice an ending from contiguous bars of one part (C, G, D straight through) so the ring is never cut mid-part.
+    Set section loudness after mastering and correct it in a loop until each section is within 0.75 LU of its target.
 - DI through an audio interface, 48 kHz / 24-bit, peaks around -12 to -6 dBFS (room for transients). A phone memo is
   fine for an idea, never for the release take.
 - To a click at the SONG.md BPM whenever the part will be produced or the video cut to it. Free time only for a
