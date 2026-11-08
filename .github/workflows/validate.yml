@@ -18,6 +18,7 @@ jobs:
           sudo apt-get install -y -qq ffmpeg > /dev/null
           python plugins/music-studio/tools/lyric_lint.py --selftest
           python plugins/music-studio/tools/loudness.py --selftest
+          python plugins/music-studio/tools/listening_taste.py --selftest
           python plugins/marketing-studio/tools/rollout.py --selftest
           python plugins/marketing-studio/tools/copy_lint.py --selftest
           python plugins/workflow/scripts/redact.py --selftest
