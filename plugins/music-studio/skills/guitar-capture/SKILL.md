@@ -37,6 +37,11 @@ asked: "ask me more questions rather than guessing".
   the tab of each move with a tick box, in the order they come, then the song top to bottom (one row per section,
   one coloured box per bar, the move and a feel word), then a short record checklist (take names). Add a slower
   practice play-along (about 20 BPM under) next to the real one, both in one clean FINAL folder.
+- Layout that worked after three rejected ones: one card per section in play order, each holding its own tab, chord
+  names over the bars, a feel word, the repeat count (x2) and one line of how. A key of moves plus a separate song map
+  made him jump around ("garbled, disorganized"), and engraved notation with rhythm stems was unreadable to him. Build
+  it as HTML (inline SVG tab, chord diagrams, a numbered strip of all sections) and render to PNG and PDF with
+  Playwright; follow the design plugin for type and colour (his own tools default dark).
 - Before sending: play the tab back as plain plucked notes over the click (Karplus-Strong in numpy, no samples) and
   check every row lands on its bar, the drop is silent and the last chorus is loudest; send that render as a slow
   "how the tab goes" guide. After copying to his PC, read the file back from the PC and compare pixels: a copy sent
