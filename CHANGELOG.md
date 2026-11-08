@@ -6,6 +6,13 @@
   the in-cell card (intro, what to get, element and stacking checks, bail and plea options, the court's own clocks,
   AI-filing guard), and how to keep a live-answer helper permanently in cell-rep mode (saved cases labelled background,
   since an "active case" label leaked one case's facts into unrelated reps; one-shortcut launch; restart only the helper).
+- advocate: `trial-prep` learns from the second round on the same case. The playbook is organised by job (how we win,
+  their points and our answers, one page per witness with that witness's objections beside our questions, the closing
+  as a full speech, exact words for each verdict), and a blind review runs before delivery (it caught a misstated
+  co-defendant sentence, leading questions on our own witness and closing lines that contradicted our own cross).
+- marketing-studio: `social-copy` gets a LinkedIn row (first two lines carry the result with a number, short
+  paragraphs instead of emoji bullets, zero emoji, 3 hashtags at most). Learned when the owner rejected a launch post
+  that read as AI because of emoji bullets and a "What I learned" list; the rewrite passed `copy_lint` and a blind read.
 - design: new "Spreadsheets, ledgers and record books" section in `apps.md` (blank-safe running balance, money at the
   right edge, frozen header block with totals, brand at ~3%, dropdowns and amber mistake flags, SUMIF links between
   tabs, Google Sheets "Replace spreadsheet" import that keeps the share link). Learned rebuilding a business
