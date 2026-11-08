@@ -1,8 +1,8 @@
 # claude-arsenal
 
-Nine Claude Code plugins from real, daily-used projects: a strict design standard with local checkers, a full
+Ten Claude Code plugins from real, daily-used projects: a strict design standard with local checkers, a full
 YouTube creator pipeline, video editing, personal edits, an exam study system, music making, marketing, research
-paper release and outreach, and working rules with safety hooks. Several projects feed it: each one leaves it a little better (`GROWTH.md`, skill
+paper release and outreach, trial prep for advocates, and working rules with safety hooks. Several projects feed it: each one leaves it a little better (`GROWTH.md`, skill
 `arsenal-update`).
 
 ## Plugins
@@ -18,6 +18,7 @@ paper release and outreach, and working rules with safety hooks. Several project
 | [music-studio](plugins/music-studio/README.md) | Songs from an idea, vocals for a guitarist who can't sing (Hindi too), production, mix, master, music videos, with 3 tested tools |
 | [marketing-studio](plugins/marketing-studio/README.md) | Release rollouts with sourced platform deadlines, campaign plans and per-platform copy, with 2 tested tools |
 | [research](plugins/research/README.md) | A paper to a citable preprint and profiles, honest outreach, and the author's own contribution |
+| [advocate](plugins/advocate/README.md) | Trial prep for an advocate in any court with published rules: deadlines, elements, evidence, cross and objection sheets |
 
 Each skill carries `status: draft` (outline, untested), `beta` (used on real work) or `stable`.
 
@@ -121,6 +122,11 @@ Each skill carries `status: draft` (outline, untested), `beta` (used on real wor
 | [paper-release](plugins/research/skills/paper-release/SKILL.md) | Audit, Zenodo software and preprint DOIs, ORCID, Google Scholar, LinkedIn, arXiv with each platform's traps |
 | [research-outreach](plugins/research/skills/research-outreach/SKILL.md) | Researchers, conference chairs and press: official addresses, one question, plain AI disclosure, follow-up rules |
 | [author-ownership](plugins/research/skills/author-ownership/SKILL.md) | Short Socratic sessions and the author's own paragraph when an AI agent did much of the work |
+
+### advocate
+| Skill | What it does |
+|---|---|
+| [trial-prep](plugins/advocate/skills/trial-prep/SKILL.md) | A court-ready prep pack for first or second chair from the case file and the court's own law, with an AI-filing ethics guard |
 
 ## Hooks and scripts
 

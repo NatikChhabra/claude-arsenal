@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+- advocate (new plugin): `trial-prep` skill (beta, first used 2026-11-08 as defense second chair on a 20-count
+  felony case). Builds a prep pack from the case file and the court's own law: deadlines from the judge's order first,
+  charges and elements (including whether accomplice liability reaches attempts), timeline, weak points per count,
+  evidence and discovery list, theory, cross banks, objections, chair duties. Records two traps from that case: court
+  forums need the user's signed-in browser (read long DOM text in ~900-character slices), and the judge must come from
+  the docket, not from a prior case with the same parties. Ethics guard: preparation only, never AI-written filings.
 - design: ads that pass every meter can still "feel AI". New `ads.md` section 8 (build the poster as a physical sheet,
   cut the client's assets from their old piece, break symmetry, one light and a lifted corner, handwriting that never
   repeats a glyph, pressed stamps, the stranger "which parts look AI" read) and a sample-watermark rule: owner name
