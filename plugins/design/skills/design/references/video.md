@@ -392,3 +392,31 @@ readers' fixes agreed. The rules below come from that.
   music do you expect; first look and feel; point at anything AI, filter or template-like; does it read at 64 px;
   score next to real covers in its genre, and the one change". Ship at 8.5. Two readers naming the same fix is the fix.
 
+### 7.5 A cover from the artist's game character
+Learned on the same single when the owner asked for his roleplay character as the cover. Blind scores went 5, 6.5,
+then up as each fix below landed.
+- **Use a whole scene, not a cut-out.** A cut-out pasted onto a backdrop from another screenshot was dropped at
+  self-review: the scale, light and ground contact did not match. A seated screenshot that already held a story (him
+  in one armchair, the second chair empty, a lamp, blinds) beat it. Ask for 3-6 screenshots: the character in a
+  place, the place empty, and the weather or city mood.
+- **Crop to the subject and the light.** A tight crop of the face plus the light source read at 64 px. The full room
+  read as "a picture of a lamp".
+- **Make the practical light work.** Readers said "the lamp is the brightest thing in the frame but lights
+  nothing". Fix it in this order: mask the shade and make it glow with a gradient (never a clipped flat bar), add
+  bloom, then a warm spill with soft falloff on the wall and chair, and a key on the side of the face that turns
+  toward it. Add a faint cool rim from the window on the back of the head and shoulder so a dark suit holds against
+  a dark chair.
+- **Swap a weak exterior.** A low-poly street seen through the window was replaced with the artist's own rainy-city
+  screenshot. Luminance-key it through the gaps in the blinds, replace clear panes fully, keep the frames, and hold
+  out the person with a soft matte (`rembg`, isnet). Grade the view to one dusk tone. A brighter, overcast pane
+  under darker blind gaps read as "two pasted photos". Rain on the glass is a few drips plus sparse beads with a
+  light core and a dark rim. Dense white dots read as snow.
+- **Edges.** Sharpen gently after an upscale (radius about 1 px at 3000, low amount). A strong unsharp mask drew a
+  hard dark halo round the hair that read as a cut-out. Use the matte's soft alpha at the hair, never a dilated
+  hard edge, which kept a bright rim of the old view.
+- **Skin under a warm key** goes orange fast. Take global saturation down about 14% after the contrast curve.
+- **Type** with more weight and character (an italic display serif at 600, cream on the dark empty chair) replaced
+  a thin default italic that readers called "picked from a menu".
+- **Tell the blind reader it is game-world art on purpose.** Without that line, readers mark it down for "waxy
+  game-render skin" and score the medium, not the cover.
+

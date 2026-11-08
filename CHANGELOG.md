@@ -7,7 +7,10 @@
   beats a scanned hand-made mark and both beat code, a five-minute phone shot list (a ringing string draws its own
   wave through rolling shutter), the waveform cliché, title type that reads at 180 px, and the blind prompt. New
   `tools/song_shape.py` (numpy + ffmpeg, selftest in CI) writes a track's loudness shape and inner silences as JSON,
-  with the silences held flat and eased so a drawn line never zig-zags at a drop bar.
+  with the silences held flat and eased so a drawn line never zig-zags at a drop bar. §7.5 covers a cover built from the
+  artist's own game-character screenshots: a whole scene over a cut-out, a crop to subject and light, making a
+  practical lamp actually light the face, swapping a weak exterior through blinds, gentle sharpening, and telling the
+  blind reader the game look is on purpose.
 - music-studio: guitar-capture "record once" learns from the first real takes, which ignored the click (free tempo,
   one file per part). The parts are re-played hit by hit from his own take, each note and strum placed on the grid,
   with Rubber Band only for slices that end too soon. Also: strum boundaries, note substitution from other bars,
