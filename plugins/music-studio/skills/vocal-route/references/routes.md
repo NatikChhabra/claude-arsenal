@@ -54,6 +54,27 @@ INFERRED = secondary or our reasoning. Prices in USD as shown on 2 Nov 2026 (may
 ## Route D: rap or spoken delivery in his own voice
 No pitch needed. Rhythm, breath and diction carry it; record many takes and comp the best syllables.
 
+## Route F: his own natural voice (no conversion, no synth, no generator)
+For when he says the song must be him. A non-singer sounds honest, not bad, when the song is built for his voice
+instead of the other way round. This is the "No Gen AI" path on every platform (his vocal plus pitch correction).
+1. **Write into the voice.** Measure first (`tools/voice_range.py`). Verses at or near his speaking pitch, talk-sung
+   (half-spoken, rhythm first); the chorus lifts 4-7 semitones over the verse and peaks about 2 semitones under the top
+   of his comfortable range, on an open vowel ("ah", "oh") on a stressed word. Total range an octave and a third at most.
+   Move the key with a capo (or the shapes a fourth lower with a capo), never by straining.
+2. **Rehearse on the guitar he plays live.** Sing every section to the guitar part 5+ times before recording; most
+   pitch problems in an untrained singer are entries, not sustained notes: practise the first note of each phrase.
+3. **Record close and dry.** A dynamic or condenser mic a hand's width away (a phone held the same way for a demo),
+   soft room (a wardrobe of clothes, a duvet behind the mic), headphones on with the guitar and a click, no reverb in
+   the headphones above a hint. Input peaks around -12 dBFS: a clipped take cannot be saved (voice_range flags it).
+4. **Many takes, then comp.** 5-8 full passes per section; comp line by line, choosing feel over pitch. Keep breaths
+   and small cracks where they serve the line: on raw indie-folk they are the reason it sounds human.
+5. **Light correction only.** Pitch: Melodyne (note by note, pitch centre 30-60%, pitch drift and vibrato untouched)
+   or ReaTune / Graillon in manual mode; never hard auto-tune at fast retune on this style. Timing: nudge only phrases
+   that fight the guitar. A listener who hears tuning is a FAIL, same as a listener who hears AI.
+6. **Doubles are the cheat code.** Double the chorus (a second real take, panned or tucked under), keep verses single
+   and close. A quiet harmony a third below on the last chorus hides pitch wobble better than tuning does.
+7. **Blind check as for every route** (SKILL.md §3): would you replay it, does any spot sound fake, tuned or off.
+
 ## Route E: a real singer
 An RP community singer or a hired session vocalist with the guide and lyric sheet. Credit them, get written consent for
 the release, agree on any revenue split before recording.

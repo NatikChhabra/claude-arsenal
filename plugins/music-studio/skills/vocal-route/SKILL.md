@@ -24,6 +24,7 @@ SONG.md = run skill song-from-idea first.
 |---|---|
 | English, he wants his exact melody | B (Synthesizer V 2 Pro Voice-to-MIDI from his guide), or A |
 | Hindi, Hinglish or Punjabi lyrics | A (his guide, pitch-fixed, converted to a voice he owns or licensed) or his own vocal pitch-fixed; no commercial singing synth sings Hindi (2 Nov 2026) |
+| He wants his own real voice on the record, nothing generated or converted | F (his own natural voice: melody written into his measured range, talk-sung verses, comped and lightly tuned) |
 | A fast demo to hear the song | C (Suno cover of his guide, or ACE-Step locally) |
 | The style allows rap or spoken word | D (his own voice) |
 | The song is the centrepiece of a release and a willing singer exists | E |
@@ -31,6 +32,9 @@ SONG.md = run skill song-from-idea first.
 Write the pick and the reason in SONG.md's decisions log. Unclear between two = run both on the chorus in step 3.
 
 ## 2. Range and key
+- Measure a real voice, never guess it: `uv run --with librosa --with soundfile python ${CLAUDE_SKILL_DIR}/../../tools/voice_range.py <take.wav> --mode sung --melody <low> <high>`
+  (a 30 s sung scale or hummed chorus; `--mode speech` on any old spoken take gives a first estimate). It prints the
+  comfortable range, the shift and the capo, and flags clipped takes.
 - Find the chosen voice's comfortable range (the synth voicebank's stated range, the converted voice's model, the
   singer's own). Transpose the song (capo for guitar) so the chorus peak sits 1-2 semitones under the top of it.
 - Update Key, Capo and Range in SONG.md before any guide is recorded: a re-key later means a new guide.

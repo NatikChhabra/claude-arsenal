@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+- music-studio: a vocal route for an owner who wants his own real voice on the record. New Route F in
+  vocal-route (melody written into his measured range, talk-sung verses, close dry recording, comp for feel, light
+  pitch correction, doubles; a listener who hears tuning fails it like one who hears AI). New `tools/voice_range.py`
+  measures a voice from any take (pYIN), estimates the comfortable range from speech or measures it from a sung take,
+  fits a melody to it with a capo or the shapes a fourth lower, and flags clipped takes (selftest in CI). First use: a
+  song's chorus peak moved 3 semitones down from a spoken take before any guide was recorded.
 - design + video-edit: the spoken launch ad. New `ads.md` section 9 (one scene per spoken claim, the problem as an object,
   a signed quote to prove a boast, the number built in step with the voice, and nine craft rules each taken from a blind
   reviewer's note: visible motion, no hard zooms, ghost-then-fill numbers, one caption baseline and plate, offer
