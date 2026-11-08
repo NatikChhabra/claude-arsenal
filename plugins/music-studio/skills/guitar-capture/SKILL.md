@@ -102,6 +102,14 @@ asked: "ask me more questions rather than guessing".
     an exciter (saturate the 1.8-5 kHz band, keep only what lands above 5.2 kHz). Compare band levels with a
     bright acoustic target until each band is within about 5 dB. The Windows input soft-clipped the loudest chucks
     at about 0.98: spline them back before use.
+    Keep the crunch, lose the grit: on the first master the owner said "very good but too crunchy, pinching in
+    the ear" at 2:00 to 2:30. The cause was not overall brightness but grit: sample-to-sample jumps over 0.35 (at a
+    -3.5 dB ceiling) from the rectified part of the exciter and from the chucks, 311 per 10 s at the spot he named
+    and 51 at the chorus he liked. The fix that kept his "crunch" was half the rectified part (0.3 of abs(band),
+    not 0.6), a broad presence peak (+11 dB at 2.9 kHz, Q 0.7, not +12 at 2.7 kHz, Q 0.9), chucks EQ'd at +2 dB
+    near 3 kHz with a 4.5 kHz low-pass, and a fast look-ahead limiter on the chuck stem in place of a clipper. Count
+    the jumps per 10 s on every master (aim for single digits) and ask him which timestamp sounds best, then match
+    that passage's band levels within about 2 dB up to 4.5 kHz.
 - DI through an audio interface, 48 kHz / 24-bit, peaks around -12 to -6 dBFS (room for transients). A phone memo is
   fine for an idea, never for the release take.
 - To a click at the SONG.md BPM whenever the part will be produced or the video cut to it. Free time only for a

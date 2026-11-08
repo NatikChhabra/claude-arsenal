@@ -1,6 +1,14 @@
 # Changelog
 
 ## Unreleased
+- music-studio: lessons from the second master of a guitar-only instrumental, after the owner said the first was
+  "very good but too crunchy, pinching in the ear" at 2:00 to 2:30 and the lifts into the choruses were
+  "underwhelming". guitar-capture: the pinch was grit (sharp sample-step spikes from a rectified exciter and the
+  chucks, over 300 per 10 s at the exact spot he named), not overall brightness; how to keep the crunch at half the
+  grit and how to count the spikes. mix-master: a harshness gate (spikes per 10 s and band levels against the passage
+  he likes best), a de-harsh threshold that must sit above the band's running level (below it, it cut 2 to 6 kHz by
+  3 to 4 dB all the time), a chuck limiter in place of a clipper, and lift rules with measured jumps (build under the
+  chorus, half-beat silence, swell tucked under the hit, thump on the downbeat).
 - design: new `video.md` §7 on single and album covers, learned on a guitar-only instrumental where two code-drawn
   covers (a photoreal render and a three-ink screen-print look) both scored 5/10 with fresh blind readers. It covers
   the store rules (3000x3000, words match metadata, no handles or logos), why a real photo of the artist's own thing

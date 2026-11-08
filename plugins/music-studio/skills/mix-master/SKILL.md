@@ -31,11 +31,21 @@ voice, film loudness) live in the design skill, references/edit.md §4 and §7: 
    de-ess, compression in two gentle stages, short plate or room plus a tempo-synced delay on sends.
 4. Glue: drum bus compression light; parallel compression only when the reference asks for it.
 5. Automation: ride the vocal so every word is heard; lift the last chorus.
+6. Lifts into a chorus (an owner called the first try "underwhelming"): the build must end under the chorus, not
+   at it. Hold the build's last bar about 1.5 dB under the chorus average, open a low-pass over its four bars, cut
+   to silence for the last half beat, keep a reverse swell's peak a few dB under the chorus (a swell louder than the
+   downbeat steals the hit), and land a short low thump plus a reverb burst on the downbeat. Measure K-weighted
+   loudness in half-second steps across the join: aim for the downbeat 2 to 4 dB over the build's peaks, more after
+   a drop.
 
 ## 3. Gate the mix
 `python ${CLAUDE_SKILL_DIR}/../../tools/loudness.py <mix.wav> --vocal <lead.wav> --inst <instrumental.wav>`
 - Phone-speaker check: vocal buried in at most 10% of sung windows (400 Hz-8 kHz is what a phone plays). Over that =
   more vocal level or less instrument in that band, then re-measure.
+- Harshness check: count sample-to-sample jumps over 0.35 per 10 s window (scale the threshold with loudness) and
+  compare 2-6.5 kHz band levels with the passage the owner likes best. Grit (the jumps) is what pinches the ear;
+  a dynamic 2-6 kHz cut should only act when the band jumps above its own running level (threshold +4 dB over a
+  0.4 s average). At a threshold below that level it cut 3 to 4 dB all the time and dulled the whole track.
 - The owner listens on headphones, a phone speaker and (if it plays there) in the game. Claude reports numbers and the
   owner's words, never "it sounds".
 
