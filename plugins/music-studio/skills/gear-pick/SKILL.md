@@ -85,7 +85,8 @@ End with a sample short answer ("<city>, 25k hard, headphones, smaller") so he c
 - No "best overall / best value" tiers.
 - Add one "how it connects" line for a beginner: guitar, guitar cable (1/4" jack), amp input; amp USB to the PC. Say
   that an amp's "line in / streaming" jack is an input for playing songs through the amp and does not send the guitar
-  to the PC (a beginner in the first real session assumed it did).
+  to the PC (a beginner in the first real session assumed it did). Call it "the guitar cable" and list the cables as a
+  numbered pair (guitar to amp, amp to PC): the same buyer read "1/4 inch" on its own as an adapter he had to buy.
 
 ## Review before delivery
 - Total within the hard cap, with the cable counted?

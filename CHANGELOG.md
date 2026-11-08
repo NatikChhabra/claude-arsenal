@@ -3,8 +3,8 @@
 ## Unreleased
 - music-studio: `gear-pick` lessons from finishing the same purchase: ask whether he wants preset saving and app
   control (it beat a cheaper amp with the same USB recording), name the computer cable (micro-B vs USB-C, in the box
-  or not), add a "how it connects" line because a beginner thought the amp's line-in jack sends the guitar to the PC,
-  spend the shared hourly web-fetch budget on finalists only, and Bajaao's "Used Gear" links are a separate used
+  or not), add a "how it connects" line because a beginner thought the amp's line-in jack sends the guitar to the PC
+  (and calls the 1/4" cable "the guitar cable", since "1/4 inch" alone read as an adapter to buy), spend the shared hourly web-fetch budget on finalists only, and Bajaao's "Used Gear" links are a separate used
   marketplace.
 - design: new "Spreadsheets, ledgers and record books" section in `apps.md` (blank-safe running balance, money at the
   right edge, frozen header block with totals, brand at ~3%, dropdowns and amber mistake flags, SUMIF links between
