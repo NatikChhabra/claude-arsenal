@@ -53,6 +53,46 @@ INFERRED = secondary or our reasoning. Prices in USD as shown on 2 Nov 2026 (may
 
 ## Route D: rap or spoken delivery in his own voice
 No pitch needed. Rhythm, breath and diction carry it; record many takes and comp the best syllables.
+When a non-singer hates every sung take, offer this route as a choice, not a downgrade: on 8 Nov 2026 the owner rejected
+three sung demos and picked "talk it" from a 4-option card (talk it / practise 2 weeks / real singer / AI voice).
+Spoken verses with a half-sung hook keep it 100% his voice and suit low, rough voices and talk-sung references.
+
+## Route F: his own natural voice (no conversion, no synth, no generator)
+For when he says the song must be him. A non-singer sounds honest, not bad, when the song is built for his voice
+instead of the other way round. This is the "No Gen AI" path on every platform (his vocal plus pitch correction).
+1. **Write into the voice.** Measure first (`tools/voice_range.py`). Verses at or near his speaking pitch, talk-sung
+   (half-spoken, rhythm first); the chorus lifts 4-7 semitones over the verse and peaks about 2 semitones under the top
+   of his comfortable range, on an open vowel ("ah", "oh") on a stressed word. Total range an octave and a third at most.
+   Move the key with a capo (or the shapes a fourth lower with a capo), never by straining.
+2. **Rehearse on the guitar he plays live.** Sing every section to the guitar part 5+ times before recording; most
+   pitch problems in an untrained singer are entries, not sustained notes: practise the first note of each phrase.
+3. **Record close and dry.** A dynamic or condenser mic a hand's width away (a phone held the same way for a demo),
+   soft room (a wardrobe of clothes, a duvet behind the mic), headphones on with the guitar and a click, no reverb in
+   the headphones above a hint. Input peaks around -12 dBFS: a clipped take cannot be saved (voice_range flags it).
+4. **Many takes, then comp.** 5-8 full passes per section; comp line by line, choosing feel over pitch. Keep breaths
+   and small cracks where they serve the line: on raw indie-folk they are the reason it sounds human.
+5. **Light correction only.** Pitch: Melodyne (note by note, pitch centre 30-60%, pitch drift and vibrato untouched)
+   or ReaTune / Graillon in manual mode; never hard auto-tune at fast retune on this style. Timing: nudge only phrases
+   that fight the guitar. A listener who hears tuning is a FAIL, same as a listener who hears AI.
+6. **Doubles are the cheat code.** Double the chorus (a second real take, panned or tucked under), keep verses single
+   and close. A quiet harmony a third below on the last chorus hides pitch wobble better than tuning does.
+7. **Blind check as for every route** (SKILL.md §3): would you replay it, does any spot sound fake, tuned or off.
+8. **Never tune a take that has no melody.** A cappella takes sung without a backing come out as a chant that drifts
+   between two notes; snapping that to a scale (even gently, even with a good vocoder) sounds robotic (8 Nov 2026: the
+   owner called a tuned chant "a robot", firm and hard versions alike). Send the untuned take placed on the beat as the
+   honest demo, then give him the instrumental, a guide-tone melody track and a line-timing sheet, and record again.
+9. **The hook is a melody, not a sentence.** A long philosophical chorus line is not catchy. Repeat his own title line
+   as the hook over a 4-bar tune inside his range (5-6 semitones is enough), and teach it with a looped hook track
+   before any full vocal take.
+10. **No DAW? Do steps 5 and 6 in code from the takes he already has** (`tools/vocal_comp.py`, no AI): `double` lines up
+   another take of the same line with the lead syllable by syllable (DTW + Praat PSOLA; keep doubles that score 0.3+,
+   two of them about 60% left and right, 7-8 dB under), and `nudge` moves only sustained chorus notes 0.3+ semitone off
+   the chord, by at most 1 semitone, keeping his slides. Every chorus repeats its lyric, so one full take already holds
+   2-6 candidate doubles per hook line. Use what is on disk before asking for new takes; the owner asked for exactly
+   that ("do everything with my voice first").
+11. **"No AI" on the voice stays declined.** If he turns down voice conversion once, even of his own voice ("it won't be
+   my own"), do not put it on a later decision card; make the real voice work (doubles, writing into the voice, a band
+   that carries the melody).
 
 ## Route E: a real singer
 An RP community singer or a hired session vocalist with the guide and lyric sheet. Credit them, get written consent for

@@ -6,6 +6,33 @@
   tabs, Google Sheets "Replace spreadsheet" import that keeps the share link). Learned rebuilding a business
   transaction sheet whose first balance cell read the header (`#VALUE!`) and whose filler formulas showed 0 down every
   empty row.
+- music-studio: guitar-capture §0, measure the player before writing his part. A guessed beginner part was called
+  "sub par"; asking 9 level questions and measuring a minute of songs he already plays fixed it. New
+  `tools/guitar_level.py` reads tuning (cents), clipping, notes per second, steadiness, picked vs strummed, range and
+  hesitations per stretch of playing (selftest in CI; on a real 73 s take it found a 30 s clean run at 5.2 notes/s and
+  a guitar 6-12 cents flat). §0 also lists moves that sound big on open shapes (harmonics, hammer-on tune, thumb on
+  every beat, chucks, a silent drop, slap + chuck groove), a relative-major ending for a lift, and the one-sheet format.
+- music-studio: a vocal route for an owner who wants his own real voice on the record. New Route F in
+  vocal-route (melody written into his measured range, talk-sung verses, close dry recording, comp for feel, light
+  pitch correction, doubles; a listener who hears tuning fails it like one who hears AI). New `tools/voice_range.py`
+  measures a voice from any take (pYIN), estimates the comfortable range from speech or measures it from a sung take,
+  fits a melody to it with a capo or the shapes a fourth lower, and flags clipped takes (selftest in CI). First use: a
+  song's chorus peak moved 3 semitones down from a spoken take before any guide was recorded. song-from-idea §4 step 0:
+  when the owner brings his own lyrics, keep his sentences and fill gaps only with his answers (a polished rewrite with
+  invented details read as AI to him). mix-master §1: check raw takes for a dead channel and low input level
+  before processing. Route F steps 8-9: never tune a melody-less chant (it read as a robot), and build the hook as a
+  short tune on his own title line, taught with a looped hook track first. Route D: offer "talk it" as a real choice to a non-singer. produce-arrange:
+  the stitched-backing stopgap for loose takes, and why a played-through take is the next ask.
+- music-studio: a demo that passed every gate was rated -1 ("missing everything"), so gates now cover the arrangement.
+  music-review: an "Arrangement built" gate (every energy-map layer present; chorus 2+ dB over verse, last chorus
+  loudest, bridge 3+ dB under) and a click scan, plus the rule that gates never mean "good". New `tools/vocal_comp.py`
+  (no AI): `double` lines up another take of the same line with the lead (DTW + Praat PSOLA; onset correlation 0.2 ->
+  0.5-0.85 on a real untrained voice) and `nudge` moves only sustained notes toward the chord, capped at 1 semitone
+  (selftest in CI). vocal-route Route F steps 10-11: doubles and nudges from the takes already on disk, and a declined
+  AI voice stays declined. produce-arrange: a no-DAW band from CC0 sample libraries (VSCO 2 CE, Swirly Drums) with
+  pitch-label checks, grid placement of free-time vocal lines, and the low-mid and click fixes found in the mix.
+  guitar-capture: a play-along with his own voice in it, and beginner parts to ask for (play-through, one-finger riff,
+  body taps as the drums).
 - advocate (new plugin): `trial-prep` skill (beta, first used 2026-11-08 as defense second chair on a 20-count
   felony case). Builds a prep pack from the case file and the court's own law: deadlines from the judge's order first,
   charges and elements (including whether accomplice liability reaches attempts), timeline, weak points per count,
