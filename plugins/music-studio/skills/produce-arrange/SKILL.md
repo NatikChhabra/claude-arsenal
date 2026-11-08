@@ -39,6 +39,11 @@ When the only guitar audio is chord practice (not the song to a click), slice si
 match per onset), re-sequence them at a fixed BPM, and place each vocal line on the next half-bar so the backing follows
 his phrasing. It gets a demo out the same day, but say plainly that it is stitched: one played-through take to the
 click is the real fix and always the next ask.
+Better than single strums: cut his continuous strumming into half-bar phrases (beat-track the take, keep phrases
+whose chroma matches one chord), then slice each phrase at its onsets and drop every slice on the nearest 8th of the
+grid (no time-stretch). Keep his own tempo as the song tempo so nothing slows down. To check timing, compare onset
+offsets against a known-on-grid reference: librosa's onset times run about 25 ms late at hop 512, so judge the spread
+(IQR), not the median.
 
 ## 4. Check
 - Play each section boundary: does the energy map's change happen and is it felt in the first second?
