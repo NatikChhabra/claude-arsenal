@@ -1,6 +1,16 @@
 # Changelog
 
 ## Unreleased
+- music-studio: guitar-capture "record once, loop the rest" for a player who wants to play each part one time. New
+  `tools/loop_assemble.py` (numpy + soundfile, selftest in CI) finds every part in one take recorded to a click track
+  (shared offset for the whole take, then each part and each bar to the millisecond), places the bars on the song
+  grid with a 25 ms pre-downbeat crossfade, keeps the recorded ring at a part's end, layers a melody part over a
+  chorus, and fails on a weak match, more than 0.5% drift from the click, clipping or a quiet take. First use: 7
+  four-bar parts (28 bars played) built a 77-bar song; tested before recording on a plucked-string render of the
+  record track with human timing (every bar within 18 ms of the grid, no gaps at loop joins, the drop bar silent).
+  A 25-case stress run plus 30 random takes then found and fixed an eighth-note slip on players 0.4% off tempo and
+  a roll bar locking onto a later string, and added checks for click in the mic, missing or wrong parts, missed
+  notes and a bar over 70 ms off. mix-master targets: ffmpeg AAC encode-check spikes on 44.1 kHz float input.
 - music-studio: `gear-pick` lessons from finishing the same purchase: ask whether he wants preset saving and app
   control (it beat a cheaper amp with the same USB recording), name the computer cable (micro-B vs USB-C, in the box
   or not), add a "how it connects" line because a beginner thought the amp's line-in jack sends the guitar to the PC

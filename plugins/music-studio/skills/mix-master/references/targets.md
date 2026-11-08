@@ -22,6 +22,9 @@ ffmpeg -hide_banner -nostats -i song.wav -af ebur128=peak=true:framelog=quiet -f
 - Summary gives I (LUFS), LRA and true peak. loudness.py wraps this and adds the phone-speaker vocal check.
 - Measure the ENCODED files too (the MP3/AAC a platform will make): overs that the WAV doesn't show appear after lossy
   encoding (Spotify, Apple). `ffmpeg -i master.wav -c:a aac -b:a 256k check.m4a`, then measure check.m4a.
+- ffmpeg's built-in AAC encoder can put single-sample spikes (+2 to +5 dBTP) into a 44.1 kHz float WAV's encode that
+  are not in the music (seen 8 Nov 2026 on a guitar master; the MP3 and Opus encodes were clean). Encode-check from
+  48 kHz / 24-bit, and if one encode alone fails, look at the spike before lowering the ceiling.
 
 ## loudnorm (a trim, never the mastering limiter)
 - Two passes, linear mode only: pass 1 `loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json`, pass 2 with all four
