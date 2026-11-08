@@ -48,6 +48,25 @@ asked: "ask me more questions rather than guessing".
   in the same batch as the write once delivered the old sheet ("it's the same").
 
 ## 1. Record
+- **Record once, loop the rest** when he would rather play each part one time ("I just want to play one time and
+  you repeat that"). Every sound stays his own playing; only the copying is done for him.
+  - Sheet: one card per distinct part (4 bars each, all bars written out, no repeat counts), in record order, plus a
+    strip of the song showing which part plays where ("5+2" = part 5 with the melody part on top).
+  - One record track for all parts in card order: 8 count-in clicks, the part's 4 bars with the click, 2 bars of rest
+    to let it ring. Print each part's start time on the sheet so one part can be redone alone. The click goes in his
+    earphones only: a click caught by the mic gets looped with the part.
+  - Reuse the parts for everything else. Repeats of verses and choruses come straight from them. The melody part is
+    layered over later choruses and a bridge. A silent drop is just an empty bar. An ending can be single bars sliced
+    from a part (rolled chords, the last bell bar of the intro). A part's last bar keeps its recorded ring, so pick the
+    slice that ends a part to ring out.
+  - Build: `python ${CLAUDE_SKILL_DIR}/../../tools/loop_assemble.py plan.json song.wav` (finds each part and each bar,
+    crossfades 25 ms before each downbeat, keeps his feel inside the bar). It fails on a weak match, more than 0.5% drift,
+    clipping or a quiet take: re-record that part, don't edit it. Set section loudness per part toward targets
+    (the last chorus loudest), then pan the melody layer off-centre, add a short room, glue, and limit to the
+    streaming target, with an encode check as in mix-master.
+  - Before he records, test the whole plan on a Karplus-Strong render of the record track with human timing (latency,
+    0.2% slow, 6 ms jitter). Check that every bar lands within 20 ms of the grid, that loop joins have no gaps, that
+    the drop bar is silent, and that the times printed on the sheet match the track.
 - DI through an audio interface, 48 kHz / 24-bit, peaks around -12 to -6 dBFS (room for transients). A phone memo is
   fine for an idea, never for the release take.
 - To a click at the SONG.md BPM whenever the part will be produced or the video cut to it. Free time only for a

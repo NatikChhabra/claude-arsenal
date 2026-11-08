@@ -1,6 +1,13 @@
 # Changelog
 
 ## Unreleased
+- music-studio: guitar-capture "record once, loop the rest" for a player who wants to play each part one time. New
+  `tools/loop_assemble.py` (numpy + soundfile, selftest in CI) finds every part in one take recorded to a click track
+  (shared offset for the whole take, then each part and each bar to the millisecond), places the bars on the song
+  grid with a 25 ms pre-downbeat crossfade, keeps the recorded ring at a part's end, layers a melody part over a
+  chorus, and fails on a weak match, more than 0.5% drift from the click, clipping or a quiet take. First use: 7
+  four-bar parts (28 bars played) built a 77-bar song; tested before recording on a plucked-string render of the
+  record track with human timing (every bar within 18 ms of the grid, no gaps at loop joins, the drop bar silent).
 - marketing-studio: `social-copy` gets a LinkedIn row (first two lines carry the result with a number, short
   paragraphs instead of emoji bullets, zero emoji, 3 hashtags at most). Learned when the owner rejected a launch post
   that read as AI because of emoji bullets and a "What I learned" list; the rewrite passed `copy_lint` and a blind read.
