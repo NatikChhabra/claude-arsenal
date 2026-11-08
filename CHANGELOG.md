@@ -1,6 +1,11 @@
 # Changelog
 
 ## Unreleased
+- advocate: new `cell-rep` skill (beta). Built while a public defender was live in a station: speed rules first (one short
+  reply in under a minute, at most one question, trust what the user sees in game over a wiki that missed a real station),
+  the in-cell card (intro, what to get, element and stacking checks, bail and plea options, the court's own clocks,
+  AI-filing guard), and how to keep a live-answer helper permanently in cell-rep mode (saved cases labelled background,
+  since an "active case" label leaked one case's facts into unrelated reps; one-shortcut launch; restart only the helper).
 - design: new "Spreadsheets, ledgers and record books" section in `apps.md` (blank-safe running balance, money at the
   right edge, frozen header block with totals, brand at ~3%, dropdowns and amber mistake flags, SUMIF links between
   tabs, Google Sheets "Replace spreadsheet" import that keeps the share link). Learned rebuilding a business
