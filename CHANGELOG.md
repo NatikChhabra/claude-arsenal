@@ -28,6 +28,12 @@
   pitch-label checks, grid placement of free-time vocal lines, and the low-mid and click fixes found in the mix.
   guitar-capture: a play-along with his own voice in it, and beginner parts to ask for (play-through, one-finger riff,
   body taps as the drums).
+- advocate (new plugin): `trial-prep` skill (beta, first used 2026-11-08 as defense second chair on a 20-count
+  felony case). Builds a prep pack from the case file and the court's own law: deadlines from the judge's order first,
+  charges and elements (including whether accomplice liability reaches attempts), timeline, weak points per count,
+  evidence and discovery list, theory, cross banks, objections, chair duties. Records two traps from that case: court
+  forums need the user's signed-in browser (read long DOM text in ~900-character slices), and the judge must come from
+  the docket, not from a prior case with the same parties. Ethics guard: preparation only, never AI-written filings.
 - music-studio: new `gear-pick` skill (beta) for buying an instrument or gear setup: questions once, his real
   listening history instead of a typed song list, the whole-setup budget (an electric needs an amp or an ASIO interface
   plus a cable), prices read on product pages (store search cards show stale prices), and one pick, never tiers. New

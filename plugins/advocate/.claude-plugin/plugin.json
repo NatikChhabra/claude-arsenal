@@ -1,0 +1,10 @@
+{
+  "name": "advocate",
+  "description": "Court and case work for an advocate in any court that publishes its own rules (moot court, mock trial, roleplay or community courts): a full trial prep pack built from the case file and the court's own law text, with deadline, element, evidence, cross and objection sheets, plus an ethics guard against AI-written filings.",
+  "author": {
+    "name": "NatikChhabra"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/NatikChhabra/claude-arsenal",
+  "keywords": ["law", "court", "trial", "defense", "moot court", "mock trial", "cross-examination", "objections"]
+}
