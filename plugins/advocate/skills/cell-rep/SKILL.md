@@ -57,6 +57,21 @@ If the user runs a live meeting assistant that listens and answers on screen, se
   and how far the search went.
 - After each rep, read the helper's question/answer log and grade a few answers against the law. Fast, relevant
   answers can still be wrong about who is speaking to whom.
+- **Word-for-word speech, not tips.** The first live rep was judged "subpar": answers were advice ("point out X") or
+  statute recitals nobody would say aloud, and when the prosecutor countered there was no comeback. What fixed it:
+  2 or 3 short spoken lines (40 to 55 words) addressed to the speaker. Line 1 makes a move: a demand, a counter
+  with exact months and dollars, or a pin-down question. Lines 2 and 3 are the reply if they push back. Use
+  contractions, at most one short quote, and say sections the way a person would ("General Laws 1(5)"), never a chain
+  of section symbols.
+- **Negotiation playbook in the prompt.** Anchor first with a number, trade the plea for cuts, never accept the first offer,
+  make them name the fact they can't prove, state calmly what a not-guilty plea costs them, stay calm with hostile
+  officers, and read back the totals before the plea. Never lie, invent facts or law, or threaten.
+- **Counters need conversation context.** Send the last few exchanges and answers with each request, and add a rule:
+  if the other side disputes our last point, line 1 is the rebuttal (their claim in brief, the clause they're missing,
+  the ask). Test it with garbled speech-to-text too.
+- **Loop-test before the next live rep.** Build 30 or more realistic moments (real lines from the last rep, counters,
+  hostile officers). Write each grading key from the verbatim law before running. Grade strictly on law, speech,
+  negotiation, length and who is addressed, then fix and rerun the failures. First use: 11/28 in the old style, 31/32 after five rounds.
 - The first line of each answer is the one sentence to say now. Then 1 to 3 lines of authority (section, months, fine).
 - Answer from the user's own plan (account mode) with thinking off. Measured: time to first word dropped from 9.5 s to about 3 s.
 - Launch through one shortcut that starts the helper before the assistant. If the assistant is opened on its own,
