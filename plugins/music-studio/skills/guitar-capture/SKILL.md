@@ -37,6 +37,10 @@ asked: "ask me more questions rather than guessing".
   the tab of each move with a tick box, in the order they come, then the song top to bottom (one row per section,
   one coloured box per bar, the move and a feel word), then a short record checklist (take names). Add a slower
   practice play-along (about 20 BPM under) next to the real one, both in one clean FINAL folder.
+- Before sending: play the tab back as plain plucked notes over the click (Karplus-Strong in numpy, no samples) and
+  check every row lands on its bar, the drop is silent and the last chorus is loudest; send that render as a slow
+  "how the tab goes" guide. After copying to his PC, read the file back from the PC and compare pixels: a copy sent
+  in the same batch as the write once delivered the old sheet ("it's the same").
 
 ## 1. Record
 - DI through an audio interface, 48 kHz / 24-bit, peaks around -12 to -6 dBFS (room for transients). A phone memo is
