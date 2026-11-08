@@ -179,3 +179,15 @@ python ${CLAUDE_SKILL_DIR}/tools/paper_kit.py --selftest
 - `sheet`, `tape` and `stamp` build the sheet-on-a-wall vernacular in `ads.md` section 8; `mark` is the tiled sample
   watermark. The docstring holds the HTML recipe (multiply, soft-light overlay, data: URI masks).
 - The finished piece still goes through `still_check.py`; the kit makes it real, the gate checks it reads.
+
+## song_shape (a track's loudness shape, Python)
+
+```bash
+python ${CLAUDE_SKILL_DIR}/tools/song_shape.py SONG.wav OUT.json [--fps 20] [--smooth 2.0] [--hold 5.0]
+python ${CLAUDE_SKILL_DIR}/tools/song_shape.py --selftest
+```
+- Needs numpy and ffmpeg. Writes `db` (raw per frame), `shape` (0-1, smoothed), `shape_held` (inner silences held
+  flat and eased over `--hold` s) and `gaps` (inner silences, lead-in and tail excluded).
+- Use `shape_held` for any drawn line: a raw 1 s collapse drew as a broken zig-zag inside one wave cycle.
+- For covers, visualisers, Canvas loops and lyric-video pacing. A literal waveform on a cover reads as cliché
+  (`video.md` §7.2), so use the shape to drive a real picture, not to replace it.

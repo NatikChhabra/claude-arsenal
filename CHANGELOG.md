@@ -1,6 +1,24 @@
 # Changelog
 
 ## Unreleased
+- music-studio: lessons from the second master of a guitar-only instrumental, after the owner said the first was
+  "very good but too crunchy, pinching in the ear" at 2:00 to 2:30 and the lifts into the choruses were
+  "underwhelming". guitar-capture: the pinch was grit (sharp sample-step spikes from a rectified exciter and the
+  chucks, over 300 per 10 s at the exact spot he named), not overall brightness; how to keep the crunch at half the
+  grit and how to count the spikes. mix-master: a harshness gate (spikes per 10 s and band levels against the passage
+  he likes best), a de-harsh threshold that must sit above the band's running level (below it, it cut 2 to 6 kHz by
+  3 to 4 dB all the time), a chuck limiter in place of a clipper, and lift rules with measured jumps (build under the
+  chorus, half-beat silence, swell tucked under the hit, thump on the downbeat).
+- design: new `video.md` §7 on single and album covers, learned on a guitar-only instrumental where two code-drawn
+  covers (a photoreal render and a three-ink screen-print look) both scored 5/10 with fresh blind readers. It covers
+  the store rules (3000x3000, words match metadata, no handles or logos), why a real photo of the artist's own thing
+  beats a scanned hand-made mark and both beat code, a five-minute phone shot list (a ringing string draws its own
+  wave through rolling shutter), the waveform cliché, title type that reads at 180 px, and the blind prompt. New
+  `tools/song_shape.py` (numpy + ffmpeg, selftest in CI) writes a track's loudness shape and inner silences as JSON,
+  with the silences held flat and eased so a drawn line never zig-zags at a drop bar. §7.5 covers a cover built from the
+  artist's own game-character screenshots: a whole scene over a cut-out, a crop to subject and light, making a
+  practical lamp actually light the face, swapping a weak exterior through blinds, gentle sharpening, and telling the
+  blind reader the game look is on purpose.
 - music-studio: guitar-capture "record once" learns from the first real takes, which ignored the click (free tempo,
   one file per part). The parts are re-played hit by hit from his own take, each note and strum placed on the grid,
   with Rubber Band only for slices that end too soon. Also: strum boundaries, note substitution from other bars,

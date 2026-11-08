@@ -103,7 +103,7 @@ Every scored row ≥8.5 (8.5 = meets the published spec or the pro reference; `p
 | `references/pages.md` | Persuade pages: argument, hero, sections, imagery, video, scroll stories, SEO, Web Vitals |
 | `references/apps.md` | Operate screens: shell, KPIs, charts, tables, spreadsheets and ledgers, settings, chat and AI, native mobile, desktop |
 | `references/experience.md` | games and game UI, rewards, juice, celebrations, XP and streaks, 3D, canvas, read-at-distance |
-| `references/video.md` | Video mode: thumbnails, Shorts/Reel covers, captions and overlays, composites, feed tests, blind readers |
+| `references/video.md` | Video mode: thumbnails, Shorts/Reel covers, single and album covers, captions and overlays, composites, feed tests, blind readers |
 | `references/edit.md` | Video mode: motion for video, camera, sound feel, music levels, film look, video QC |
 | `references/copy.md` | headlines, CTAs, errors, empty states, app words, formatting |
 | `references/systems.md` | brand identity, brand characters and app icons, tokens, DESIGN.md templates, brand-system lessons, brand library fetch, style by domain |
@@ -119,6 +119,7 @@ node ${CLAUDE_SKILL_DIR}/tools/preflight.mjs <files|dirs> [--video]          # e
 node ${CLAUDE_SKILL_DIR}/tools/taste/inspect.mjs <url|index.html> [--app|--video] [--widths 1440,768,390|1920x1080]   # real Chrome: measures + screenshots
 python ${CLAUDE_SKILL_DIR}/tools/still_check.py <png|jpg|gif|mp4 ...> --as thumbnail|ad|ingame|cover|story [--words "..."] [--vs last pieces]   # finished graphic at its real viewing size
 python ${CLAUDE_SKILL_DIR}/tools/paper_kit.py sheet|tape|stamp|mark OUT.png   # paper, tape, stamp ink and sample watermark layers for print-look ads (ads.md 8)
+python ${CLAUDE_SKILL_DIR}/tools/song_shape.py SONG.wav OUT.json   # a track's real loudness shape and silent gaps, for covers, Canvas and visualisers (video.md 7)
 node ${CLAUDE_SKILL_DIR}/tools/scene_frames.mjs page.html cues.json OUT [--at 2.5,9.3] [--audio mix.wav --mp4 ad.mp4]   # built vertical ad: page with render(t) -> exact frames (ads.md 9)
 ```
 
