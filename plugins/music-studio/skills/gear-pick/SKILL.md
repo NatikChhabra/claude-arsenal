@@ -57,6 +57,10 @@ End with a sample short answer ("<city>, 25k hard, headphones, smaller") so he c
 - Free tone (checked on the makers' pages, Nov 2026): Guitar Rig 7 Player (amp, chorus and reverb in one, needs a free
   Native Instruments account); the TONE3000 plugin with NAM captures (see guitar-capture section 4); Valhalla
   Supermassive for big reverb; TAL-Chorus-LX for chorus.
+- Amp features can beat price: ask whether he wants to save his own sounds (presets) and control the amp from an app.
+  In the first real session a cheaper amp with the same USB recording was turned down for the one with preset saving.
+- The computer cable is part of the setup: check the amp's or interface's USB port (micro-B vs USB-C) and whether a
+  cable is in the box, and say which cable he needs. A buyer whose phones are all USB-C may prefer a USB-C amp.
 - Price the cable (about 3 m) and a strap if he stands, from a store page, in the first total. In the first real session
   adding them at the end pushed the leading guitar over the hard cap and flipped the pick; a guitar that leaves room for
   them is better than one that wins on paper and breaks the cap.
@@ -67,7 +71,11 @@ End with a sample short answer ("<city>, 25k hard, headphones, smaller") so he c
 - India, learned the hard way: Bajaao search cards often show a cached or sold-out variant's price, so trust the
   product page; amazon.in refuses automated fetching; Johns Music shows "Add to cart" and "Notify me" on the same page,
   so tell him to WhatsApp before paying; small dealers ask buyers to confirm stock by phone.
-- An MRP far below every other store is a stale listing, not a deal.
+- An MRP far below every other store is a stale listing, not a deal. "Used Gear Available" links on Bajaao go to a
+  separate used marketplace (connect.bajaao.com), not an open-box listing.
+- The web-fetch tool has an hourly page budget shared by every agent in the session (about 100 pages). A broad
+  parallel sweep of stores can burn it before the finalists are verified: search once, then open product pages only for
+  the two or three finalists, and check the computer cable early.
 
 ## 5. Deliver one pick
 - One line up top: the setup and the total against his cap.
@@ -75,6 +83,9 @@ End with a sample short answer ("<city>, 25k hard, headphones, smaller") so he c
 - One line on the obvious alternatives and why not (sold out, over the cap, wrong pickups for his music).
 - Anything he asked for outside the brief (strings, a setup for his old guitar) goes in one short separate paragraph.
 - No "best overall / best value" tiers.
+- Add one "how it connects" line for a beginner: guitar, guitar cable (1/4" jack), amp input; amp USB to the PC. Say
+  that an amp's "line in / streaming" jack is an input for playing songs through the amp and does not send the guitar
+  to the PC (a beginner in the first real session assumed it did).
 
 ## Review before delivery
 - Total within the hard cap, with the cable counted?
