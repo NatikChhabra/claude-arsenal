@@ -132,3 +132,39 @@ A spec piece sent to a business is watermarked so it can't be used unpaid, and t
 - Deliver `_SAMPLE` files and a separate `clean_master/`. Say plainly that no watermark is impossible to remove; this
   one costs a redraw of most of the piece. A drifting mark grows a GIF (about 6x here): send the MP4 when the GIF passes
   the upload cap.
+
+## 9. The spoken launch ad: real pieces cut to a voice-over
+
+A 20-40 s vertical ad where the owner talks and the picture shows the real work. Build it as an HTML page with
+`window.render(t)` and render it with `tools/scene_frames.mjs`, so every beat lands on the frame the word is said and a
+re-time is a change to the cue file, not the page. Voice first: `video-edit/tools/vo_bestof.py` gives each word's time.
+
+**Structure that held up in blind reads (three rounds, 2026)**
+- Open on the problem as an object: the business's kind of bad poster on a wall, torn away by the brand's own paper
+  on the word that turns it. The joke lands in the picture, no explaining caption.
+- One scene per spoken claim, showing that exact thing: the owner's card on "I'm ...", the logo on the name, real
+  samples on "logos, menus, cards", the site scrolling on a phone on "websites". A line with no matching picture (a
+  boast, a joke) gets an object that turns it into proof: a quote that gets signed and stamped "AGREED".
+- End card: logo, the number built in step with the voice saying it, the promise, then the offer. Hold it 4-5 s.
+
+**Craft rules each learned from a reviewer's note**
+- "Moving" must visibly move. A record spinning on a poster is invisible (round, symmetric halftone): build the poster
+  instead (words rise out of masks one by one, the record slides in spinning, the small print follows). Start the build
+  on the cut; a blank sheet for 3 frames reads as a glitch.
+- No hard size jumps inside a scene. A second, closer angle eases in over 0.4-0.5 s from where the first push ended,
+  from one fixed transform origin (changing the origin mid-scene jumps the picture).
+- A number that builds with the voice is laid out whole from the first frame at ~15% opacity and each group fills in
+  as it is said, so it never sits off centre while half built.
+- Captions: the speaker's exact words, 1-3 words a chunk, one baseline for the whole ad, inside the safe zone
+  (video.md 3.2: about 420 px above the bottom at 1080x1920). One plate style everywhere; on a background the same
+  colour as the plate, swap to the dark plate instead of an outline box. The single key word gets the accent plate.
+  Lay out each scene so the caption never covers the thing being sold (signature, price, number); move the object,
+  not the caption.
+- The offer line keeps a 90-120 px side margin and wraps to two lines rather than running edge to edge.
+- Every piece of small print shown for under 2 s is texture: either make 2-3 rows big enough to read or don't
+  pretend it is information.
+- A stamp or badge for an offer that applies to everything (a launch discount) never sits on one plan; it sits
+  between or above them.
+- Last check: a frame every 0.8 s as a contact sheet, plus `--at` renders of each cut and each beat, then three fresh
+  blind readers (a creative director, a motion designer, a customer). Ship at 8.5.
+

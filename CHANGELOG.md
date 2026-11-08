@@ -1,6 +1,14 @@
 # Changelog
 
 ## Unreleased
+- design + video-edit: the spoken launch ad. New `ads.md` section 9 (one scene per spoken claim, the problem as an object,
+  a signed quote to prove a boast, the number built in step with the voice, and nine craft rules each taken from a blind
+  reviewer's note: visible motion, no hard zooms, ghost-then-fill numbers, one caption baseline and plate, offer
+  margins, badge placement). New `tools/scene_frames.mjs` renders a page with `render(t)` plus a cue file to exact
+  frames and an mp4. New `video-edit/tools/vo_bestof.py` builds one VO from the best take of each line with word times
+  for captions (selftest in CI; reproduced the real launch-ad cut to the millisecond). `pages.md`: a price calculator
+  that shows the discounted deposit, shared plan terms said once, gallery reveals after decode, and tap-to-copy contact
+  with no app hand-off. Over three blind rounds the ad went from about 7.2 to 7.6-8.4 and the site from 7.8 to 8.0.
 - design: ads that pass every meter can still "feel AI". New `ads.md` section 8 (build the poster as a physical sheet,
   cut the client's assets from their old piece, break symmetry, one light and a lifted corner, handwriting that never
   repeats a glyph, pressed stamps, the stranger "which parts look AI" read) and a sample-watermark rule: owner name

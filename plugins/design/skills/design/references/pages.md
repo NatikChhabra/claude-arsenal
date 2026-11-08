@@ -152,7 +152,7 @@ Hero compositions that work (pick by subject):
 - A scene is a tall section whose stage holds still while the page scrolls: stage `position: sticky; top: 0; height: 100svh`; section height = (hold + 1) screens; a timeline is scrubbed 0→1 by that scroll. Sticky beats JS pinning when nothing transforms.
 - Count, length and pacing: motion.md §8 (2-3 scenes, 1-3 screens each, ≤60% of the page). Pick scenes from different families, each on the section of the argument it can carry. ~1 screen per story beat with a line of text on every held screen; a hold with nothing new is cut, not padded.
 - Words: a held statement is 4-12 words, captions 1-4 words, one statement on screen at a time, readable whole at every rest point. Nothing passes over text while it is being read.
-- Pictures: one family, decoded before they move. The scene must say something about the subject (the real route, the four rooms, the product changing state). Unrelated pictures make it a gimmick. Too few real pictures means a different scene, never stand-ins.
+- Pictures: one family, decoded before they move (gallery reveals: start loading one screen ahead, add the reveal class only after `img.decode()`, or a lazy image wipes in blank). The scene must say something about the subject (the real route, the four rooms, the product changing state). Unrelated pictures make it a gimmick. Too few real pictures means a different scene, never stand-ins.
 - Native scroll only: no wheel capture, no scroll locking, no click-to-advance scenes.
 - Counts, when needed, are plain ("2 of 4"). No hairline progress bars, no "01/08".
 - A scene on the first screen is fully readable at progress 0 and starts moving only when the visitor scrolls.
@@ -202,6 +202,18 @@ Signature moves, picked by subject (one per page):
 - Put the 2-3 objections that block purchase (cancellation, refunds, data ownership, trial terms) directly under the plans.
 - Missing prices and missing checkout: copy.md §5 (`[YOUR PRICE]`, real destination or flagged stub, never a fake payment form).
 - Sign-up and contact forms ask only what the next step needs (a newsletter is one email field), labels above fields, a real `action`; on success the form is replaced in place by what happens next and when.
+
+- A price calculator: ticking a row adds it; totals count up once (~400 ms, none under reduced motion); every money
+  line a buyer will be told on the phone is in the total block (total, deposit, and the deposit after any launch
+  discount), worked the same way as the quotes the business sends. A sticky total bar shows while the table is in
+  view and the total block is not.
+- Say shared terms once under the plans ("On both: ...") and let each plan list only what is its own.
+
+### Contact without leaving the page (in-game and roleplay businesses)
+When the visitor can't dial from the browser (a game phone, a roleplay number), the number is a `<button>` that copies
+it: `navigator.clipboard.writeText` in a secure context, a hidden-textarea `execCommand('copy')` fallback, and an
+on-page `role=status` note ("Copied 834-...: paste it in your phone"). No `tel:`, `mailto:` or links that open another
+app. The same button sits in the sticky header, the hero and the footer, each at least 44 px tall on a phone.
 
 ## 13. FAQ
 
