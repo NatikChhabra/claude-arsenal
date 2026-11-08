@@ -17,10 +17,13 @@ answer back ("give me one guitar"), and his budget dropped sharply once he saw f
 first reply, one pick at the end.
 
 ## 1. Ask once (one message of short questions; a second round only if he asks for it)
-- Where and how he buys (country, online or a shop he can visit).
+- Where and how he buys (country, online or a shop he can visit, and whether everything must come from one store: one
+  cart can rule out the cheapest item elsewhere).
 - The hard cap for EVERYTHING (instrument, amp or interface, cable). Ask "hard limit or stretch?".
 - What he already owns and loves (keep it, build around it, never sell him a duplicate).
-- Room, headphones or both. That decides practice amp versus a USB interface into his DAW.
+- Room, headphones or both, and will he play for people. That decides a practice amp, a USB interface into his DAW,
+  or both. When he wants both, an amp with USB audio built in (Fender Mustang LT25, Boss Katana Gen 3) is one box
+  instead of two.
 - Feel: body size, weight, neck. Ask about looks only if he has said looks matter.
 - Do NOT ask what music he listens to when a library is reachable: read it (step 2). DO ask what he plays or wants to
   play on the instrument: what he plays is not what he listens to. In the first real session the library was all
