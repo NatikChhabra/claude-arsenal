@@ -21,9 +21,15 @@ Claude scores the rows it can check and reports the listeners' words verbatim. N
 | Master | `python ${CLAUDE_SKILL_DIR}/../../tools/loudness.py <master.wav> --target <target>` | PASS |
 | Encoded master | the same on the AAC/MP3 a platform makes (mix-master §4) | true peak under the ceiling |
 | Phone-speaker vocal | `loudness.py <mix> --vocal <lead> --inst <instrumental>` | buried <= 10% of sung windows |
+| Arrangement built | every layer in produce-arrange's energy map is in the bounce; per-section RMS of the master: each chorus 2+ dB over its verse, the last chorus the loudest section, the bridge or breakdown 3+ dB under the chorus | all true |
+| Clicks | scan the master and each stem for single-sample jumps over 12x the local median (edit and slice edges need 3-5 ms fades) | none left unexplained |
 | Credits and rights | `songs/<slug>/CREDITS.md` complete; release intent matches every tool's plan | complete |
 | Video cuts | `beatmap.py cuts <map.json> <edl> --fps <fps>` | >= 90% on grid outside marked cuts |
 | Video QC | design references/edit.md §7 table (flashes, loudness, black/frozen, sync, identity) | all pass |
+
+Gates say a file is technically clean, never that the song is good. On 8 Nov 2026 a demo passed every gate above
+and the owner rated it -1: "missing everything" (it was one stitched guitar and a thump). Nothing goes to the owner as a
+song until the arrangement gate passes; a draft sent earlier is labelled a draft, with what is still missing.
 
 ## 2. Scored rows (1-10; 8.5 = meets the reference song or a pro release in its genre)
 Score each with one sentence of evidence (a measurement, a listener's quote with its time, a frame). No evidence = no
