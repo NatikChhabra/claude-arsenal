@@ -1,6 +1,11 @@
 # Changelog
 
 ## Unreleased
+- music-studio: `gear-pick` lessons from finishing the same purchase: ask whether he wants preset saving and app
+  control (it beat a cheaper amp with the same USB recording), name the computer cable (micro-B vs USB-C, in the box
+  or not), add a "how it connects" line because a beginner thought the amp's line-in jack sends the guitar to the PC
+  (and call the 1/4" cable "the guitar cable", since "1/4 inch" alone read as an adapter to buy), spend the shared
+  hourly web-fetch budget on finalists only, and Bajaao's "Used Gear" links are a separate used marketplace.
 - advocate: new `cell-rep` skill (beta). Built while a public defender was live in a station: speed rules first (one short
   reply in under a minute, at most one question, trust what the user sees in game over a wiki that missed a real station),
   the in-cell card (intro, what to get, element and stacking checks, bail and plea options, the court's own clocks,
