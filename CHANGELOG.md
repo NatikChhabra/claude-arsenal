@@ -1,6 +1,14 @@
 # Changelog
 
 ## Unreleased
+- music-studio: new `gear-pick` skill (beta) for buying an instrument or gear setup: questions once, his real
+  listening history instead of a typed song list, the whole-setup budget (an electric needs an amp or an ASIO interface
+  plus a cable), prices read on product pages (store search cards show stale prices), and one pick, never tiers. New
+  `tools/listening_taste.py` reads the songs he plays from a Feishin player cache (play-queue JSON plus the Snappy and
+  V8 query cache; LevelDB .log records rejoined across blocks and .ldb tables decoded, so the queue survives a
+  compaction; Latin-1 and UTF-16 strings read as stored; stdlib only, selftest in CI). On a real cache it listed 54
+  songs with play counts. Registry: Guitar Rig 7 Player (TRIAL). From a real purchase where two tiered answers were
+  sent back with "give me one guitar", and where a strap and cable added at the end flipped the pick.
 - research: `author-ownership` gains a one-sitting version (Introduction, Limitations, Conclusion and contribution
   statement, three questions each), "fix the reason, keep the point" with numbers read from result files, and a rule
   never to write an author's overclaimed contribution: check it against the git history, the paper's disclosure and

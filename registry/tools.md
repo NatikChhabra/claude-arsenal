@@ -36,6 +36,7 @@ Facts and sources: research/03_vocal_tools.md (vocals), research/04_production_a
 | Matchering 2.0 | reference-matched mastering (3rd of 12 in a 472-entry blind test) | GPL-3.0 | CPU | TRIAL (starting point only) | 2026-12-01 | github.com/sergree/matchering |
 | Neural Amp Modeler | amp/cab captures | MIT | Windows plugin | TRIAL | 2026-12-01 | github.com/sdatkinson/neural-amp-modeler |
 | TONE3000 plugin | free amp sim loading 700,000+ NAM captures and IRs (1 Sep 2026) | free, open source (licence not named) | Windows | TRIAL | 2026-12-01 | tone3000.com |
+| Guitar Rig 7 Player | free amp sim with 2 amps, chorus/flanger, delay and reverb in one plugin; the quickest clean indie tone for a beginner in his DAW (gear-pick) | free, Native Instruments account | Windows VST3/AAX, standalone | TRIAL | 2027-01-08 | native-instruments.com/products/guitar-rig-7-player |
 | EVER (Extended Video Export Revived) | high-quality GTA video export | unknown | GTA/FiveM | WATCH (anti-cheat risk unknown; never on a live server without staff OK) | 2027-01-01 | research/04 §7 |
 
 ## Distribution
