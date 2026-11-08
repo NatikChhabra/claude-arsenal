@@ -42,6 +42,10 @@ carries something only this character has, pick it, and log why. When the owner 
 direction is open, show all three (text only, one line of why each) and let him pick or combine.
 
 ## 4. Lyrics
+0. **When he brings his own words (a personal song), they are the song.** Start from his sentences in his order; fix
+   spelling and grammar only. No rhymes he didn't write, no images he didn't give, no new lines: a gap gets filled by
+   asking him for a real memory and using his answer's words. A polished rewrite of a personal lyric reads as AI to
+   him (8 Nov 2026: a rhymed, restructured version with invented details was called "AI af"; his raw words were not).
 1. Verses from the inventory: at least two items per verse; one image per line; no line that fits any song.
 2. Prosody pass (references §2): speak every line over a click at tempo; stressed syllables on strong beats.
 3. Matching lines match: syllable counts and stress patterns line up across verses and repeated sections (§3).
