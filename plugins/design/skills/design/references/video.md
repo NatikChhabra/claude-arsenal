@@ -1,6 +1,6 @@
 # Video packaging: thumbnails, titles, covers, on-video text, composites, blind reads
 
-Use when: making or reviewing a YouTube thumbnail, a title + thumbnail pair, a Shorts or Reels cover, any 9:16 frame, text burned into video, a photo composite or cut-out, or when measuring whether packaging works. Edit feel, motion, camera, sound, captions-as-words, film look, QC and video slop tells live in `edit.md`.
+Use when: making or reviewing a YouTube thumbnail, a title + thumbnail pair, a Shorts or Reels cover, a single or album cover (§7), any 9:16 frame, text burned into video, a photo composite or cut-out, or when measuring whether packaging works. Edit feel, motion, camera, sound, captions-as-words, film look, QC and video slop tells live in `edit.md`.
 
 Scope and overrides. These rules are for fixed video canvases (1280x720, 1080x1920, 1920x1080 frames), not web pages. Where they differ from the web references, the video rule wins on video:
 - Text over footage and thumbnails takes a hard ink outline and a hard offset shadow (§4). The web bans on `text-shadow`, stroked display text and drop shadows (SKILL.md Surfaces, tells.md Glow) do not apply to video text.
@@ -347,3 +347,76 @@ Score 0-10. Ship = every row except U4 >= 7 AND the mean of the 11 >= 8.5. A bli
 3. Two independent coders per feature; report agreement (84-99% here).
 4. Per feature: winners' share minus flops' share, averaged over channels, with a 90% bootstrap CI. Bold only what clears zero.
 5. State the limits: topic rides with the card, the crawl's search bias, AI coders. Winner-vs-winner across channels gives hints, not causes.
+
+## 7. Single and album covers (streaming)
+
+Learned on a guitar-only instrumental (Nov 2026). Two drawn covers both scored 5/10 with fresh blind readers, and the
+readers' fixes agreed. The rules below come from that.
+
+### 7.1 File and store rules
+- 3000x3000 square, RGB, JPG or PNG, sharp at full size. No URLs, social handles, prices, store or streaming logos,
+  "out now" or "new single". Any words on the cover match the release metadata exactly: title and artist as typed in
+  the distributor, nothing else ([BandLab](https://help.bandlab.com/hc/en-us/articles/60748835760793-Distribution-Issues-and-Release-Rejections),
+  [Interspace](https://help.interspacemusic.com/article/artwork-requirements-size-format-content) list these as rejection reasons).
+- One file serves Spotify, Apple Music and the YouTube Music art track. A YouTube video thumbnail is a separate
+  1280x720 card (§1), never the square cover letterboxed.
+- No explainer text: no genre tags, no "instrumental", no BPM, no credits.
+- `still_check.py --as cover`: 0 FAIL at 64 px (playlist row) and 180 px (grid).
+
+### 7.2 What a cover is built from
+- Work in this order. **A real photo of the artist's own thing** (their instrument, hands, room, street, in one real
+  light) beats **a hand-made mark scanned in** (real riso, pencil, collage, paint), which beats anything drawn in code.
+- Ask for the photo on day one, with a shot list a phone can do in five minutes: the subject, where the light comes
+  from, the distance, one detail only they have (a pickup they fitted, a capo position, a worn spot), and one take
+  with motion in it. A ringing string shot on a phone draws its own wave through rolling shutter, so the "sound made
+  visible" idea is captured, not drawn.
+- Code-drawn covers failed both ways. A photoreal render (procedural wood, perfect rings, a vector sine on a
+  string) read as "a 3D render or a generated image with an overlay". A flat screen-print look (three inks, even
+  grain, a decorative diagonal band) read as "stock illustration", "a vintage noise filter" and "the stock warm-retro
+  palette". Even grain at one strength over every surface is a filter tell. Real ink and real grain vary by area.
+- **The music-as-a-waveform idea is the first thing any template makes.** A song's real shape (`tools/song_shape.py`)
+  is honest data, but drawn as a clean sine it still reads as cliché. Use the shape only where the picture is real
+  (it picks the frame, it drives a Canvas loop, it sets a crop) or where it is not literally a wave.
+- A cliché subject needs a twist only this artist has. A soundhole close-up is "one of the most-used acoustic
+  covers", and his own guitar, light and detail are what turn it into his cover.
+- Never AI imagery on a release whose credits say "No Gen AI", even where a blind reader could not tell.
+
+### 7.3 Type
+- Title type is designed with the picture, not dropped in a corner. Readers flagged "default sans, top left, two
+  lines, no artist" twice. Either set it so it touches the image (it sits in the light, behind a string, on the
+  surface), or leave it off. Most streaming covers carry no words at all.
+- When a title is used it reads at 180 px. Cream type with a cap height near 5% of the canvas, on tan, did not. Heavy type with a cap height near 10% did.
+
+### 7.4 Review
+- Fresh readers get only the cover and a 64/180 px strip, with the prompt in §6.1 adapted: "what do you see and what
+  music do you expect; first look and feel; point at anything AI, filter or template-like; does it read at 64 px;
+  score next to real covers in its genre, and the one change". Ship at 8.5. Two readers naming the same fix is the fix.
+
+### 7.5 A cover from the artist's game character
+Learned on the same single when the owner asked for his roleplay character as the cover. Blind scores went 5, 6.5,
+then up as each fix below landed.
+- **Use a whole scene, not a cut-out.** A cut-out pasted onto a backdrop from another screenshot was dropped at
+  self-review: the scale, light and ground contact did not match. A seated screenshot that already held a story (him
+  in one armchair, the second chair empty, a lamp, blinds) beat it. Ask for 3-6 screenshots: the character in a
+  place, the place empty, and the weather or city mood.
+- **Crop to the subject and the light.** A tight crop of the face plus the light source read at 64 px. The full room
+  read as "a picture of a lamp".
+- **Make the practical light work.** Readers said "the lamp is the brightest thing in the frame but lights
+  nothing". Fix it in this order: mask the shade and make it glow with a gradient (never a clipped flat bar), add
+  bloom, then a warm spill with soft falloff on the wall and chair, and a key on the side of the face that turns
+  toward it. Add a faint cool rim from the window on the back of the head and shoulder so a dark suit holds against
+  a dark chair.
+- **Swap a weak exterior.** A low-poly street seen through the window was replaced with the artist's own rainy-city
+  screenshot. Luminance-key it through the gaps in the blinds, replace clear panes fully, keep the frames, and hold
+  out the person with a soft matte (`rembg`, isnet). Grade the view to one dusk tone. A brighter, overcast pane
+  under darker blind gaps read as "two pasted photos". Rain on the glass is a few drips plus sparse beads with a
+  light core and a dark rim. Dense white dots read as snow.
+- **Edges.** Sharpen gently after an upscale (radius about 1 px at 3000, low amount). A strong unsharp mask drew a
+  hard dark halo round the hair that read as a cut-out. Use the matte's soft alpha at the hair, never a dilated
+  hard edge, which kept a bright rim of the old view.
+- **Skin under a warm key** goes orange fast. Take global saturation down about 14% after the contrast curve.
+- **Type** with more weight and character (an italic display serif at 600, cream on the dark empty chair) replaced
+  a thin default italic that readers called "picked from a menu".
+- **Tell the blind reader it is game-world art on purpose.** Without that line, readers mark it down for "waxy
+  game-render skin" and score the medium, not the cover.
+
