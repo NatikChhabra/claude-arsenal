@@ -30,8 +30,11 @@ asked: "ask me more questions rather than guessing".
   thumb on every beat with a pinch on 1 and a hammer-on inside each chord; palm-muted builds; chucks on 2 and 4;
   one bar of dead silence before the last chorus; a thumb slap (kick) plus chuck (snare) groove for the last chorus.
   For an ending that lifts, finish on the relative major (from Em-shape home to the G shape), not the home minor chord.
+- Write every move as real 6-line tab (thin string on top, frets from the capo, counts under each bar, h/p, x for a
+  chuck, <12> for a harmonic, T/i/m/r for fingers), not as named moves with a symbol key: he could not follow
+  "TUNE / BELL / PICK / MUTE / STOP" boxes and asked for tabs. Check each tab note against the chord under it.
 - Deliver ONE sheet, never several: chord diagrams with finger numbers (mark the bass string and the hammer finger),
-  a key of moves with a tick box each, in the order they come, then the song top to bottom (one row per section,
+  the tab of each move with a tick box, in the order they come, then the song top to bottom (one row per section,
   one coloured box per bar, the move and a feel word), then a short record checklist (take names). Add a slower
   practice play-along (about 20 BPM under) next to the real one, both in one clean FINAL folder.
 
