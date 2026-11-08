@@ -62,7 +62,12 @@ witness. Built first for a defense second chair on a 20-count felony case (2026-
 - Plain language, no em dashes, English unless asked.
 
 ## Notes / sources
-- Deliver one typeset PDF of the whole pack too (cover with the first hard deadline, numbered sections, no meta notes); the owner reads it on the day.
+- **The deliverable is a short in-court playbook, not the research.** The owner rejected a 32-page pack as too much;
+  the 9-page version that worked has three parts: (1) the case on two pages (story, charges, the defense in one breath,
+  a "they say / you say" table), (2) the court script in trial order (cross per witness with pushback lines, the
+  acquittal ask, our case, closing beats, an "if this happens, do this" table), (3) objections as their own list
+  ("you hear / you say", "when they object to you"). Research, motions and law text stay as source files and feed
+  the script. No side notes inside the script. Action items (deadlines, conflicts) go in the chat reply, not the PDF.
 - Save the pack in a case folder: `00_Case_Brief`, `01_Procedure`, `02_Objections`, `03_Motions`, `04_Duties`,
   `05_Charges_and_Elements`, `source/` (case thread verbatim, law excerpts, prior cases, inventory).
 - Prior cases of the same client and the same judge's past rulings are useful, but check the ID number before relying on
