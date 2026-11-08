@@ -28,6 +28,16 @@ setup or questions is dead time. First used 2026-11-08 (a public defender called
   any footage or witnesses, injuries or force, priors, bail or probation status, and the client's own version in private.
 - **Check:** does every element fit; any duplicate or stacked counts; modifiers and their conditions; which charges
   allow no bail under this code (list them from the code, never from memory of another court).
+- **Plea-first.** Most cell-rep clients plead guilty or no contest at the station, and trials are rare (a bench trial
+  at most). The first live client said "forget it" and pleaded no contest mid-argument. So the advocate's main job is
+  the best deal before the plea, in this order: strike charges that don't fit their elements or stack illegally, then
+  remove modifiers whose conditions aren't met (name the condition the officer skipped), then ask for discretionary
+  modifiers to be dropped, then ask for lower months and fines with reasons. Read back the final totals, and only then
+  does the client plead. Suggest a trial only for a strong defence, and say what it costs.
+- **Quote, don't paraphrase.** When an officer or prosecutor reads a statute aloud, they often stop before the
+  condition that helps the defence (a location rule read without the victim-status condition that follows it). Keep
+  the full statute text in the helper, and answer with the exact words they skipped. Paraphrased answers get "you're
+  saying the wrong thing" from the other side.
 - **Options:** guilty goes straight to sentencing (argue low end: first offence, remorse, cooperation). Not guilty
   means bail is decided (the benchmark is often the maximum fine). Deals stay open until trial. **Never let the client waive
   the right to appeal the sentence.** The client decides the plea, and the advocate lays out the options.
