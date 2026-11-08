@@ -36,13 +36,21 @@ witness. Built first for a defense second chair on a 20-count felony case (2026-
 5. **Weak points per charge.** For each element: which fact proves it, who says so, and what's missing. Count named
    victims against the number of counts, and ask for particulars when they don't match. Check forensic results
    (GSR, casings) against each count.
-6. **Evidence and discovery.** One row per exhibit: what it shows, the issue for us (foundation, hearsay, search,
+6. **Evidence and discovery.** Use the court's own definitions, not real-world ones (one court defined hearsay
+   only as what the witness didn't personally perceive, so a radio call the officer heard himself was a foundation
+   fight, not hearsay). One row per exhibit: what it shows, the issue for us (foundation, hearsay, search,
    recording consent, prior bad acts, earlier pleas), and a short list of discovery requests to file now.
 7. **Theory.** One main theory in a sentence, two fallbacks (narrow the case, plea), and any affirmative defense with
    its posting deadline. Plea calls belong to lead counsel and the client: say so.
 8. **Cross banks.** Per witness, short leading questions with one fact each, built from their own statement.
    Add the objections to have ready, and the affidavit-versus-live-witness problem if the other side plans affidavits.
-9. **Role duties.** What this chair does today, at the pre-trial conference and in court (exhibit log, a tracker with one
+9. **Speeches.** Check the trial form before writing an opening: many courts' bench trials have no opening
+   statements, so the opening becomes talking points for the pre-trial conference and the start of the closing.
+   Write spoken lines (short, names, exhibit numbers), check every number in them against the case file, and put
+   delivery notes under them.
+10. **Conflicts and benchmarks.** Look up co-defendants' cases: who represented them (a lead who defended a
+   co-defendant on the same incident is a conflict to raise first), and what sentence they got (the plea benchmark).
+11. **Role duties.** What this chair does today, at the pre-trial conference and in court (exhibit log, a tracker with one
    row per count, objections, notes to lead).
 
 ## Review before delivery
@@ -54,6 +62,7 @@ witness. Built first for a defense second chair on a 20-count felony case (2026-
 - Plain language, no em dashes, English unless asked.
 
 ## Notes / sources
+- Deliver one typeset PDF of the whole pack too (cover with the first hard deadline, numbered sections, no meta notes); the owner reads it on the day.
 - Save the pack in a case folder: `00_Case_Brief`, `01_Procedure`, `02_Objections`, `03_Motions`, `04_Duties`,
   `05_Charges_and_Elements`, `source/` (case thread verbatim, law excerpts, prior cases, inventory).
 - Prior cases of the same client and the same judge's past rulings are useful, but check the ID number before relying on
