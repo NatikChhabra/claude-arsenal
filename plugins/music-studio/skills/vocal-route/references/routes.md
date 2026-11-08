@@ -53,6 +53,9 @@ INFERRED = secondary or our reasoning. Prices in USD as shown on 2 Nov 2026 (may
 
 ## Route D: rap or spoken delivery in his own voice
 No pitch needed. Rhythm, breath and diction carry it; record many takes and comp the best syllables.
+When a non-singer hates every sung take, offer this route as a choice, not a downgrade: on 8 Nov 2026 the owner rejected
+three sung demos and picked "talk it" from a 4-option card (talk it / practise 2 weeks / real singer / AI voice).
+Spoken verses with a half-sung hook keep it 100% his voice and suit low, rough voices and talk-sung references.
 
 ## Route F: his own natural voice (no conversion, no synth, no generator)
 For when he says the song must be him. A non-singer sounds honest, not bad, when the song is built for his voice

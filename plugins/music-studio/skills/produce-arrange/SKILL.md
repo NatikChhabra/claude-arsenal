@@ -34,6 +34,12 @@ Pick the 2-3 reference songs from SONG.md; note per reference: tempo, kick/snare
    unchanged. Licence of each piece into CREDITS.md.
 5. Save a new project version before each Claude-driven change; one change per step, listen, keep or revert.
 
+### Stopgap: a backing from loose takes
+When the only guitar audio is chord practice (not the song to a click), slice single strums by chord (chroma template
+match per onset), re-sequence them at a fixed BPM, and place each vocal line on the next half-bar so the backing follows
+his phrasing. It gets a demo out the same day, but say plainly that it is stitched: one played-through take to the
+click is the real fix and always the next ask.
+
 ## 4. Check
 - Play each section boundary: does the energy map's change happen and is it felt in the first second?
 - Mute test: mute the guitar; if the song still works the guitar isn't central enough for this artist. Mute the
