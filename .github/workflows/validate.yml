@@ -33,3 +33,4 @@ jobs:
           python plugins/music-studio/tools/beatmap.py --selftest
           python plugins/music-studio/tools/voice_range.py --selftest
           python plugins/music-studio/tools/vocal_comp.py --selftest
+          python plugins/music-studio/tools/guitar_level.py --selftest

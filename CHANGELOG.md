@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+- music-studio: guitar-capture §0, measure the player before writing his part. A guessed beginner part was called
+  "sub par"; asking 9 level questions and measuring a minute of songs he already plays fixed it. New
+  `tools/guitar_level.py` reads tuning (cents), clipping, notes per second, steadiness, picked vs strummed, range and
+  hesitations per stretch of playing (selftest in CI; on a real 73 s take it found a 30 s clean run at 5.2 notes/s and
+  a guitar 6-12 cents flat). §0 also lists moves that sound big on open shapes (harmonics, hammer-on tune, thumb on
+  every beat, chucks, a silent drop, slap + chuck groove), a relative-major ending for a lift, and the one-sheet format.
 - music-studio: a vocal route for an owner who wants his own real voice on the record. New Route F in
   vocal-route (melody written into his measured range, talk-sung verses, close dry recording, comp for feel, light
   pitch correction, doubles; a listener who hears tuning fails it like one who hears AI). New `tools/voice_range.py`

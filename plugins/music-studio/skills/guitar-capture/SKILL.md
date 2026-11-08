@@ -13,6 +13,28 @@ status: draft (full workflow; beat map tool tested; promote to beta after the fi
 Sources and licences: research/04_production_and_video.md §2. The guitar is his voice in every song: it stays audible
 and central.
 
+## 0. Level check, then one play sheet
+Write parts for the player he is, measured, not guessed. A first draft pitched by guesswork was called "sub par"; he
+asked: "ask me more questions rather than guessing".
+- Ask, a few words each: how long he has played; barre chords (can he switch to them in time?); thumb on the bass while
+  fingers pick on top (Travis style); harmonics; notes past fret 5; thumb slap and chuck; can he play 3 minutes without
+  stopping; pick or fingers; how long he will practise. Ask the feel too: what the ending should feel like and 1-2
+  reference songs.
+- Ask for about a minute of songs he already plays, then measure it:
+  `uv run --with librosa --with soundfile python ${CLAUDE_SKILL_DIR}/../../tools/guitar_level.py <take.wav>`
+  (tuning, clipping, notes per second, steadiness, picked vs strummed, range, hesitations, per stretch of playing).
+  Write the part at about 60-70% of his best clean notes/s. Tell him to tune if it reads more than 10 cents off and to
+  move the mic back if anything clipped.
+- Sound big with moves a 2-4 month player can do, on the chord shapes he already knows (no barre chords): natural
+  harmonics 12 frets above the capo for an intro; the hook as a single-string tune with hammer-ons and pull-offs;
+  thumb on every beat with a pinch on 1 and a hammer-on inside each chord; palm-muted builds; chucks on 2 and 4;
+  one bar of dead silence before the last chorus; a thumb slap (kick) plus chuck (snare) groove for the last chorus.
+  For an ending that lifts, finish on the relative major (from Em-shape home to the G shape), not the home minor chord.
+- Deliver ONE sheet, never several: chord diagrams with finger numbers (mark the bass string and the hammer finger),
+  a key of moves with a tick box each, in the order they come, then the song top to bottom (one row per section,
+  one coloured box per bar, the move and a feel word), then a short record checklist (take names). Add a slower
+  practice play-along (about 20 BPM under) next to the real one, both in one clean FINAL folder.
+
 ## 1. Record
 - DI through an audio interface, 48 kHz / 24-bit, peaks around -12 to -6 dBFS (room for transients). A phone memo is
   fine for an idea, never for the release take.
