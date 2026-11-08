@@ -40,6 +40,14 @@ Every long video can carry a watch-back VO; a VO film's VO carries every word (s
    live one.
 8. **Ground truth:** every line they changed or refused, plus what they said instead, goes into the ground-truth file.
 
+### Several full takes of a short script (ads, promos)
+When the speaker reads the whole script two or three times, pick the best take of each line from the transcript and a
+listen, then `python ${CLAUDE_PLUGIN_ROOT}/tools/vo_bestof.py spec.json`: it finds each line's real onset (quiet before
+it, so a breath or the last word of the line before is not cut in), shortens long inner pauses, matches loudness,
+places the lines with the gaps you set and writes `lines.json` with every word's placed time for captions. Transcribe
+the cut file again and compare word for word: a clipped first consonant shows as a changed word ("I'll" heard as "all").
+A take that runs on into an ad-lib gets `clamp_end` just before the extra word.
+
 ## 3. Then
 Radio cut first (VO + live lines + game sound, no music or SFX, one eyes-closed listen at 1x), then picture to it (skill
 `roughcut` 2c), then the rest of the edit and its gates.
