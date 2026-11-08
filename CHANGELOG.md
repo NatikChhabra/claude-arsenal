@@ -11,6 +11,20 @@
   A 25-case stress run plus 30 random takes then found and fixed an eighth-note slip on players 0.4% off tempo and
   a roll bar locking onto a later string, and added checks for click in the mic, missing or wrong parts, missed
   notes and a bar over 70 ms off. mix-master targets: ffmpeg AAC encode-check spikes on 44.1 kHz float input.
+- music-studio: `gear-pick` lessons from finishing the same purchase: ask whether he wants preset saving and app
+  control (it beat a cheaper amp with the same USB recording), name the computer cable (micro-B vs USB-C, in the box
+  or not), add a "how it connects" line because a beginner thought the amp's line-in jack sends the guitar to the PC
+  (and call the 1/4" cable "the guitar cable", since "1/4 inch" alone read as an adapter to buy), spend the shared
+  hourly web-fetch budget on finalists only, and Bajaao's "Used Gear" links are a separate used marketplace.
+- advocate: new `cell-rep` skill (beta). Built while a public defender was live in a station: speed rules first (one short
+  reply in under a minute, at most one question, trust what the user sees in game over a wiki that missed a real station),
+  the in-cell card (intro, what to get, element and stacking checks, bail and plea options, the court's own clocks,
+  AI-filing guard), and how to keep a live-answer helper permanently in cell-rep mode (saved cases labelled background,
+  since an "active case" label leaked one case's facts into unrelated reps; one-shortcut launch; restart only the helper).
+- advocate: `trial-prep` learns from the second round on the same case. The playbook is organised by job (how we win,
+  their points and our answers, one page per witness with that witness's objections beside our questions, the closing
+  as a full speech, exact words for each verdict), and a blind review runs before delivery (it caught a misstated
+  co-defendant sentence, leading questions on our own witness and closing lines that contradicted our own cross).
 - marketing-studio: `social-copy` gets a LinkedIn row (first two lines carry the result with a number, short
   paragraphs instead of emoji bullets, zero emoji, 3 hashtags at most). Learned when the owner rejected a launch post
   that read as AI because of emoji bullets and a "What I learned" list; the rewrite passed `copy_lint` and a blind read.

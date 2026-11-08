@@ -128,6 +128,7 @@ Each skill carries `status: draft` (outline, untested), `beta` (used on real wor
 | Skill | What it does |
 |---|---|
 | [trial-prep](plugins/advocate/skills/trial-prep/SKILL.md) | A court-ready prep pack for first or second chair from the case file and the court's own law, with an AI-filing ethics guard |
+| [cell-rep](plugins/advocate/skills/cell-rep/SKILL.md) | Fast live help for a client in custody: in-cell card, rights and charge checks, bail and plea, live-answer helper always in cell-rep mode |
 
 ## Hooks and scripts
 
