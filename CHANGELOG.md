@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+- music-studio: guitar-capture "record once" learns from the first real takes, which ignored the click (free tempo,
+  one file per part). The parts are re-played hit by hit from his own take, each note and strum placed on the grid,
+  with Rubber Band only for slices that end too soon. Also: strum boundaries, note substitution from other bars,
+  left/right doubles and a chuck percussion stem from his own hits, and how to fix a dark soundhole pickup (hiss
+  above 5 kHz, presence EQ, exciter, spline the clipped chucks). mix-master targets: the ffmpeg AAC spike also
+  appears on 48 kHz / 24-bit sources, at limiter flat tops.
 - music-studio: guitar-capture "record once, loop the rest" for a player who wants to play each part one time. New
   `tools/loop_assemble.py` (numpy + soundfile, selftest in CI) finds every part in one take recorded to a click track
   (shared offset for the whole take, then each part and each bar to the millisecond), places the bars on the song

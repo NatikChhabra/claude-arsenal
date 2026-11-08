@@ -78,6 +78,30 @@ asked: "ask me more questions rather than guessing".
     take). Resample to the exact pitch, low-pass the excitation, and add a body resonance.
   - Slice an ending from contiguous bars of one part (C, G, D straight through) so the ring is never cut mid-part.
     Set section loudness after mastering and correct it in a loop until each section is within 0.75 LU of its target.
+  - **When the takes don't follow the click** (first real use, 8 Nov 2026: one file per part, free tempo, the verse
+    at about 6 s a bar with long pauses, the bells and chugs faster than the click), `loop_assemble.py` can't lock on.
+    Don't stretch whole takes 2-6x and don't ask for a re-record he has ruled out. Re-play the part hit by hit from
+    his own take instead:
+    - Find each tab event in his take: onsets with a CQT "new energy" vector (after minus before), matched in order to
+      the tab's expected notes (sounding pitch = open string + capo + fret). Check every match by the new
+      pitches it adds, not by onset strength.
+    - Cut each hit from its attack (8 ms pre-roll) to his next real hit, and place it on the grid. Let it ring until the
+      same string is played again or the chord changes; later slices carry the ring of earlier strings, so let-ring
+      parts stay continuous. Only when his next hit came sooner than the grid needs, lengthen that one slice with
+      Rubber Band R3 (`rubberband -3 -t`, at most 2.5x). Palm-muted chugs never stretch: they just decay.
+    - For a strum, the next hit is the next strum, not the next string inside the roll: onset detectors fire on every
+      string, which cuts strums to 50 ms. List the strums by hand once, from a spectrogram.
+    - A wrong or missing note becomes the same note from another bar of his (same string and fret); a missing
+      thumb bass can come from the verse's thumb notes. Where he played a different chord than the tab (Em7 for
+      Cadd9, a finger on fret 2 not 3), keep his chord if it is consonant, and say so.
+    - Strum parts: render two different hit orders for a left/right double (wide, real). Render the chucks alone as
+      a percussion stem (thump around 95 Hz, crack around 3.2 kHz, first spike clipped about 7 dB).
+  - **Soundhole pickup takes** (magnetic, into the PC): band levels fell about 12 dB per octave above 300 Hz, and
+    everything above 5 kHz was hiss (signal-to-noise 2-6 dB there, 13-25 dB at 2.5-5 kHz). Low-pass at 5.2 kHz,
+    expand only the band above 1.5 kHz in quiet passages, boost 1.7 to 4 kHz (up to +12 dB), and make the air with
+    an exciter (saturate the 1.8-5 kHz band, keep only what lands above 5.2 kHz). Compare band levels with a
+    bright acoustic target until each band is within about 5 dB. The Windows input soft-clipped the loudest chucks
+    at about 0.98: spline them back before use.
 - DI through an audio interface, 48 kHz / 24-bit, peaks around -12 to -6 dBFS (room for transients). A phone memo is
   fine for an idea, never for the release take.
 - To a click at the SONG.md BPM whenever the part will be produced or the video cut to it. Free time only for a
