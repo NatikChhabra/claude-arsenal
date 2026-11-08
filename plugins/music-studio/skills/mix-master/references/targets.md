@@ -25,6 +25,9 @@ ffmpeg -hide_banner -nostats -i song.wav -af ebur128=peak=true:framelog=quiet -f
 - ffmpeg's built-in AAC encoder can put single-sample spikes (+2 to +5 dBTP) into a 44.1 kHz float WAV's encode that
   are not in the music (seen 8 Nov 2026 on a guitar master; the MP3 and Opus encodes were clean). Encode-check from
   48 kHz / 24-bit, and if one encode alone fails, look at the spike before lowering the ceiling.
+- It happens on 48 kHz / 24-bit sources too (seen 8 Nov 2026): wherever the limiter holds a flat top for 10 or
+  more samples, ffmpeg's AAC put a spike up to +1.3 dBTP. Lowering the ceiling from -2.6 to -3.5 made it worse,
+  while MP3 and Opus stayed clean (-2.8 and -1.9 dBTP). Treat that as an encoder glitch, not an over in the master.
 
 ## loudnorm (a trim, never the mastering limiter)
 - Two passes, linear mode only: pass 1 `loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json`, pass 2 with all four
