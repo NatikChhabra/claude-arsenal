@@ -19,6 +19,11 @@ and central.
 - To a click at the SONG.md BPM whenever the part will be produced or the video cut to it. Free time only for a
   rubato intro, marked as such.
 - Record 3+ full takes plus punch-ins per section; keep every raw file untouched in `songs/<slug>/guitar/raw/`.
+- Give him a play-along, not only a click: click, a soft low note on each chord's root (so he hears every change), a
+  bell at each new section, and his own vocal placed where it will sit. A bar chart (bars, chords, how hard to play)
+  goes with it. Ask for the parts a beginner can play: the whole song once through (twice), a riff of the hook tune on
+  2-3 strings with one finger, and body taps on the guitar (palm on the side = kick on 1 and 3, knuckles on the top =
+  snare on 2 and 4) so even the drums are his guitar. He asked for this himself: "it should feel my own".
 
 ## 2. Map it
 `uv run --with librosa --with soundfile python ${CLAUDE_SKILL_DIR}/../../tools/beatmap.py map <take.wav> --click <check.wav>`

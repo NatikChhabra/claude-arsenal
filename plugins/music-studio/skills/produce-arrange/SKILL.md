@@ -45,6 +45,24 @@ grid (no time-stretch). Keep his own tempo as the song tempo so nothing slows do
 offsets against a known-on-grid reference: librosa's onset times run about 25 ms late at hop 512, so judge the spread
 (IQR), not the median.
 
+A stitched backing is still held to the energy map: never send his guitar alone as "the song" (8 Nov 2026: "missing
+everything").
+
+### No DAW on hand: a band from CC0 sample libraries, played from code
+Real recorded instruments, release-safe, no generator: VSCO 2 Community Edition (Versilian Studios, CC0: upright bass
+pizz, cello and violin sections, upright piano, glockenspiel, tambourine, shaker) and Swirly Drums (Karoryfer, CC0: a
+brush kit with kick, snare, hats, ride, floor tom and brush stirs). Salamander Drumkit is CC-BY-SA: skip it for releases.
+GitHub zip downloads time out on his PC; shallow `git clone` works. Download into `<models-root>\arsenal\samples\`.
+- Check every sample's pitch with pYIN before using its name: VSCO strings are named an octave low (a file called C1
+  sounds C2) and its glockenspiel files sound an octave above their names.
+- Write parts note by note on a fixed bar grid (sections in 2- or 4-bar multiples, chord loop per section), nearest
+  sample pitch-shifted by resampling (3 semitones or less), velocity layers by dynamic, 5-8 ms timing and 6-8% velocity
+  humanising, round-robins rotated. Lines of a spoken or free-time vocal go on the grid by their natural gaps, each
+  start rounded to the nearest 8th; chorus lines start on 2-bar slots.
+- Mix checks that caught real problems: per-section RMS arc (see music-review gates), octave-band balance against the
+  1 kHz band (his low voice plus acoustic guitar ran 250 Hz +11 dB: cut 250 Hz on vocal, guitar, piano and cello),
+  and a click scan (slices cut at an onset need a 3-5 ms fade-in, not only a fade-out).
+
 ## 4. Check
 - Play each section boundary: does the energy map's change happen and is it felt in the first second?
 - Mute test: mute the guitar; if the song still works the guitar isn't central enough for this artist. Mute the

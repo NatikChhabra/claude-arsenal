@@ -12,6 +12,16 @@
   before processing. Route F steps 8-9: never tune a melody-less chant (it read as a robot), and build the hook as a
   short tune on his own title line, taught with a looped hook track first. Route D: offer "talk it" as a real choice to a non-singer. produce-arrange:
   the stitched-backing stopgap for loose takes, and why a played-through take is the next ask.
+- music-studio: a demo that passed every gate was rated -1 ("missing everything"), so gates now cover the arrangement.
+  music-review: an "Arrangement built" gate (every energy-map layer present; chorus 2+ dB over verse, last chorus
+  loudest, bridge 3+ dB under) and a click scan, plus the rule that gates never mean "good". New `tools/vocal_comp.py`
+  (no AI): `double` lines up another take of the same line with the lead (DTW + Praat PSOLA; onset correlation 0.2 ->
+  0.5-0.85 on a real untrained voice) and `nudge` moves only sustained notes toward the chord, capped at 1 semitone
+  (selftest in CI). vocal-route Route F steps 10-11: doubles and nudges from the takes already on disk, and a declined
+  AI voice stays declined. produce-arrange: a no-DAW band from CC0 sample libraries (VSCO 2 CE, Swirly Drums) with
+  pitch-label checks, grid placement of free-time vocal lines, and the low-mid and click fixes found in the mix.
+  guitar-capture: a play-along with his own voice in it, and beginner parts to ask for (play-through, one-finger riff,
+  body taps as the drums).
 - design + video-edit: the spoken launch ad. New `ads.md` section 9 (one scene per spoken claim, the problem as an object,
   a signed quote to prove a boast, the number built in step with the voice, and nine craft rules each taken from a blind
   reviewer's note: visible motion, no hard zooms, ghost-then-fill numbers, one caption baseline and plate, offer

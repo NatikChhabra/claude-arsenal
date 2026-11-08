@@ -84,6 +84,15 @@ instead of the other way round. This is the "No Gen AI" path on every platform (
 9. **The hook is a melody, not a sentence.** A long philosophical chorus line is not catchy. Repeat his own title line
    as the hook over a 4-bar tune inside his range (5-6 semitones is enough), and teach it with a looped hook track
    before any full vocal take.
+10. **No DAW? Do steps 5 and 6 in code from the takes he already has** (`tools/vocal_comp.py`, no AI): `double` lines up
+   another take of the same line with the lead syllable by syllable (DTW + Praat PSOLA; keep doubles that score 0.3+,
+   two of them about 60% left and right, 7-8 dB under), and `nudge` moves only sustained chorus notes 0.3+ semitone off
+   the chord, by at most 1 semitone, keeping his slides. Every chorus repeats its lyric, so one full take already holds
+   2-6 candidate doubles per hook line. Use what is on disk before asking for new takes; the owner asked for exactly
+   that ("do everything with my voice first").
+11. **"No AI" on the voice stays declined.** If he turns down voice conversion once, even of his own voice ("it won't be
+   my own"), do not put it on a later decision card; make the real voice work (doubles, writing into the voice, a band
+   that carries the melody).
 
 ## Route E: a real singer
 An RP community singer or a hired session vocalist with the guide and lyric sheet. Credit them, get written consent for

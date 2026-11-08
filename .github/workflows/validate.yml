@@ -25,10 +25,11 @@ jobs:
         env:
           STILL_CHECK_DEPS: "1"
         run: |
-          python -m pip install -q pillow numpy scipy rapidocr-onnxruntime librosa soundfile
+          python -m pip install -q pillow numpy scipy rapidocr-onnxruntime librosa soundfile praat-parselmouth
           python plugins/design/skills/design/tools/still_check.py --selftest
           python plugins/design/skills/design/tools/paper_kit.py --selftest
           python plugins/video-edit/tools/watch.py --selftest
           python plugins/video-edit/tools/vo_bestof.py --selftest
           python plugins/music-studio/tools/beatmap.py --selftest
           python plugins/music-studio/tools/voice_range.py --selftest
+          python plugins/music-studio/tools/vocal_comp.py --selftest
