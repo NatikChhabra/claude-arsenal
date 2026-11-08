@@ -1,6 +1,13 @@
 # Changelog
 
 ## Unreleased
+- design: new `video.md` §7 on single and album covers, learned on a guitar-only instrumental where two code-drawn
+  covers (a photoreal render and a three-ink screen-print look) both scored 5/10 with fresh blind readers. It covers
+  the store rules (3000x3000, words match metadata, no handles or logos), why a real photo of the artist's own thing
+  beats a scanned hand-made mark and both beat code, a five-minute phone shot list (a ringing string draws its own
+  wave through rolling shutter), the waveform cliché, title type that reads at 180 px, and the blind prompt. New
+  `tools/song_shape.py` (numpy + ffmpeg, selftest in CI) writes a track's loudness shape and inner silences as JSON,
+  with the silences held flat and eased so a drawn line never zig-zags at a drop bar.
 - music-studio: guitar-capture "record once" learns from the first real takes, which ignored the click (free tempo,
   one file per part). The parts are re-played hit by hit from his own take, each note and strum placed on the grid,
   with Rubber Band only for slices that end too soon. Also: strum boundaries, note substitution from other bars,
