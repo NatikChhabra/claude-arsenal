@@ -1,6 +1,11 @@
 # Changelog
 
 ## Unreleased
+- research: `author-ownership` gains a one-sitting version (Introduction, Limitations, Conclusion and contribution
+  statement, three questions each), "fix the reason, keep the point" with numbers read from result files, and a rule
+  never to write an author's overclaimed contribution: check it against the git history, the paper's disclosure and
+  what venues were told. From a real session where the author's first answer overclaimed and three venues already
+  knew the AI's role.
 - design + video-edit: the spoken launch ad. New `ads.md` section 9 (one scene per spoken claim, the problem as an object,
   a signed quote to prove a boast, the number built in step with the voice, and nine craft rules each taken from a blind
   reviewer's note: visible motion, no hard zooms, ghost-then-fill numbers, one caption baseline and plate, offer
