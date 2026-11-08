@@ -14,6 +14,10 @@ Targets, commands and sources: [references/targets.md](references/targets.md). V
 voice, film loudness) live in the design skill, references/edit.md §4 and §7: this skill owns the song itself.
 
 ## 1. Prepare
+- Check every raw take first: a mono mic on a stereo input often leaves one channel silent (a home take on 8 Nov 2026
+  had its right channel 45 dB down). Fold such a take to mono from the live channel before any processing, or the
+  part plays from one side only. Also check peak level per take: a take whose peaks sit near -24 dBFS needs more input
+  gain next time, not more makeup gain now (the noise comes up with it).
 - Import every stem at unity, same start. Name tracks by part. Session notes start `songs/<slug>/MIX.md`.
 - Pick 1-2 reference tracks from SONG.md; level-match them to the mix before every comparison (louder always sounds
   better to the ear, so unmatched A/B is meaningless).
