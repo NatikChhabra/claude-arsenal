@@ -8,6 +8,9 @@
   chorus, and fails on a weak match, more than 0.5% drift from the click, clipping or a quiet take. First use: 7
   four-bar parts (28 bars played) built a 77-bar song; tested before recording on a plucked-string render of the
   record track with human timing (every bar within 18 ms of the grid, no gaps at loop joins, the drop bar silent).
+  A 25-case stress run plus 30 random takes then found and fixed an eighth-note slip on players 0.4% off tempo and
+  a roll bar locking onto a later string, and added checks for click in the mic, missing or wrong parts, missed
+  notes and a bar over 70 ms off. mix-master targets: ffmpeg AAC encode-check spikes on 44.1 kHz float input.
 - marketing-studio: `social-copy` gets a LinkedIn row (first two lines carry the result with a number, short
   paragraphs instead of emoji bullets, zero emoji, 3 hashtags at most). Learned when the owner rejected a launch post
   that read as AI because of emoji bullets and a "What I learned" list; the rewrite passed `copy_lint` and a blind read.
