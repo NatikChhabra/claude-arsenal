@@ -18,6 +18,8 @@ Comfortable range:
                  highest note 1-2 semitones under the top of the comfortable range (vocal-route §2), and the capo
                  (shift up 1-7), or for a shift down of 1-5 the open shapes a fourth lower with a capo (Am at capo 0 = Em
                  shapes at capo 5, so down 3 = Em shapes at capo 2): one shape set covers every key from E to A.
+A sung take narrower than 5 semitones (talk-singing, one note) is not fitted: it tells where the voice sits, not
+                 how far it reaches.
 Read-only on the input. Exit 0, or 1 on a failed selftest.
 """
 import json, math, sys
@@ -97,7 +99,11 @@ def report(m, mode, melody):
         f"clipping: {m['clipping_share']:.3%} of samples at full scale"
         + ("  FIX: lower the input gain and re-record" if m["clipping_share"] > 0.0001 else "  OK"),
     ]
-    if melody:
+    if melody and hi_c - lo_c < 5:
+        lines.append(f"melody {melody[0]}-{melody[1]}: not fitted. The take spans under 5 semitones (a talk-sung or "
+                     f"one-note take): it shows where the voice SITS, not its range. Put the key's root or third on "
+                     f"{midi_to_name(m['median'])}, or record a slow scale up and down and measure that.")
+    elif melody:
         f = fit(lo_c, hi_c, name_to_midi(melody[0]), name_to_midi(melody[1]))
         lines.append(f"melody {melody[0]}-{melody[1]}: shift {f['shift']:+d} -> {f['melody_after'][0]}-"
                      f"{f['melody_after'][1]}; guitar: {f['guitar']}"
@@ -144,7 +150,7 @@ def main(argv):
         if "error" not in m:
             lo_c, hi_c = comfortable(m, mode)
             out["comfortable"] = [midi_to_name(lo_c), midi_to_name(hi_c)]
-            if melody:
+            if melody and hi_c - lo_c >= 5:
                 out["fit"] = fit(lo_c, hi_c, name_to_midi(melody[0]), name_to_midi(melody[1]))
         print(json.dumps(out, indent=2))
     else:
