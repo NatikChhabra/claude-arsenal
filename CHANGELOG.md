@@ -4,8 +4,15 @@
 - music-studio: `gear-pick` lessons from finishing the same purchase: ask whether he wants preset saving and app
   control (it beat a cheaper amp with the same USB recording), name the computer cable (micro-B vs USB-C, in the box
   or not), add a "how it connects" line because a beginner thought the amp's line-in jack sends the guitar to the PC
-  (and calls the 1/4" cable "the guitar cable", since "1/4 inch" alone read as an adapter to buy), spend the shared hourly web-fetch budget on finalists only, and Bajaao's "Used Gear" links are a separate used
-  marketplace.
+  (and call the 1/4" cable "the guitar cable", since "1/4 inch" alone read as an adapter to buy), spend the shared
+  hourly web-fetch budget on finalists only, and Bajaao's "Used Gear" links are a separate used marketplace.
+- advocate: `trial-prep` learns from the second round on the same case. The playbook is organised by job (how we win,
+  their points and our answers, one page per witness with that witness's objections beside our questions, the closing
+  as a full speech, exact words for each verdict), and a blind review runs before delivery (it caught a misstated
+  co-defendant sentence, leading questions on our own witness and closing lines that contradicted our own cross).
+- marketing-studio: `social-copy` gets a LinkedIn row (first two lines carry the result with a number, short
+  paragraphs instead of emoji bullets, zero emoji, 3 hashtags at most). Learned when the owner rejected a launch post
+  that read as AI because of emoji bullets and a "What I learned" list; the rewrite passed `copy_lint` and a blind read.
 - design: new "Spreadsheets, ledgers and record books" section in `apps.md` (blank-safe running balance, money at the
   right edge, frozen header block with totals, brand at ~3%, dropdowns and amber mistake flags, SUMIF links between
   tabs, Google Sheets "Replace spreadsheet" import that keeps the share link). Learned rebuilding a business

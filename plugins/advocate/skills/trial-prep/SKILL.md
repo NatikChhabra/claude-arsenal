@@ -60,6 +60,13 @@ witness. Built first for a defense second chair on a 20-count felony case (2026-
 - **Ethics guard:** many bar codes ban AI-written filings or docket posts. The pack is preparation only. Never draft the
   actual filing text; give structure and points, and tell the user to write it themselves.
 - Plain language, no em dashes, English unless asked.
+- **Blind review before delivery.** Give the PDF and the source files to a reviewer with no build context and ask what
+  a nervous reader would miss, what is wrong against the sources, and what could backfire if said in court. On the
+  first real run it caught: a co-defendant sentence stated as "time served" when it was 2,050 months served as time
+  served (it sank the comparison); leading questions scripted for our own witness; closing lines that contradicted our
+  own cross; questions whose answers we did not know. Fix, re-render, review again until nothing must-fix remains.
+- Every cross question is closed (yes or no) and its answer is known from the file; a question that depends on an
+  exhibit says so in brackets. Questions for our own witness are open.
 
 ## Notes / sources
 - **The deliverable is a short in-court playbook, not the research.** The owner rejected a 32-page pack as too much;
@@ -68,6 +75,14 @@ witness. Built first for a defense second chair on a 20-count felony case (2026-
   acquittal ask, our case, closing beats, an "if this happens, do this" table), (3) objections as their own list
   ("you hear / you say", "when they object to you"). Research, motions and law text stay as source files and feed
   the script. No side notes inside the script. Action items (deadlines, conflicts) go in the chat reply, not the PDF.
+- **Second round (same case): organise by job, not only by clock.** The 9-page step-by-step script then came back as
+  "badly organised": closing beats and step lists were hard to read live. The layout that replaced it: (1) the case,
+  (2) how we win (the ways it ends well, then a table of every strong point: point / where it comes from / how to use
+  it), (3) their best points (they say / why it sounds strong / you say), (4) start of trial and the opening in order,
+  (5) questioning: one page with every objection, then one page per witness with our questions on the left and
+  "object while the State questions them" (objections that witness is likely to trigger) on the right, (6) the closing
+  as a full speech to read word for word, (7) verdict and sentencing with the exact words for each outcome, (8) an
+  "if this happens" table. Everything read aloud sits in one marked box style, so the reader can find it at a glance.
 - Save the pack in a case folder: `00_Case_Brief`, `01_Procedure`, `02_Objections`, `03_Motions`, `04_Duties`,
   `05_Charges_and_Elements`, `source/` (case thread verbatim, law excerpts, prior cases, inventory).
 - Prior cases of the same client and the same judge's past rulings are useful, but check the ID number before relying on
