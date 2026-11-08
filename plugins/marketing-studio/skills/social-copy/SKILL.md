@@ -32,6 +32,7 @@ where it was recorded, who played the guitar, the date, a number that is true. A
 | YouTube title | matches the video; song and artist first; caps and emoji rare; 100 characters max |
 | YouTube description | first two lines: what it is, the story in one line; then credits, lyrics, links, AI disclosure where needed |
 | Spotify pitch | who, what, why, when, where, how; the RP story; the marketing plan; mood and genre; no follower counts |
+| LinkedIn | the first two lines (all that shows before "see more") state the result with a number; then short paragraphs, not emoji bullets or "What I learned:" headers; zero emoji; links on their own lines; 3 hashtags at most; limits stated plainly at the end |
 | Discord | what, when, where, one link; a ping only when the owner says so |
 | In-game advert | the server's ad format and rules; in character; never names other servers or real brands |
 

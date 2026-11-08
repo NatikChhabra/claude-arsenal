@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- marketing-studio: `social-copy` gets a LinkedIn row (first two lines carry the result with a number, short
+  paragraphs instead of emoji bullets, zero emoji, 3 hashtags at most). Learned when the owner rejected a launch post
+  that read as AI because of emoji bullets and a "What I learned" list; the rewrite passed `copy_lint` and a blind read.
 - design: new "Spreadsheets, ledgers and record books" section in `apps.md` (blank-safe running balance, money at the
   right edge, frozen header block with totals, brand at ~3%, dropdowns and amber mistake flags, SUMIF links between
   tabs, Google Sheets "Replace spreadsheet" import that keeps the share link). Learned rebuilding a business
