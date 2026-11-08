@@ -6,6 +6,11 @@
   or not), add a "how it connects" line because a beginner thought the amp's line-in jack sends the guitar to the PC
   (and call the 1/4" cable "the guitar cable", since "1/4 inch" alone read as an adapter to buy), spend the shared
   hourly web-fetch budget on finalists only, and Bajaao's "Used Gear" links are a separate used marketplace.
+- advocate: new `cell-rep` skill (beta). Built while a public defender was live in a station: speed rules first (one short
+  reply in under a minute, at most one question, trust what the user sees in game over a wiki that missed a real station),
+  the in-cell card (intro, what to get, element and stacking checks, bail and plea options, the court's own clocks,
+  AI-filing guard), and how to keep a live-answer helper permanently in cell-rep mode (saved cases labelled background,
+  since an "active case" label leaked one case's facts into unrelated reps; one-shortcut launch; restart only the helper).
 - advocate: `trial-prep` learns from the second round on the same case. The playbook is organised by job (how we win,
   their points and our answers, one page per witness with that witness's objections beside our questions, the closing
   as a full speech, exact words for each verdict), and a blind review runs before delivery (it caught a misstated
