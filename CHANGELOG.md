@@ -9,7 +9,8 @@
   song's chorus peak moved 3 semitones down from a spoken take before any guide was recorded. song-from-idea §4 step 0:
   when the owner brings his own lyrics, keep his sentences and fill gaps only with his answers (a polished rewrite with
   invented details read as AI to him). mix-master §1: check raw takes for a dead channel and low input level
-  before processing.
+  before processing. Route F steps 8-9: never tune a melody-less chant (it read as a robot), and build the hook as a
+  short tune on his own title line, taught with a looped hook track first.
 - design + video-edit: the spoken launch ad. New `ads.md` section 9 (one scene per spoken claim, the problem as an object,
   a signed quote to prove a boast, the number built in step with the voice, and nine craft rules each taken from a blind
   reviewer's note: visible motion, no hard zooms, ghost-then-fill numbers, one caption baseline and plate, offer

@@ -74,6 +74,13 @@ instead of the other way round. This is the "No Gen AI" path on every platform (
 6. **Doubles are the cheat code.** Double the chorus (a second real take, panned or tucked under), keep verses single
    and close. A quiet harmony a third below on the last chorus hides pitch wobble better than tuning does.
 7. **Blind check as for every route** (SKILL.md §3): would you replay it, does any spot sound fake, tuned or off.
+8. **Never tune a take that has no melody.** A cappella takes sung without a backing come out as a chant that drifts
+   between two notes; snapping that to a scale (even gently, even with a good vocoder) sounds robotic (8 Nov 2026: the
+   owner called a tuned chant "a robot", firm and hard versions alike). Send the untuned take placed on the beat as the
+   honest demo, then give him the instrumental, a guide-tone melody track and a line-timing sheet, and record again.
+9. **The hook is a melody, not a sentence.** A long philosophical chorus line is not catchy. Repeat his own title line
+   as the hook over a 4-bar tune inside his range (5-6 semitones is enough), and teach it with a looped hook track
+   before any full vocal take.
 
 ## Route E: a real singer
 An RP community singer or a hired session vocalist with the guide and lyric sheet. Credit them, get written consent for
