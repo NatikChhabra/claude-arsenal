@@ -1,6 +1,11 @@
 # Changelog
 
 ## Unreleased
+- design: new "Spreadsheets, ledgers and record books" section in `apps.md` (blank-safe running balance, money at the
+  right edge, frozen header block with totals, brand at ~3%, dropdowns and amber mistake flags, SUMIF links between
+  tabs, Google Sheets "Replace spreadsheet" import that keeps the share link). Learned rebuilding a business
+  transaction sheet whose first balance cell read the header (`#VALUE!`) and whose filler formulas showed 0 down every
+  empty row.
 - music-studio: guitar-capture §0, measure the player before writing his part. A guessed beginner part was called
   "sub par"; asking 9 level questions and measuring a minute of songs he already plays fixed it. New
   `tools/guitar_level.py` reads tuning (cents), clipping, notes per second, steadiness, picked vs strummed, range and
