@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- design: video.md §7.4a, a cover from the artist's own phone photo. Ask for the original file (a chat-app copy
+  carries baked HDR that caps blind scores at 5-6), use a warm matte grade with no sharpening after the upscale, and
+  set the title in upright tracked caps rather than a hairline italic that misreads at 180 px.
 - music-studio: lessons from the second master of a guitar-only instrumental, after the owner said the first was
   "very good but too crunchy, pinching in the ear" at 2:00 to 2:30 and the lifts into the choruses were
   "underwhelming". guitar-capture: the pinch was grit (sharp sample-step spikes from a rectified exciter and the
