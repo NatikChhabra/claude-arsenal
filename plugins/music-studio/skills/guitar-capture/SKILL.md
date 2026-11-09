@@ -113,6 +113,13 @@ asked: "ask me more questions rather than guessing".
     Hiss gates chatter on long rings: the above-1.5 kHz expander that cleans the quiet verse made a buzz on the
     bridge's long, quiet ringing strums (the owner heard "strings buzzing" in the middle; the raw take was clean). Leave
     the expander off on parts whose raw take has a quiet floor, or slow its release well past 50 ms.
+    Make the air harmonic, not noisy. An exciter of `tanh(band) + 0.45*abs(band)` on the 2-5 kHz band gave air above
+    5.5 kHz with a spectral flatness of 0.15-0.35 (noise-like; the dry notes measure 0.02-0.035). The owner heard it
+    as a slight "fizzy" sound on the opening bells on earbuds, less on the phone speaker. A square law on the band over
+    its own 10 ms RMS envelope (`band**2 / env`), high-passed 8th order at 6 kHz and level-matched to the old air, keeps
+    the same brightness at a flatness of about 0.06-0.09. A 4th-order 5.5 kHz high-pass let its sum tones leak into
+    3-5.5 kHz and raised the floor there by about 2 dB, so use the steep one. Never use `abs()` (a corner at zero)
+    in an exciter: it makes high-order products, heard as fizz or grit.
   - **Retime only with slices, never with a time map on bells or harmonics.** Rubber Band's `-M` key-frame map (to
     keep each attack 1:1 while stretching the ring) made faint second attacks on the bell notes the owner loved
     (onset strength 0.41 against 0.14). Check every source hit's tuning before placing it: two up-strums rang an E4
@@ -132,6 +139,35 @@ asked: "ask me more questions rather than guessing".
     - Where the kit plays, pull his chucks back about 4 dB: they land on 2 and 4 with the snare and double the peak.
     - Round the hits with a soft tanh set about 10 dB over the kit's own 2 s level (not a fixed level: a fixed one
       crushed the loud chorus and left the quiet bridge spiky).
+    - Hi-hat ticks cut from his chucks carried the chucks' 2-8 kHz rattle on every eighth note and added to a
+      "buzz" the owner heard. His finger taps on the body (high-passed at 600 Hz, low-passed at 7 kHz) give a soft tick
+      without it. Pick each hit at random with no immediate repeat, from a random stream of its own, so the kit's
+      timing and velocity stay as they were when only the hit choice changes.
+  - **Chorus strums that buzz: re-take and score, don't EQ.** A rattle the owner called "crunchy, gives me a
+    headache" came from chucked strums (slap-mutes rattling the strings). EQ, de-essing and notches did not remove it.
+    Ask for brushed strums of each chord, many takes, then score every phrase by its between-harmonic noise: the
+    median level in 1.5-6 kHz between the chord's partials, against the take's hiss floor. Over 3 dB is rattle; hard
+    strums scored 5-9 dB, his clean brushed phrases 0.5 or less. Also check each phrase's chord-tone share (0.85 or
+    more of the chroma), its tuning (drop phrases 9 cents or more off the rest) and cut it before any slap at its end.
+  - **Free-time strum phrases onto the grid.** He strummed the re-takes freely (stroke spacing 75-107 BPM), so a
+    phrase dropped whole onto a 90 BPM half bar drifted up to 120 ms behind the snare by its end. Cut each phrase at
+    the quiet point just before its first stroke (the last 1 ms envelope minimum within 15 ms before the rise), find
+    the stroke nearest beat 2 (the steepest rise of the 1 ms log envelope, not a threshold crossing, which locked
+    onto the previous stroke's ring 86% of the time), and stretch the whole phrase once with Rubber Band R3 so that
+    stroke lands on beat 2 (ratio 0.82-1.22). His timing inside the phrase stays his. Splitting the phrase into two
+    separately stretched pieces made a 4 dB dip at the join: stretch it in one piece unless it ends early.
+  - **Never copy a chorus.** He hated a second chorus that repeated the first. Assign phrases slot by slot (bar, half
+    bar, left or right) with hard rules: the two sides never play the same phrase, no slot repeats the slot four bars
+    back or the half bar just before on the same side, phrases used in an earlier chorus come last, and at least one
+    side rings past the next half bar (two short phrases together left 100-300 ms holes). Cut the outgoing phrase 3 ms
+    before any stroke of its own that lands in the 70 ms before the next on-grid strum (it flammed). Put the long
+    phrase on a random side, or one side always carries the same few long phrases.
+  - **Hit-by-hit parts need a player's feel.** Every note of the opening had been placed exactly on the eighth grid,
+    with levels pulled 60% toward one target, and one A-note recording played four times in each melody pass: the
+    owner heard it as "a little robotic". Render each placement of a part as its own variant: a slow push and pull
+    (about 6 ms over 16 beats plus 3 ms over 6.5), 4-5 ms random spread, a light off-beat lilt (5 ms late) except on
+    quick bell runs (3 ms early), an accent shape (beat 1 up, off-beats down, a phrase arch), level pull 40%, and
+    rotate repeated notes through his other takes of the same pitch (within 30 cents).
 - DI through an audio interface, 48 kHz / 24-bit, peaks around -12 to -6 dBFS (room for transients). A phone memo is
   fine for an idea, never for the release take.
 - To a click at the SONG.md BPM whenever the part will be produced or the video cut to it. Free time only for a
