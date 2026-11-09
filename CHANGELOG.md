@@ -6,7 +6,8 @@
   the part's own level, and a small third-harmonic layer above 10 kHz so a loved part keeps its top; humanised parts
   share one push-and-pull curve, held notes rotate only through long takes, variants are level-matched. mix-master:
   diff the build that ships against the tested one (a sed edit commented out a level match), append events when a
-  random stream draws per event, and verify copies by decoded audio when a folder adds a provenance tag.
+  random stream draws per event, and verify copies by decoded audio when a folder adds a provenance tag. The owner
+  called the master built this way "perfect".
 - music-studio: lessons from the final rework of a guitar-only instrumental, after the owner called the choruses
   "crunchy, gives me a headache" and the opening "a little fizzy". guitar-capture: re-take and score chorus strums by
   between-harmonic noise instead of EQing a rattle, fit free-time phrases to the beat with one whole-phrase stretch

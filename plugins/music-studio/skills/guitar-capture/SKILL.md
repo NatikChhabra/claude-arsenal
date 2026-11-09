@@ -131,6 +131,8 @@ asked: "ask me more questions rather than guessing".
     loves; add a third-harmonic layer (Chebyshev `4u**3 - 3u` on the band over the same envelope) high-passed 8th
     order at 10 kHz, 12 dB under the old air's 10-14 kHz level. With that layer at 8 kHz the 6-10 kHz flatness rose
     from 0.04 to 0.14; at 10 kHz it stayed near 0.1 (the old air: 0.24 there and 0.38 above 10 kHz).
+    The master built this way (with the player's feel below and re-taken brushed choruses) is the one the owner
+    called "perfect" after rejecting three earlier ones, so treat this chain as the proven default for pickup takes.
   - **Retime only with slices, never with a time map on bells or harmonics.** Rubber Band's `-M` key-frame map (to
     keep each attack 1:1 while stretching the ring) made faint second attacks on the bell notes the owner loved
     (onset strength 0.41 against 0.14). Check every source hit's tuning before placing it: two up-strums rang an E4
