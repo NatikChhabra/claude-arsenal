@@ -28,7 +28,10 @@ witness. Built first for a defense second chair on a 20-count felony case (2026-
    docket, never from a guess or an earlier case with the same parties (a first pass profiled the wrong judge).
 2. **Deadlines.** Copy every clock from the judge's opening order (it beats the general procedures), work out the real
    dates, and put the first hard one at the top of the pack (often "all subpoenas before the scheduler").
-3. **Charges and elements.** Full statute text per charge, every element, max sentence, aggravators, stacking. Check
+3. **Charges and elements.** Full statute text per charge, every element, max sentence, aggravators, stacking. Take
+   the text from the court's live published code, not only a saved copy: check its "last amended" line first (a
+   stacking point in one pack was written from a copy five weeks out of date, and the new text allowed both charges;
+   see the cell-rep skill's law freshness check). Check
    whether party, accomplice or conspiracy liability exists in this code and whether it reaches attempts; a pile of
    counts against a non-shooter often stands or falls on it. Say so plainly if a law doesn't exist.
 4. **Timeline.** Number every event from the statements. Note who saw what, and every contradiction between officers

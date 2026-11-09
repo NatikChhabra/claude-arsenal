@@ -80,6 +80,26 @@ If the user runs a live meeting assistant that listens and answers on screen, se
 - After a context edit, rebuild and restart **only the helper** (the restart loop brings it back in seconds) while
   the assistant is idle. Run one tiny test question, never a whole suite, and confirm no saved-case facts appear.
 
+## Law freshness check (before trusting the helper's law)
+A local copy of the code goes stale quietly. On first use (2026-11-09) the court's official code sheet had been
+amended five weeks earlier ("Official 2.1, last amended" a newer date than the local copy), and one change flipped an
+argument the prep pack was making: a no-stacking point became wrong because the new text says both charges "may be
+charged". So, whenever there is time between reps:
+1. Open the court's own published sources (code sheet, procedures, bar code, signed-bills list, executive orders) and
+   compare their "last amended" or version line with the copy the helper uses.
+2. If anything is newer, diff row by row, not by eye: normalise each row (lower case, letters and digits only), hash
+   it on both sides, and list the rows that exist on only one side. Formatting noise drops out; real edits remain
+   (13 of about 300 rows that time). A doc export that merges paragraphs shows false hits, so read each flagged line.
+3. Put the changed rows into the helper as one current version: swap the definition in by charge title and append new
+   rows under their section, rather than adding an "amendments" note beside the old text. Two versions side by side
+   invite the model to quote the old one. Keep the verbatim new text in its own file so it can be dropped once a fresh
+   full copy of the sheet is in place.
+4. Rebuild, check the build is byte-identical to the old one before the change (proves the pipeline is the same),
+   and tell any case work that relied on a changed rule.
+5. When the other side says a whole act is "suspended", find what the suspension notice actually covered (one
+   covered the trial clocks only). Line 1 asks them to show the order that suspends the specific section, and the
+   helper never claims the suspended part still runs.
+
 ## Review before sending
 - Speed rules followed (first message short, one question at most).
 - No law from another court or real-world law unless the court adopts it. Guesses marked "[my read]".
