@@ -19,6 +19,14 @@ thing the ear gets. Rules:
 - The first chorus is the first 8+ of the song; the last chorus is the peak (a new layer, a lift, or a drop-out before
   it). The bridge differs in texture, not only chords.
 - Leave one bar of space or a fill before each chorus (the pre-chorus tension the chorus releases).
+- Never use the same build into every chorus. A four-bar palm-muted build played three times was what the owner said
+  "ruins it" and made the song feel long. Enter each chorus a different way (a two-bar lead-in, two bars of verse, a
+  roll of his own chucks that speeds up from quarters to triplet sixteenths and then one silent bar) and count exact
+  four-bar repeats before and after (19 down to 9 cut the song from 3:32 to 2:54 without losing a part he liked).
+- If the drop before the last chorus is meant to be silent, gate the whole bar: gating only the last half beat let
+  the bridge chord ring back in at the downbeat.
+- Two choruses in a row with only two bars between them read as a copy. Make the second one differ in its first
+  second (drums come in, a counter-line on top), and keep a pulse through the bridge.
 Put the map in SONG.md under "## Arrangement".
 
 ## 2. Reference and palette

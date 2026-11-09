@@ -46,12 +46,27 @@ voice, film loudness) live in the design skill, references/edit.md §4 and §7: 
   compare 2-6.5 kHz band levels with the passage the owner likes best. Grit (the jumps) is what pinches the ear;
   a dynamic 2-6 kHz cut should only act when the band jumps above its own running level (threshold +4 dB over a
   0.4 s average). At a threshold below that level it cut 3 to 4 dB all the time and dulled the whole track.
+- A spot the owner calls painful: compare its K-weighted loudness with the passage he likes before touching the
+  tone. On one master the pain at 1:40 was the second chorus sitting 1.2 LU over the first (same strum, same
+  spectrum); two independent checks refuted a 3 kHz dip, and 1.5 dB less level fixed it.
+- A middle that "makes you sleepy": count onsets per bar and K-weighted loudness per bar. A stretch of one or two
+  onsets a bar with no pulse for 20 s, right after two near-identical choruses, was exactly where the owner said it
+  dragged. A groove from his own body taps fixed it (see guitar-capture).
+- Long-kernel moving averages (a 0.4 s window is 19,200 taps at 48 kHz) must use `scipy.ndimage.uniform_filter1d`
+  or a cumulative sum, never `np.convolve`: the convolve version hung a full build for over 30 minutes.
 - The owner listens on headphones, a phone speaker and (if it plays there) in the game. Claude reports numbers and the
   owner's words, never "it sounds".
 
 ## 4. Master
-1. Chain per references; ceiling -1 dBTP (or -2 dBTP when the master is louder than -14 LUFS).
-2. `python ${CLAUDE_SKILL_DIR}/../../tools/loudness.py <master.wav> --target streaming` (or `club`, `ingame`).
+1. Chain per references; ceiling -1 dBTP (or -2 dBTP when the master is louder than -14 LUFS). End the chain with
+   `python ${CLAUDE_SKILL_DIR}/../../tools/lookahead_limit.py <premaster.wav> <master.wav> --target -14 --ceiling -1`:
+   it writes the master and prints gain reduction per 10 s (median, 95th percentile, max, swing). A limiter that
+   pulled the gain down 60 to 70 ms before every hit and held it flat pumped the last chorus at a median of 8.8 dB;
+   this forward-only one brought it to 0 (max 3.4 dB). With drums, accept a little more, but keep the swing under
+   about 3 dB in the loudest section. On FIX, lower `--target` by 0.5 LU and render again before squeezing harder
+   (one drum-led master settled at -15 LUFS). If another limiter is used, this report does not apply to it.
+2. `python ${CLAUDE_SKILL_DIR}/../../tools/loudness.py <master.wav> --target streaming` (or `club`, `ingame`) on the
+   file step 1 wrote; re-run it after any change in step 1.
 3. Encode check: make the AAC/MP3 a platform would, measure it again; true peak over the ceiling = lower the ceiling.
 4. Matchering is allowed as a starting point against a well-chosen reference; its output is measured like any other.
 

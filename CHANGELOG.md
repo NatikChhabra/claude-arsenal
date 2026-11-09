@@ -1,6 +1,15 @@
 # Changelog
 
 ## Unreleased
+- music-studio: lessons from the final master of a guitar-only instrumental. New `tools/lookahead_limit.py`: a
+  forward-only look-ahead limiter (gain falls at most 2 x look before a peak, exponential release) with a per-10 s
+  gain-reduction report; the old centred-hold design dipped 60-70 ms before every hit and pumped the last chorus at a
+  median 8.8 dB, this one 0 dB. mix-master: check loudness against the liked passage before tone (a "painful" chorus
+  was 1.2 LU louder, not brighter), count onsets per bar to find a sleepy middle, O(N) moving averages, the limiter
+  check step. produce-arrange: never repeat one build into every chorus, gate the whole silent drop bar, make a
+  second chorus differ in its first second. guitar-capture: hiss gates chatter on long rings (heard as buzzing
+  strings), no time-map stretch on bells, check each hit's tuning, and a drum kit built from the player's own body
+  thumps, string slaps and chucks, played with swing and drift so it never sounds machine-made.
 - design: video.md §7.4a, after three rejected single covers, show four finished directions side by side (he picked
   one at once), plus the line-print silhouette recipe that won: bent lines over the figure, face tone blurred hard so
   no features show at 180 px, and a knock-out title on one cream path line instead of a pasted-on box.
