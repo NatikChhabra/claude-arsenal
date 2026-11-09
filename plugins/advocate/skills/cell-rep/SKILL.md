@@ -80,6 +80,30 @@ If the user runs a live meeting assistant that listens and answers on screen, se
 - After a context edit, rebuild and restart **only the helper** (the restart loop brings it back in seconds) while
   the assistant is idle. Run one tiny test question, never a whole suite, and confirm no saved-case facts appear.
 
+## Mixed speakers, loops and scripts (second live rep, 2026-11-09)
+The helper's questions were judged good, but the advocate "didn't know how to use the information", lost ground on a
+deal, and the helper mixed up who was talking. From its log of about 140 answers in 40 minutes:
+- **One mic, many speakers.** The client and the officers all arrive as the same "other person". The helper opened with
+  "Officer," while the client was telling his story, mixed client and officer lines in one answer, and called the client
+  "my client" to his face. Fixes: speaker cues in the prompt (first person about the arrest or "what am I charged with"
+  = client; "your client", charges, counts, "how does he plead" = officer); the advocate's own typed notes ("talking to
+  the client now", "talking to the cop") kept by the helper as a sticky speaker note for about 20 minutes and sent with
+  every answer; one addressee per answer; "you" to the client.
+- **Typed notes are not speech.** Short lowercase or all-caps text with chat words ("u", "rn") is the advocate typing to
+  the helper. Treat it as an instruction or a fact just heard (a bare "215 grams" is the weight the officer read out),
+  never as someone in the room.
+- **Loops.** "Read me each charge and count" appeared about 30 times, long after the charges were read. Give the helper
+  the stages of a rep (charges, private client talk, negotiation, read-back, bail or bench) and a no-repeat rule:
+  never repeat a demand from the last two answers that was already answered; give the next stage's move.
+- **Scripts on request.** For "what should I say", bail, bench trial, closing or sentencing, switch to a full numbered
+  word-for-word script with no line cap, built from [references/live-scripts.md](references/live-scripts.md) and
+  filled with this case's facts. Keep the 3-line cap for everything else.
+- **Check the maths before calling a figure wrong.** The helper told an officer his 45 months was wrong when his sum was
+  right; the real target was the charge (a more specific charge fit the item at a third of the time). Attack the
+  charge, not correct arithmetic.
+- **Stop the client early.** Statements the client makes after the warning are evidence: a bench verdict on the same
+  forum rested on one. The first private line is "tell me, not them".
+
 ## Law freshness check (before trusting the helper's law)
 A local copy of the code goes stale quietly. On first use (2026-11-09) the court's official code sheet had been
 amended five weeks earlier ("Official 2.1, last amended" a newer date than the local copy), and one change flipped an

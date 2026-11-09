@@ -1,6 +1,11 @@
 # Changelog
 
 ## Unreleased
+- advocate: cell-rep lessons from a second live rep (helper mixed up client and officer on one mic stream, repeated one
+  demand about 30 times, called a correct total wrong): speaker cues plus the advocate's typed notes kept as a sticky
+  speaker note, one addressee per answer, a stage model with a no-repeat rule, and a script mode. New reference
+  live-scripts.md: station bail, bail hearing and bench trial scripts, a run sheet for the whole rep, and an argument
+  bank that words each defence point for the officer, the judge and the client.
 - advocate: law freshness check in cell-rep (compare the published "last amended" line, diff the code row by row
   with normalised hashes, swap changed rows in by title so the helper holds one version, ask for the order when told a
   whole act is suspended); trial-prep takes statute text from the live code. A stale local copy had made a
