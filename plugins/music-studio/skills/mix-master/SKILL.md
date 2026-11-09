@@ -71,6 +71,14 @@ voice, film loudness) live in the design skill, references/edit.md §4 and §7: 
   refute, with numbers against the previous version. On one song they found a free-time strum drifting 85-120 ms
   off the beat, choruses that still repeated their own first half, the click above, and a pan lean, none of which
   the build's own gates flagged.
+- Diff the build script that ships against the one that was tested. A `sed` edit that made a filter steeper also
+  moved a level-match factor into a comment on the same line, and the new exciter shipped 4-8 dB hot; only an
+  independent check caught it. Re-read every line an automated edit touched.
+- Add new events at the end of an event list when a random stream draws per event: inserting a few kicks before the
+  later grooves moved every later hit's random timing and choice, so sections that should have stayed bit-identical
+  changed.
+- A shared-files folder may add a provenance tag (C2PA in an ID3 header, about 6 KB) to audio and video it stores.
+  File md5s then differ while the audio is the same: verify copies by the md5 of the decoded audio and the cover.
 - The owner listens on headphones, a phone speaker and (if it plays there) in the game. Claude reports numbers and the
   owner's words, never "it sounds".
 

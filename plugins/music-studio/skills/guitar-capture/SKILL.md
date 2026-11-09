@@ -120,6 +120,17 @@ asked: "ask me more questions rather than guessing".
     the same brightness at a flatness of about 0.06-0.09. A 4th-order 5.5 kHz high-pass let its sum tones leak into
     3-5.5 kHz and raised the floor there by about 2 dB, so use the steep one. Never use `abs()` (a corner at zero)
     in an exciter: it makes high-order products, heard as fizz or grit.
+    Three more things the square law needs (found by an independent check before the final, not by the build's gates):
+    the 10 ms boxcar envelope lags every pick attack, so `band**2 / env` jumps for a few ms and made 144 short air
+    ticks in one master (a 2 ms burst above 5 kHz within 10 dB of the 300 Hz-3 kHz body; the old exciter had 55).
+    Normalise by a peak-held envelope instead (1 ms RMS, 12 ms running max, 4 ms mean, times 1.41), cap the air at
+    4 dB over its own 40 ms RMS, and level-match it to the old air in 5.5-8 kHz minus 2 dB: 0 ticks in the whole song.
+    Gate the air off in quiet ring tails (a ramp from 30 to 20 dB under the part's 95th-percentile band level, which
+    touches about 20% of frames and 0.01 dB of energy): air made from a tail's hiss is hiss. The square law alone
+    leaves almost nothing above 10 kHz (about 17 dB under the old air at 10 kHz), which darkens a part the owner
+    loves; add a third-harmonic layer (Chebyshev `4u**3 - 3u` on the band over the same envelope) high-passed 8th
+    order at 10 kHz, 12 dB under the old air's 10-14 kHz level. With that layer at 8 kHz the 6-10 kHz flatness rose
+    from 0.04 to 0.14; at 10 kHz it stayed near 0.1 (the old air: 0.24 there and 0.38 above 10 kHz).
   - **Retime only with slices, never with a time map on bells or harmonics.** Rubber Band's `-M` key-frame map (to
     keep each attack 1:1 while stretching the ring) made faint second attacks on the bell notes the owner loved
     (onset strength 0.41 against 0.14). Check every source hit's tuning before placing it: two up-strums rang an E4
@@ -168,6 +179,11 @@ asked: "ask me more questions rather than guessing".
     (about 6 ms over 16 beats plus 3 ms over 6.5), 4-5 ms random spread, a light off-beat lilt (5 ms late) except on
     quick bell runs (3 ms early), an accent shape (beat 1 up, off-beats down, a phrase arch), level pull 40%, and
     rotate repeated notes through his other takes of the same pitch (within 30 cents).
+    Give every part the same push-and-pull curve (one player), with only its own small spread on top (3 ms, clipped
+    at 7 ms): separate curves let the melody and the bells drift apart. Rotate held notes only through his long
+    takes of that note and short notes only through his short ones: a short take on a held note was stretched 2.4x
+    and dropped out. Ease the last two notes of each pass back toward the grid, keep each pass's first note on the
+    downbeat, and match each variant's K-weighted level to the original stem (the variants came out 0.2-0.7 dB hot).
 - DI through an audio interface, 48 kHz / 24-bit, peaks around -12 to -6 dBFS (room for transients). A phone memo is
   fine for an idea, never for the release take.
 - To a click at the SONG.md BPM whenever the part will be produced or the video cut to it. Free time only for a
