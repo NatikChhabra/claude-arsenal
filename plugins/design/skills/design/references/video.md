@@ -408,6 +408,16 @@ Learned on the same single, from a real photo of the owner on a windy hilltop (a
 - **Readers contradict each other on grade direction** (one asks for warm, the next for natural). Follow the music
   brief and the fix two readers share, then stop at the plateau rule.
 
+- **"Hide my face, make it cool" means a bold effect, not a clean grade.** The owner rejected the graded hilltop
+  photo as "bland, chicken with no salt", even though its face was already turned away. Read the brief's verbs. If
+  the artist names a favourite photo of himself, build on that one. What landed was a slit-scan smear: for each row
+  from brow to chin, repeat the pixel at a slit just behind the ear leftward to the frame edge. Clusters of 6-45 rows
+  share an offset that only moves the slit back into the hair, never forward over the eye, so the right edge breaks
+  raggedly and no feature shows through. Add a few torn streaks above and below, then a sepia duotone over the rest
+  so only the streaks keep their real (boosted) colour. The figure was cut out with rembg (isnet for hair, u2net for
+  the body), the torso dissolved into the trip's misty cliffs to hide the phone, and the title was set in cream
+  caps inside the streak band. Blind scores went from 5 to 6 over six rounds. The rounds fixed the slab's hard top
+  edge, an eye showing through the rag, the glasses arm left sharp, and a title placed on the shirt.
 ### 7.5 A cover from the artist's game character
 Learned on the same single when the owner asked for his roleplay character as the cover. Blind scores went 5, 6.5,
 then up as each fix below landed.
