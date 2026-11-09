@@ -145,7 +145,7 @@ Each skill carries `status: draft` (outline, untested), `beta` (used on real wor
 | [video-edit/tools/watch.py](plugins/video-edit/tools/watch.py) | The watch pack: a whole render as one time-aligned text timeline with DEAD, STEP, UNCUED, FLASH, FROZEN, SILENCE, OFFBEAT flags |
 | [video-edit/scripts/lut.py](plugins/video-edit/scripts/lut.py) | Our own film LUTs (S-curve with toe and shoulder, highlight roll-off, split tone) |
 | [study/scripts/](plugins/study/scripts/) | 20 vault, PDF, diagram and Anki deck scripts, all configured by `study.json` |
-| [music-studio/tools/](plugins/music-studio/tools/) | `lyric_lint.py` (lyrics gate), `loudness.py` (LUFS, true peak, phone-speaker vocal check), `beatmap.py` (beats, bars, sections, cut-on-grid check), `guitar_level.py` (a player's level from a take), `loop_assemble.py` (a full song from parts recorded once each, looped on the bar grid) |
+| [music-studio/tools/](plugins/music-studio/tools/) | `lyric_lint.py` (lyrics gate), `loudness.py` (LUFS, true peak, phone-speaker vocal check), `beatmap.py` (beats, bars, sections, cut-on-grid check), `guitar_level.py` (a player's level from a take), `loop_assemble.py` (a full song from parts recorded once each, looped on the bar grid), `lookahead_limit.py` (a limiter that only touches the loudest hits, with a gain-reduction report) |
 | [marketing-studio/tools/](plugins/marketing-studio/tools/) | `rollout.py` (dated release calendar with Spotify's floors), `copy_lint.py` (promo copy gate) |
 
 Every command-line script answers `--help` (`decklib.py` and `studycfg.py` are libraries).

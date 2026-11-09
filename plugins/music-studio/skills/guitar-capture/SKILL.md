@@ -110,6 +110,28 @@ asked: "ask me more questions rather than guessing".
     near 3 kHz with a 4.5 kHz low-pass, and a fast look-ahead limiter on the chuck stem in place of a clipper. Count
     the jumps per 10 s on every master (aim for single digits) and ask him which timestamp sounds best, then match
     that passage's band levels within about 2 dB up to 4.5 kHz.
+    Hiss gates chatter on long rings: the above-1.5 kHz expander that cleans the quiet verse made a buzz on the
+    bridge's long, quiet ringing strums (the owner heard "strings buzzing" in the middle; the raw take was clean). Leave
+    the expander off on parts whose raw take has a quiet floor, or slow its release well past 50 ms.
+  - **Retime only with slices, never with a time map on bells or harmonics.** Rubber Band's `-M` key-frame map (to
+    keep each attack 1:1 while stretching the ring) made faint second attacks on the bell notes the owner loved
+    (onset strength 0.41 against 0.14). Check every source hit's tuning before placing it: two up-strums rang an E4
+    about 57 cents flat; swap in the same strum from another bar and keep the left and right doubles different.
+  - **A drum kit from his own guitar, when he will record a little more** (9 Nov 2026, through the same soundhole
+    pickup, about a minute of single hits): fist thumps on the body for the kick, palm slaps on muted strings for
+    the snare body, and his existing chucks for the crack and the hi-hat ticks.
+    - Pick hits by sound, not by count: kick = most energy under 150 Hz (over half the spectrum), no clipping;
+      snare = a clean slap whose strings ring at least 40 dB down after 120 ms.
+    - Cut each hit short (kick about 0.1 s decay, snare 0.07 s, tick 0.02 s): his strings ring through the pickup in
+      standard tuning (A, B, D, E) under a capo-2 song, and a short envelope keeps that out of the key.
+    - Every hit gets a 1 to 2 ms fade-in. Without it the ticks were near-clicks (sample step 0.64 of their peak) and
+      the master's sharp-jump count went from 22 to 191, the same grit that pinched his ear on the first master.
+    - Play it like a person: a light swing on the off-beat eighths (about 22 ms at 90 BPM), the snare about 7 ms
+      late, 4 to 5 ms random spread, a kick pattern that changes bar to bar, ghost notes now and then. He hates music
+      that sounds AI-made, so no grid-perfect drums.
+    - Where the kit plays, pull his chucks back about 4 dB: they land on 2 and 4 with the snare and double the peak.
+    - Round the hits with a soft tanh set about 10 dB over the kit's own 2 s level (not a fixed level: a fixed one
+      crushed the loud chorus and left the quiet bridge spiky).
 - DI through an audio interface, 48 kHz / 24-bit, peaks around -12 to -6 dBFS (room for transients). A phone memo is
   fine for an idea, never for the release take.
 - To a click at the SONG.md BPM whenever the part will be produced or the video cut to it. Free time only for a
