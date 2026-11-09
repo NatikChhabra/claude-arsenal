@@ -3,7 +3,8 @@ name: guitar-capture
 description: >-
   Record and prepare the owner's guitar parts (DI or mic, to a click) so they can drive the song: a clean take, a beat
   and bar map, a chord chart and an optional MIDI sketch, plus the tone chain. Use when he has a riff, a progression or
-  a full guitar part, for "record my guitar", "turn this riff into a song", or a take that drifts off tempo.
+  a full guitar part, for "record my guitar", "turn this riff into a song", or a take that drifts off tempo. Also
+  for a piece to play live that must be easy but impress (audition, "make them go wow"): section 0a.
 ---
 
 # guitar-capture
@@ -47,6 +48,27 @@ asked: "ask me more questions rather than guessing".
   "how the tab goes" guide. After copying to his PC, read the file back from the PC and compare pixels: a copy sent
   in the same batch as the write once delivered the old sheet ("it's the same").
 
+## 0a. A piece to play live (audition, "make them go wow")
+His own songs are not wow pieces, however good: "very good but not something that will impress people". Live wow
+comes from two things at once: the room knows the tune within two seconds, and they can SEE a trick.
+- Ask once: what it's for (real or in game, what kind of room), how long they give him, which guitar. Then one pick.
+- The pick that fits a 2-4 month player on acoustic: a famous riff that lives on one string against the open string
+  next to it, played with the LEFT HAND ONLY (pull off to the open string, hammer back on), while the right hand
+  drums on the body: kick = heel of the palm on the top below the bridge, snare = fingertips on the top above the
+  sound hole, never touching the strings. One guitar sounds like a guitarist plus a drummer. Body drums need an
+  acoustic; on an electric, pick the riff and save the trick for the breaks.
+- Shape it as a short show (about 1 minute is plenty even with no time limit): picked and soft (instant recognition),
+  "hands off" (lift the right hand where they can see it, first kick), full beat, one big chord hit plus silence,
+  hardest section with a kick on every beat, one hit and stop. Same one-card-per-section sheet as section 0.
+- Left-hand-only notes are quieter than picked ones (in the guide render the picked intro had to be set about 4 dB
+  under the hands-off part). Write the picked opening soft so the trick never sounds like a drop.
+- Easy pattern, hard speed: add a speed ladder (70, 80, 95, 105, 120, full) with tick boxes and give practice tracks
+  at three tempos plus a no-click preview. If full speed isn't clean by the day, 105-115 BPM still sounds fast.
+- Never tab a famous riff from memory: the remembered version was wrong. Read at least two published text tabs, use
+  what they agree on, tell him where it came from and ask if the version he already plays differs.
+- Keep ONE arrangement file (bars as 16 slots of frets, drum marks and chord hits) that both the sheet generator and
+  the guide synth read, so the tab and the audio can't disagree.
+
 ## 1. Record
 - **Record once, loop the rest** when he would rather play each part one time ("I just want to play one time and
   you repeat that"). Every sound stays his own playing; only the copying is done for him.
@@ -73,7 +95,9 @@ asked: "ask me more questions rather than guessing".
     pass clean or be caught with the right fix. The first run caught real bugs: on a whole take, a 0.4% tempo error
     let parts slip by an eighth note (now one offset and one tempo for the whole take), and a roll bar locked onto a
     later string.
-  - Check the guide synth too: plain Karplus-Strong with an integer delay was up to 36 cents sharp on high notes,
+  - Check the guide synth too: plain Karplus-Strong with an integer delay was up to 36 cents sharp on high notes
+    (and the two-point averaging filter adds half a sample of delay: tuning to N instead of N + 0.5 left notes 5-10
+    cents flat; measure the FFT peak of a few frets against the target),
     and white-noise excitation made it far brighter than a real acoustic (compare long-term spectra with his own
     take). Resample to the exact pitch, low-pass the excitation, and add a body resonance.
   - Slice an ending from contiguous bars of one part (C, G, D straight through) so the ring is never cut mid-part.

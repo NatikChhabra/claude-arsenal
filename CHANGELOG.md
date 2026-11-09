@@ -1,6 +1,11 @@
 # Changelog
 
 ## Unreleased
+- music-studio: `guitar-capture` gains section 0a, a piece to play live that is easy but makes the room go "wow"
+  (audition): recognisable one-string riff played left hand only while the right hand drums on the body, a 1-minute
+  show shape, a speed ladder with three practice tempos, softer picked opening (left-hand notes are quieter), riffs
+  checked against two published tabs (a remembered version was wrong), one arrangement file for sheet and audio.
+  Guide synth note: the Karplus-Strong averaging filter adds half a sample (tune to N + 0.5, was 5-10 cents flat).
 - advocate: cell-rep lessons from a second live rep (helper mixed up client and officer on one mic stream, repeated one
   demand about 30 times, called a correct total wrong): speaker cues plus the advocate's typed notes kept as a sticky
   speaker note, one addressee per answer, a stage model with a no-repeat rule, and a script mode. New reference
