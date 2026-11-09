@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- music-studio: mix-master step 4.5, embed covers phone players actually show (about 1400 px baseline 4:2:0 JPEG under
+  1 MB, front-cover type, album tags); a 3000 px 3.5 MB cover with no album tag showed as a blank square.
 - music-studio: lessons from the final check of a guitar-only instrumental. guitar-capture: the square-law exciter
   needs a peak-held envelope and an air tamer (a 10 ms envelope made 144 air ticks, now 0), a tail gate relative to
   the part's own level, and a small third-harmonic layer above 10 kHz so a loved part keeps its top; humanised parts

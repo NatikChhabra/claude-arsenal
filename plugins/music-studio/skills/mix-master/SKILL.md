@@ -94,6 +94,11 @@ voice, film loudness) live in the design skill, references/edit.md §4 and §7: 
    file step 1 wrote; re-run it after any change in step 1.
 3. Encode check: make the AAC/MP3 a platform would, measure it again; true peak over the ceiling = lower the ceiling.
 4. Matchering is allowed as a starting point against a well-chosen reference; its output is measured like any other.
+5. Embed the cover so phone players show it: a baseline JPEG at about 1400 px with 4:2:0 chroma, under 1 MB, as a
+   FLAC PICTURE block of type 3 (front cover, depth 24) or an MP3 APIC, plus `album` and `albumartist` tags (for
+   example with mutagen). A 3000 px, 3.5 MB, 4:4:4 cover with no album tag played as a blank grey square on the
+   owner's phone player while title and artist showed fine. Read the picture block back (type, size, bytes) on the
+   delivered copy, not only on the local one.
 
 ## 5. Write it down
 MIX.md: references used, the final numbers (integrated, LRA, true peak, encoded true peak, phone-check share), the
