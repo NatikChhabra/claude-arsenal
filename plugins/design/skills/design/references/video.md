@@ -392,6 +392,22 @@ readers' fixes agreed. The rules below come from that.
   music do you expect; first look and feel; point at anything AI, filter or template-like; does it read at 64 px;
   score next to real covers in its genre, and the one change". Ship at 8.5. Two readers naming the same fix is the fix.
 
+### 7.4a A cover from the artist's own phone photo
+Learned on the same single, from a real photo of the owner on a windy hilltop (a WhatsApp copy, 1108x896).
+- **Ask for the original file first, sent as a document.** A chat app's copy is about 1 MP and carries the phone's
+  own HDR. Five blind rounds scored 5 to 6. Every reader named the same faults: crunchy grass, a halo between the
+  figure and the hills, and smeared detail on the face. All of them were already in the source. A regrade cannot
+  take baked HDR out. It can only trade crunch for "painterly".
+- **What still moved the score:** a warm matte grade (lifted blacks, rolled-off highlights, greens pushed toward
+  straw, the sky taken to warm grey), with no sharpening after the upscale and grain to hide the upscale. A cold
+  stormy grade read as "epic trailer" against a warm acoustic track.
+- **Type on a landscape photo.** A big italic display serif read as "Canva or wedding template", and its hairline
+  "e" dropped out at 180 px ("Lincar Path"). Upright tracked caps in a grotesk (Familjen Grotesk 600, cap height
+  near 7%, tracking about 0.1 em) on the darkest sky band read as a label cover. Darken only the band behind the
+  title, softly, so still_check contrast reaches 3:1 or better without a visible patch.
+- **Readers contradict each other on grade direction** (one asks for warm, the next for natural). Follow the music
+  brief and the fix two readers share, then stop at the plateau rule.
+
 ### 7.5 A cover from the artist's game character
 Learned on the same single when the owner asked for his roleplay character as the cover. Blind scores went 5, 6.5,
 then up as each fix below landed.
