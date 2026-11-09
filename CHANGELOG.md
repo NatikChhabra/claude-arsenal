@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- music-studio: `guitar-capture` 0a, lessons from the audition retries: a room that only hears him (voice call)
+  makes visual tricks worthless, so the wow is a known song plus the soft-build-silence-explode shape; pick the song
+  from his own listening history (he did not know the famous pick); move riffs to an easier string over an open drone.
 - music-studio: `guitar-capture` gains section 0a, a piece to play live that is easy but makes the room go "wow"
   (audition): recognisable one-string riff played left hand only while the right hand drums on the body, a 1-minute
   show shape, a speed ladder with three practice tempos, softer picked opening (left-hand notes are quieter), riffs

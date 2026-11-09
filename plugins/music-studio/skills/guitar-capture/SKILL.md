@@ -52,6 +52,16 @@ asked: "ask me more questions rather than guessing".
 His own songs are not wow pieces, however good: "very good but not something that will impress people". Live wow
 comes from two things at once: the room knows the tune within two seconds, and they can SEE a trick.
 - Ask once: what it's for (real or in game, what kind of room), how long they give him, which guitar. Then one pick.
+- Ask how they will take it in: if they only HEAR him (a voice call, an online room), a trick they'd have to watch is
+  wasted. The left-hand riff with body drums below was "too hard and not even that wow" for a call audition. By ear,
+  the wow is a song they know plus a big dynamic shape: soft start, a build that gets louder every bar, one bar of
+  dead silence, then everything (full strums with chucks), and a whisper or one hit to end.
+- Pick the song from HIS listening history (music-studio `listening_taste.py`, or the saved taste list), never a famous
+  song he may not know: "pick something from my playlist, I have not heard that song". Prefer a song that lives on
+  two or three open chords so the whole build fits a beginner. If the guesses keep missing, put 3-4 very different
+  directions on one card and let him choose.
+- Move a riff to an easier string when the notes allow it (a line at frets 14-7 on the D string is frets 9-2 on the G
+  string) and let an open string drone under it, so one guitar sounds full.
 - The pick that fits a 2-4 month player on acoustic: a famous riff that lives on one string against the open string
   next to it, played with the LEFT HAND ONLY (pull off to the open string, hammer back on), while the right hand
   drums on the body: kick = heel of the palm on the top below the bridge, snare = fingertips on the top above the
