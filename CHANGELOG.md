@@ -1,6 +1,15 @@
 # Changelog
 
 ## Unreleased
+- music-studio: lessons from the final rework of a guitar-only instrumental, after the owner called the choruses
+  "crunchy, gives me a headache" and the opening "a little fizzy". guitar-capture: re-take and score chorus strums by
+  between-harmonic noise instead of EQing a rattle, fit free-time phrases to the beat with one whole-phrase stretch
+  anchored on beat 2, slot-by-slot phrase rules so no chorus copies another, a player's feel for hit-by-hit parts
+  (drift, spread, lilt, accents, rotating repeated notes), finger-tap hats in place of chuck cracks, and a harmonic
+  exciter (square law over the band's envelope, steep 6 kHz high-pass) in place of `tanh + abs`, which made
+  noise-like air heard as fizz. mix-master: keep untouched sections bit-identical with a fixed master gain and peak
+  reference, ramp hit gates (a one-sample gate re-open was the song's worst click), check balance per section, and
+  run independent lens-by-lens checks before calling a master final.
 - music-studio: lessons from the final master of a guitar-only instrumental. New `tools/lookahead_limit.py`: a
   forward-only look-ahead limiter (gain falls at most 2 x look before a peak, exponential release) with a per-10 s
   gain-reduction report; the old centred-hold design dipped 60-70 ms before every hit and pumped the last chorus at a

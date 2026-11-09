@@ -54,6 +54,23 @@ voice, film loudness) live in the design skill, references/edit.md §4 and §7: 
   dragged. A groove from his own body taps fixed it (see guitar-capture).
 - Long-kernel moving averages (a 0.4 s window is 19,200 taps at 48 kHz) must use `scipy.ndimage.uniform_filter1d`
   or a cumulative sum, never `np.convolve`: the convolve version hung a full build for over 30 minutes.
+- Keep untouched sections bit-identical while you rework others: hold the master gain and the saturator's peak
+  reference at the earlier version's values (measure them in a separate run with exactly the earlier settings: a
+  reconstruction run with one new switch on gave 20.0 dB instead of 20.1 and moved the whole opening by 0.1 dB), and
+  pin anything keyed to another section's level (a drum bus or a build keyed to the last chorus's RMS changed the
+  bridge when only the chorus changed). Diff the new file against the old one sample by sample to prove it.
+- Gates before a hit must ramp. A half-beat silence gate that re-opened every bus in one sample at the bar line
+  switched the previous chord's ring back on right on the chorus downbeat: the largest click in the song (a 0.31
+  step in two samples), present for three versions because a fade went onto the wrong layer. Ramp the gate over
+  3 ms starting 4 ms before the bar, keep the previous part's bus shut 150 ms past the hit, and confirm a click fix
+  by diffing the samples at that exact time.
+- Check the balance per section: a melody bus panned right only in the choruses leaned them 1-2 dB right once the
+  bed under it got quieter.
+- Before calling a master final, run independent checks in parallel by lens (harshness and buzz; repetition and
+  timing; musical fit and seams; preservation of the parts he loves plus the master and encodes), each asked to
+  refute, with numbers against the previous version. On one song they found a free-time strum drifting 85-120 ms
+  off the beat, choruses that still repeated their own first half, the click above, and a pan lean, none of which
+  the build's own gates flagged.
 - The owner listens on headphones, a phone speaker and (if it plays there) in the game. Claude reports numbers and the
   owner's words, never "it sounds".
 
