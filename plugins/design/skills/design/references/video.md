@@ -392,6 +392,49 @@ readers' fixes agreed. The rules below come from that.
   music do you expect; first look and feel; point at anything AI, filter or template-like; does it read at 64 px;
   score next to real covers in its genre, and the one change". Ship at 8.5. Two readers naming the same fix is the fix.
 
+### 7.4a A cover from the artist's own phone photo
+Learned on the same single, from a real photo of the owner on a windy hilltop (a WhatsApp copy, 1108x896).
+- **Ask for the original file first, sent as a document.** A chat app's copy is about 1 MP and carries the phone's
+  own HDR. Five blind rounds scored 5 to 6. Every reader named the same faults: crunchy grass, a halo between the
+  figure and the hills, and smeared detail on the face. All of them were already in the source. A regrade cannot
+  take baked HDR out. It can only trade crunch for "painterly".
+- **What still moved the score:** a warm matte grade (lifted blacks, rolled-off highlights, greens pushed toward
+  straw, the sky taken to warm grey), with no sharpening after the upscale and grain to hide the upscale. A cold
+  stormy grade read as "epic trailer" against a warm acoustic track.
+- **Type on a landscape photo.** A big italic display serif read as "Canva or wedding template", and its hairline
+  "e" dropped out at 180 px ("Lincar Path"). Upright tracked caps in a grotesk (Familjen Grotesk 600, cap height
+  near 7%, tracking about 0.1 em) on the darkest sky band read as a label cover. Darken only the band behind the
+  title, softly, so still_check contrast reaches 3:1 or better without a visible patch.
+- **Readers contradict each other on grade direction** (one asks for warm, the next for natural). Follow the music
+  brief and the fix two readers share, then stop at the plateau rule.
+
+- **"Hide my face, make it cool" means a bold effect, not a clean grade.** The owner rejected the graded hilltop
+  photo as "bland, chicken with no salt", even though its face was already turned away. Read the brief's verbs. If
+  the artist names a favourite photo of himself, build on that one. What landed was a slit-scan smear: for each row
+  from brow to chin, repeat the pixel at a slit just behind the ear leftward to the frame edge. Clusters of 6-45 rows
+  share an offset that only moves the slit back into the hair, never forward over the eye, so the right edge breaks
+  raggedly and no feature shows through. Add a few torn streaks above and below, then a sepia duotone over the rest
+  so only the streaks keep their real (boosted) colour. The figure was cut out with rembg (isnet for hair, u2net for
+  the body), the torso dissolved into the trip's misty cliffs to hide the phone, and the title was set in cream
+  caps inside the streak band. Blind scores went from 5 to 6 over six rounds. The rounds fixed the slab's hard top
+  edge, an eye showing through the rag, the glasses arm left sharp, and a title placed on the shirt.
+- **After two or three rejections, stop polishing one design and show four.** On the same cover the owner turned down
+  three single designs in a row: the graded hilltop, the slit-scan smear ("mid, does not match the vibe") and a
+  golden-hour glare over the face ("looks shit ass"). Next he got four finished directions on one 2x2 sheet: a
+  line-print silhouette, a two-colour riso portrait with a blank face, a mirror selfie cropped below the chin in a warm
+  flash grade, and his legs over a valley in a warm film grade. He picked one at once ("i love A"). Each direction must
+  be finished and titled, must hide the face in its own way, and must pass still_check before it goes on the sheet.
+- **The line-print silhouette that won.** Crop the favourite profile photo to head and shoulders and cut it out with
+  rembg. Clean the cut-out into a poster shape: Gaussian blur at 15 px on 3000, a threshold, keep the largest
+  component, an opening of 20 px, then a hole fill. Draw horizontal lines at a 30 px pitch, navy (#1b2560) on orange
+  (#e8672e), about 100 lines on 3000. Outside the figure each line is about 4% of the pitch thick. Inside it the
+  thickness goes from 12% to 46%, driven by tone. Lift every line over the figure by up to 20 px, using the cut-out
+  blurred at 45 px, so the lines bend around the body and it gets depth. **Blur the tone by about 85 px and squash it to
+  the top half of its range.** At 28 px a blind reader still saw ghostly eye and nose shading at 180 px. Drive the lift
+  from the cut-out alone, never from tone. For the title, cream caps (Familjen Grotesk 600 at 236 px, tracking 30 px)
+  knocked straight onto the lines over the dark torso. One cream line runs under the title and out of the right edge.
+  A pasted-on title box read to a blind reader as "a Canva lower third". The line alone, without a title on it, read
+  as a mistake. Final still_check score 8.8; the owner said "perfect".
 ### 7.5 A cover from the artist's game character
 Learned on the same single when the owner asked for his roleplay character as the cover. Blind scores went 5, 6.5,
 then up as each fix below landed.
