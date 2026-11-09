@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- advocate: law freshness check in cell-rep (compare the published "last amended" line, diff the code row by row
+  with normalised hashes, swap changed rows in by title so the helper holds one version, ask for the order when told a
+  whole act is suspended); trial-prep takes statute text from the live code. A stale local copy had made a
+  no-stacking argument that the newer text contradicts.
 - music-studio: mix-master step 4.5, embed covers phone players actually show (about 1400 px baseline 4:2:0 JPEG under
   1 MB, front-cover type, album tags); a 3000 px 3.5 MB cover with no album tag showed as a blank square.
 - music-studio: lessons from the final check of a guitar-only instrumental. guitar-capture: the square-law exciter
