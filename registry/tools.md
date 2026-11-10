@@ -55,11 +55,17 @@ Facts and sources: research/03_vocal_tools.md (vocals), research/04_production_a
 | rembg + BiRefNet (`birefnet-general-lite`) | clean cut-outs of characters from cartoon and CGI video frames | MIT (rembg), MIT (BiRefNet) | CPU, ~200 MB model on first use | ADOPT (design video.md §1.11b; beat isnet-general-use on green-on-green and glow edges, 2 Nov 2026) | - | github.com/danielgatis/rembg |
 | yt-dlp with EJS (`--js-runtimes node --remote-components ejs:github`) | download public YouTube sections for references and frames | Unlicense | any, needs Node | ADOPT (creator reference-study; without the flags downloads fail "video not available", 2 Nov 2026) | 2026-12-01 | github.com/yt-dlp/yt-dlp/wiki/EJS |
 | ComfyUI (already on his PC, ROCm) | local image generation for backgrounds/textures | GPL-3.0 | RX 7800 XT | TRIAL (behind the no-AI-slop check) | 2026-12-01 | github.com/comfyanonymous/ComfyUI |
+| Astryx (Meta) | React 19 design system: 150+ accessible components, 7 themes, dark mode, templates, and an `astryx` CLI whose docs are written for coding agents to read (`astryx component --list`, `astryx docs`); checked 10 Nov 2026 | MIT, beta | npm `@astryxdesign/core` + theme + `@stylexjs/stylex`; needs React 19 | WATCH (none of his current builds has a React front end: the web apps are Gradio, the amp sim is JUCE; first choice of component kit if a project ships a React UI, still behind the design skill's rules) | 2027-02-01 | github.com/meta/astryx |
 
 ## Marketing
 | name | what it does for us | licence | runs on | verdict | recheck | source |
 |---|---|---|---|---|---|---|
 | coreyhaines31/marketingskills | ~40 marketing skills: copywriting, social, launch, ad-creative, marketing-psychology, ab-testing | MIT | `npx skills add coreyhaines31/marketingskills -a claude-code` | TRIAL (depth for campaign-plan; our voice rules win) | 2026-12-01 | github.com/coreyhaines31/marketingskills |
+
+## Developer tools
+| name | what it does for us | licence | runs on | verdict | recheck | source |
+|---|---|---|---|---|---|---|
+| Rune IDE (Unstable Build) | keyboard-driven, GPU-rendered IDE in Go with terminals, a REPL, a debugger and its own coding agent; open-sourced 12 Sep 2026; checked 10 Nov 2026 | GPL-3.0-or-later (extension SDK Apache-2.0) | macOS and Linux only, no Windows build or timetable | SKIP (his PC is Windows; first-class languages are Go and Python, C++ not listed; Claude Code is already the agent, Rune has no Claude Code or MCP hook) | 2027-03-01 | github.com/unstablebuild/rune |
 
 ## Arsenal plumbing
 | name | what it does for us | licence | runs on | verdict | recheck | source |
