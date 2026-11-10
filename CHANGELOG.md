@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- registry: Rune IDE (SKIP: no Windows build, no C++ tier, own agent instead of Claude Code) and Meta's Astryx
+  React design system (WATCH: MIT and agent-readable CLI, but no current build has a React front end).
 - music-studio: `guitar-capture` gains section 0a, a piece to play live that is easy but makes the room go "wow"
   (audition): recognisable one-string riff played left hand only while the right hand drums on the body, a 1-minute
   show shape, a speed ladder with three practice tempos, softer picked opening (left-hand notes are quieter), riffs
