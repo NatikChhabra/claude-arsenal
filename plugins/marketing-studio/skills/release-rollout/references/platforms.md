@@ -30,6 +30,29 @@ CONFIRMED (2nd) = a credible secondary quoting it (the primary would not load); 
 | DistroKid | accepted with 100% rights, no impersonation, the AI box ticked; asks if lyrics, music, all or part of the audio is AI | CONFIRMED (2nd); USD 24.99 / 44.99 / 89.99 a year, splits on every plan |
 Check the chosen distributor's AI page by hand on release week; policies moved monthly in 2026.
 
+## RouteNote upload, hands-on (10 Nov 2026, Free plan)
+- Audio: MP3 320 kbps or FLAC at exactly 44.1 kHz. There is no WAV option, and a 48 kHz FLAC is refused ("sample rate
+  is too high"). Tested route: `ffmpeg -i master.flac -af "aresample=44100:resampler=soxr:precision=28:dither_method=triangular"
+  -c:a pcm_s16le store.wav`, then `ffmpeg -i store.wav -c:a flac -compression_level 12 store.flac`; check the rate with
+  ffprobe. Keep the upload copy alone in its own folder so the 48 kHz master can't be picked by mistake. CONFIRMED.
+- Release date: the earliest sales start date offered was 14 days out (24 Nov when set on 10 Nov). "Originally
+  Released" must be on or before the sales start date, so set both. Blank sales start = as soon as approved. CONFIRMED.
+- Required fields: a contributor (the role list has instruments such as Guitar as well as Producer), a composer's first
+  and last name, C and P lines, a label name (the artist's own name works). Language has no "Instrumental" entry: keep
+  English, tick no lyrics, leave the track's Audio Language at None. The genre list does have Instrumental. CONFIRMED.
+- A first release: the artist search offers "Create a new profile". Pick it rather than a lookalike name. CONFIRMED.
+- Artwork: 3000 x 3000 px RGB JPG under 25 MB, no URL, contact details or prices on it. CONFIRMED.
+- Stores: all 45 are ticked by default and YouTube Content ID is a separate box, also ticked. Untick Content ID when
+  the artist or friends will use the song in their own videos, or the claims land on them. CONFIRMED.
+- Preview start defaults to 0:30; set it to the hook. CONFIRMED.
+- Distribute: a terms tick plus "Distribute Free" (the owner's own click). After that the audio is locked; metadata edits
+  stay possible and take up to 30 days to reach stores. Status then reads "Pending Moderation". CONFIRMED.
+- Through Claude in Chrome: the extension uploads at most 10 MB per call, so the owner picks the audio file (a 3-minute
+  16-bit FLAC is about 13 MB). The cover uploads fine once copied into the session's working folder (delete the copy
+  after). The date picker: a found ref can be the "Clear Date" button, so open the calendar image next to the input
+  (id `button2` style) or dispatch a click on the day cell, then read the input's value back. Screenshots can time out
+  while a calendar is open; read values with JavaScript instead. CONFIRMED.
+
 ## YouTube
 - Official Artist Channel: 1+ release through a distributor, plus YPP or a Services Directory distributor; a strike
   suspends it. CONFIRMED.

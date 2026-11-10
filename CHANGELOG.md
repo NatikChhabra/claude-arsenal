@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- marketing-studio: release-rollout platforms.md gains a hands-on RouteNote upload section from a real Free-plan
+  release: FLAC or MP3 at exactly 44.1 kHz only (no WAV, 48 kHz refused) with a tested ffmpeg route, the 14-day
+  earliest date, required fields, YouTube Content ID ticked by default, audio locked after Distribute, and the Claude
+  in Chrome limits (10 MB upload cap, date-picker refs that hit "Clear Date").
 - registry: Rune IDE (SKIP: no Windows build, no C++ tier, own agent instead of Claude Code) and Meta's Astryx
   React design system (WATCH: MIT and agent-readable CLI, but no current build has a React front end).
 - music-studio: `guitar-capture` gains section 0a, a piece to play live that is easy but makes the room go "wow"
