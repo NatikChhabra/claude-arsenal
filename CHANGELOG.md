@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- registry: new Video section with five repos read and tested 10 Nov: raea (TRIAL, GPU React/3D renderer), earshot
+  (TRIAL; `find` measured, `realness` too noisy for a gate), huashu-art-motion (TRIAL), argo (TRIAL, web-app demo
+  videos), Director (SKIP, paid hosted index). video-edit README: "The full engine" says to call the owner's existing
+  PC video tools before building new ones.
 - marketing-studio: release-rollout platforms.md gains a hands-on RouteNote upload section from a real Free-plan
   release: FLAC or MP3 at exactly 44.1 kHz only (no WAV, 48 kHz refused) with a tested ffmpeg route, the 14-day
   earliest date, required fields, YouTube Content ID ticked by default, audio locked after Distribute, and the Claude
