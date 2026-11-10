@@ -75,3 +75,11 @@ a beat tracker, a CLAP model to search a sound library by meaning, frame interpo
 /plugin install video-edit --marketplace NatikChhabra/claude-arsenal
 ```
 Or `/plugin marketplace add NatikChhabra/claude-arsenal`, then `/plugin install video-edit@claude-arsenal`. More options: the [marketplace README](../../README.md).
+
+## The full engine (reuse it, never rebuild)
+These skills carry the method. The working engine they came from runs on the owner's PC: a JSON-EDL renderer with
+captions, SFX on cues, ducking and 9:16, an acceptance oracle, a watch pack, transcription, beat tools, CLAP sound
+search (also inside a recording), stems, mattes, motion graphics, LUTs, thumbnails and Shorts checks, each with a
+selftest. Its own reuse guide (`tools/REUSE.md` in that project) lists every tool and how another project calls it.
+On the owner's PC, call those tools instead of writing new ones; a missing feature goes in there as an opt-in flag,
+then a lesson worth sharing comes back here.

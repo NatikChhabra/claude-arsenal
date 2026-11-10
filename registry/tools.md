@@ -57,6 +57,18 @@ Facts and sources: research/03_vocal_tools.md (vocals), research/04_production_a
 | ComfyUI (already on his PC, ROCm) | local image generation for backgrounds/textures | GPL-3.0 | RX 7800 XT | TRIAL (behind the no-AI-slop check) | 2026-12-01 | github.com/comfyanonymous/ComfyUI |
 | Astryx (Meta) | React 19 design system: 150+ accessible components, 7 themes, dark mode, templates, and an `astryx` CLI whose docs are written for coding agents to read (`astryx component --list`, `astryx docs`); checked 10 Nov 2026 | MIT, beta | npm `@astryxdesign/core` + theme + `@stylexjs/stylex`; needs React 19 | WATCH (none of his current builds has a React front end: the web apps are Gradio, the amp sim is JUCE; first choice of component kit if a project ships a React UI, still behind the design skill's rules) | 2027-02-01 | github.com/meta/astryx |
 
+## Video
+Facts checked 10 Nov 2026 (each repo's code read; earshot run on a 391-file licensed SFX bank). The owner's PC already has
+a full video engine (EDL render, QA oracle, CLAP sound search, beats, mattes, motion graphics): call it before building
+anything here (video-edit README, "The full engine").
+| name | what it does for us | licence | runs on | verdict | recheck | source |
+|---|---|---|---|---|---|---|
+| raea ("Render Anything Engine") | React/TS compositions (Remotion-style API) drawn on the GPU: motion graphics, 3D (Bevy, glTF, splats), games, physics, local foley models; `raea check` (text in app UI zones, contrast, flashes, reading time, loudness), `raea cut` by speech | FSL-1.1-ALv2 (any use except a competing engine; Apache-2.0 after 2 years) | Windows x86_64 (least tested), DX12 or Vulkan GPU; Windows encode is CPU only, so render `--alpha` PNGs and encode with ffmpeg | TRIAL (the route to 3D layers, particles, springs and building charts; canary, changes daily: pin a release, bakeoff against HyperFrames on the PC first) | 2026-12-01 | github.com/shinyobjectz/raea |
+| earshot | lets an agent hear audio: describe, match, rank files by a description, find moments in a long recording, real vs code-made, listening timeline sheet, launch-film critique, code-made SFX bank | MIT; CLAP + AST weights Apache-2.0 / BSD (~1.1 GB, CPU) | CPU, Python 3.10+, torch CPU | TRIAL (`find`: 10 of 19 sounds found in a 30-sound mix, the same as a plain CLAP window scan; `realness` too noisy for a gate: 5 of 20 code-made sounds read real; the code-made bank breaks the "real sounds only" rule; never feed it Sonniss files, their licence bans ML) | 2027-01-01 | github.com/Leonxlnx/earshot |
+| huashu-art-motion | 36 painted art styles and 9 explainer grammars as code (brush/medium libs, v1.3 paints one scene in 16 styles), anti-slideshow gates (film_gate, storyboard_lint) | MIT | Node + headless Chrome | TRIAL (painted looks for music videos and personal edits; characters in its demos come from image models, so run the no-AI-slop blind check) | 2026-12-01 | github.com/alchaincyf/huashu-art-motion |
+| argo | a Playwright web-app walkthrough turned into a narrated demo MP4: TTS (Kokoro, local), overlays, cursor ring, camera moves | MIT | Node, Chromium; Kokoro ~410 MB | TRIAL (demo videos of the owner's own web apps; narration is TTS, so voice-led channels keep his voice) | 2026-12-01 | github.com/shreyaskarnik/argo |
+| Director (VideoDB) | chat agents that search, clip, summarise, dub and subtitle videos | MIT code, but every agent runs on VideoDB's paid hosted index | cloud | SKIP (paid key and raw footage uploaded to a third party; local transcripts + the engine's watch pack do the same search) | - | github.com/video-db/Director |
+
 ## Marketing
 | name | what it does for us | licence | runs on | verdict | recheck | source |
 |---|---|---|---|---|---|---|
