@@ -158,6 +158,15 @@ python ${CLAUDE_SKILL_DIR}/tools/still_check.py --selftest
 - **Animation review:** see the Before | After | Why standard in `motion.md`; video motion is reviewed frame by frame per `edit.md`.
 - **Thumbnails and covers:** `still_check.py` first, then the safe-zone check and blind readers in `video.md`.
 
+## Companion: hallmark (Persuade pages only)
+
+- For a landing page, product site or a site redesign, hallmark v2 (MIT, registry row) can deal the theme and page
+  shape: `node <hallmark>/scripts/theme.mjs deal` then `draw`, and `photos` for credited open photos. Build under THIS
+  skill's rules and tokens, then run both linters: ours (`lint.mjs`, `preflight.mjs`, `inspect.mjs`) and its
+  `sloplint.mjs --render`. On a redesign, `sloplint --before` then `--kept` proves no link, field or handler went missing.
+- Never set `TOGETHER_API_KEY` for it (paid image API); never install its `install-hook.mjs` edit-time hook.
+- Not for Operate, Read, Experience, Ad or Video work: its themes are web-page materials.
+
 ## Not adopted (and why)
 
 - **impeccable CLI and hooks:** its new-design step always calls their server, the hooks download and run a binary, and session hooks run unsandboxed. Its rules are folded into these references instead. If its 62-rule detector is ever wanted:
