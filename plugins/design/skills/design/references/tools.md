@@ -2,7 +2,7 @@
 
 Use when: running the design gate, or deciding which checker fits.
 
-All checkers live under `${CLAUDE_SKILL_DIR}/tools/` (the skill folder printed as "Base directory" when it loads). Two are third-party MIT code, modified here; licences sit beside them and in the plugin's `NOTICE.md`. They read files and run a local headless browser. None call the network themselves. Need Node 22+. No Chrome on PATH (cloud containers): set `CHROME_PATH=/opt/pw-browsers/chromium` for `inspect.mjs`.
+All checkers live under `${CLAUDE_SKILL_DIR}/tools/` (the skill folder printed as "Base directory" when it loads). Two are third-party MIT code, modified here; licences sit beside them and in the plugin's `NOTICE.md`. They read files and run a local headless browser. None call the network themselves. Need Node 22+. No Chrome on PATH (cloud containers): set `CHROME_PATH=/opt/pw-browsers/chromium` for `inspect.mjs` and `motion.mjs`; running as root on Linux they add `--no-sandbox` themselves (Chrome refuses to start without it there; checked 11 Nov 2026).
 
 ## Which one
 
@@ -117,6 +117,7 @@ node ${CLAUDE_SKILL_DIR}/tools/taste/motion.mjs <url | path/to/index.html[#hash]
 ```
 - **What it is for:** motion.md §14 asks for motion reviewed frame by frame. This films the page on a virtual clock and lays the frames out as contact sheets (6 x 5 tiles, each stamped with its time), so an entrance, a reward or a key press can be judged beat by beat instead of from memory.
 - **How the clock works:** a shim injected before the page's own scripts drives `setTimeout`, `setInterval`, `requestAnimationFrame`, `performance.now`, `Date.now` and every CSS and Web Animation from one clock that only moves between captures. Every frame is exactly on its beat and screenshots never jitter. Chrome's own virtual-time policy is not used: new headless stops painting while it is paused. Not virtualised: Workers, audio clocks, `document.timeline.currentTime`, and an animation the page itself paused (the shim drives it anyway).
+- **Frame 0 is the true start:** CSS animations begin on the real clock while the page loads, so the shim catches each one within a native frame of its start and holds it. Before 11 Nov 2026 it did not, and any entrance of about 400 ms or less (every UI entrance under this standard) had already finished by frame 0, so the sheet showed no motion at all. Old sheets of short entrances are not evidence.
 - **Events:** `--at` fires keys (`ArrowDown`, `Enter`, `Escape`, `" "`, a letter) or `js:<expression>` (no commas) at page-clock seconds, for remote and keyboard paths, or to trigger an idle move on cue.
 - **`--tv`:** also writes `tv-NN.jpg`, the same frames as an old television shows them: soft and with 5% overscan cut from every edge. Use it for any 10-foot surface (layout.md, experience.md §7).
 - **Output:** `sheet-NN.jpg` (and `tv-NN.jpg`) in `--out` (default `.design-check/motion/`), plus every page error. Exit 0 clean, 1 on any page error, 2 on bad arguments. Full-size frames are kept only with `--keep-frames`.
@@ -164,6 +165,17 @@ python ${CLAUDE_SKILL_DIR}/tools/still_check.py --selftest
   shape: `node <hallmark>/scripts/theme.mjs deal` then `draw`, and `photos` for credited open photos. Build under THIS
   skill's rules and tokens, then run both linters: ours (`lint.mjs`, `preflight.mjs`, `inspect.mjs`) and its
   `sloplint.mjs --render`. On a redesign, `sloplint --before` then `--kept` proves no link, field or handler went missing.
+- Install: `/plugin marketplace add nutlope/hallmark`, `/plugin install hallmark@hallmark`. The plugin install adds no
+  hooks; the edit-time hook only arrives if someone runs its `install-hook.mjs`, so never run that.
+- `--render` needs `puppeteer-core`, which hallmark does not ship. Without it sloplint prints its static results and,
+  on the very last line, `render tier not run: no puppeteer-core found`, exiting 0 when the static rules pass (checked): read
+  that line before claiming a render pass. Fix once per machine: `npm i puppeteer-core@24` in a scratch folder and
+  set `HALLMARK_PUPPETEER=<that folder>/node_modules/puppeteer-core`. As root on Linux (cloud containers) it also needs
+  Chrome with `--no-sandbox`: point `CHROME_PATH` at a two-line wrapper
+  (`exec /opt/pw-browsers/chromium --no-sandbox "$@"`). Checked 11 Nov 2026: then the render tier runs at 1440px and
+  `--before`/`--kept` caught a renamed in-page link.
+- Its FAIL 20 wants a `/* Hallmark · <theme> ... */` comment as the first line of the CSS, recording what it dealt
+  (and, on a redesign, anything deliberately dropped). Add it; it is a comment, not a visual change.
 - Never set `TOGETHER_API_KEY` for it (paid image API); never install its `install-hook.mjs` edit-time hook.
 - Not for Operate, Read, Experience, Ad or Video work: its themes are web-page materials.
 
