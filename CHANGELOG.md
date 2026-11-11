@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+- design: every checker run end to end on a test page and a real cover (11 Nov). Two fixes: `inspect.mjs` and
+  `motion.mjs` would not start Chrome as root on Linux (cloud containers), now `--no-sandbox` is added there only;
+  `motion.mjs` let CSS animations run on the real clock during page load, so a 300 ms entrance had already finished
+  by frame 0 and the sheet showed no motion (a check that lied), now each animation is held from its first frame.
+  Sheet labels show 2 decimals above 10 fps. tools.md: hallmark `--render` needs `puppeteer-core`
+  (`HALLMARK_PUPPETEER`) and silently skips the render tier without it, plus the cloud wrapper for Chrome.
 - design: hallmark v2 (MIT) registered as a TRIAL companion for Persuade pages and site redesigns (theme and
   page-shape dealer, credited open photos, `sloplint --before/--kept` redesign check); tools.md says how it runs under
   the house rules, with its paid image key and edit hook off.

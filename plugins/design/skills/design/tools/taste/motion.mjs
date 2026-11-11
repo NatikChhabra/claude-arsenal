@@ -74,6 +74,9 @@ const SHIM = `(() => {
     const t = (T - seen.get(a)) * (a.playbackRate || 1), end = a.effect ? a.effect.getComputedTiming().endTime : Infinity;
     if (t >= end) a.finish(); else { a.pause(); a.currentTime = t; }
   } };
+  // CSS animations start on the real clock while the page loads; catch each one within a native frame of its start
+  // and hold it there, or an entrance of 400 ms or less has already finished by frame 0
+  const hold = () => { try { sync(); } catch {} nativeRaf(hold); }; nativeRaf(hold);
   window.__vt = { now: () => T, paint: () => new Promise((r) => nativeRaf(() => nativeRaf(r))), advance(ms) {
     const until = T + ms;
     while (T < until) {
@@ -121,7 +124,7 @@ async function sheet(name, tv) {
     // Each frame is drawn into its own small canvas, one at a time: thirty full-size images on one page overrun
     // Chrome's decode budget and some tiles never paint (seen as black blocks). tv: the frame is drawn 11% larger
     // and centred, so 5% of every edge falls outside the tile (overscan), then softened.
-    const srcs = slice.map((f) => `/__motion/f/f${String(f).padStart(4, '0')}.jpg`), labels = slice.map((f) => `${(f / fps).toFixed(1)}s`);
+    const srcs = slice.map((f) => `/__motion/f/f${String(f).padStart(4, '0')}.jpg`), labels = slice.map((f) => `${(f / fps).toFixed(fps > 10 ? 2 : 1)}s`);
     const html = `<!doctype html><meta charset="utf-8"><style>body{margin:0;background:#111;display:grid;grid-template-columns:repeat(${COLS},${TW}px);gap:4px;padding:4px}
       .c{position:relative;width:${TW}px;height:${TH}px}canvas{display:block}
       b{position:absolute;left:0;top:0;background:#0d0d0d;color:#f2f2f2;font:12px/1 monospace;padding:3px 5px}</style>
