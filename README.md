@@ -97,6 +97,7 @@ Each skill carries `status: draft` (outline, untested), `beta` (used on real wor
 | [arsenal-update](plugins/workflow/skills/arsenal-update/SKILL.md) | Feed what a session learned back into this marketplace, privacy-checked, through a PR |
 | [pre-report-secrets-scan](plugins/workflow/skills/pre-report-secrets-scan/SKILL.md) | Redact secrets and personal data from a log, bug report or issue before it is shared, with a findings list |
 | [android-adb-drive](plugins/workflow/skills/android-adb-drive/SKILL.md) | Drive an app on an Android phone over adb without mis-taps: focus and notification guard, saved and restored settings, screen as tappable labels |
+| [app-release-gate](plugins/workflow/skills/app-release-gate/SKILL.md) | Gate an app release: rehearse the real flows, start the installed build in CI, pretend hardware with retry budgets, a local diary for reports, staged rollout, one-click publish |
 
 ### music-studio
 | Skill | What it does |

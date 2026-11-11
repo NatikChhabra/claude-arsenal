@@ -1,6 +1,11 @@
 # Changelog
 
 ## Unreleased
+- workflow: new skill `app-release-gate` (beta), from a real app release that passed every unit and screenshot test and
+  still crashed at the end of its own setup and froze on the first real computers. Ten steps: list the real flows,
+  rehearse each one's end (and prove the rehearsal fails on the old bug), start the installed build in CI and check
+  the window answers, pretend hardware with asserted retry budgets, bounded retries off the change callback, a local
+  diary with a freeze watch and crash note for bug reports, a memory checker, testers a day early, one-click publish.
 - design: every checker run end to end on a test page and a real cover (11 Nov). Two fixes: `inspect.mjs` and
   `motion.mjs` would not start Chrome as root on Linux (cloud containers), now `--no-sandbox` is added there only;
   `motion.mjs` let CSS animations run on the real clock during page load, so a 300 ms entrance had already finished
