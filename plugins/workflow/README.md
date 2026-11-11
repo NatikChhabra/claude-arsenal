@@ -17,6 +17,7 @@ code.
 | `skills/pre-report-secrets-scan/` | Before a log, stack trace, env dump or bug report is pasted, posted or emailed: a redacted copy, a findings list that never shows a value, UNSURE flags for the user, a rotate reminder |
 | `skills/drift-sweep/` | One read-only helper finds contradictions between rule files after a rule changed (the first sweep found 25, 2 HIGH) |
 | `skills/research-claims/` | CONFIRMED / INFERRED / DEBUNKED on every claim, read the whole source, say when a claim is true |
+| `skills/app-release-gate/` | Gate an app release so a green build cannot still crash or freeze on a user's machine: rehearse real flows, start the installed build in CI, pretend hardware with retry budgets, a local diary for reports, staged rollout, one-click publish |
 | `hooks/secret_guard.py` | PreToolUse on Bash/PowerShell: blocks git add/commit/push carrying secret files, token-shaped strings or private names; blocks `git clean -x`, recursive deletes through protected paths, git commands that throw away uncommitted or pushed work (`reset --hard`, `checkout --`, `restore`, `clean -f`, `stash clear`, `branch -D`, `push --force` without a lease) and a download piped into a shell |
 | `hooks/context_guard.py` | PostToolUse: tells the session to hand off at +140k past its work start (helpers +120k), due at +200k; notes cache-expiry rewrites, helper fan-out over 4, helpers past 20 images. Never blocks |
 | `hooks/test_hooks.py` | Feeds both hooks fake JSON on stdin (48 checks) |
