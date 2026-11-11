@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- design: hallmark v2 (MIT) registered as a TRIAL companion for Persuade pages and site redesigns (theme and
+  page-shape dealer, credited open photos, `sloplint --before/--kept` redesign check); tools.md says how it runs under
+  the house rules, with its paid image key and edit hook off.
 - registry: new Video section with five repos read and tested 10 Nov: raea (TRIAL, GPU React/3D renderer), earshot
   (TRIAL; `find` measured, `realness` too noisy for a gate), huashu-art-motion (TRIAL), argo (TRIAL, web-app demo
   videos), Director (SKIP, paid hosted index). video-edit README: "The full engine" says to call the owner's existing
