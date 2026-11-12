@@ -253,6 +253,16 @@ scene.environment = new THREE.PMREMGenerator(renderer)
 - Mobile: no antialias, minimal shadows, no post-processing, Lambert, <1000 particles.
 - Profile: `renderer.info.render.calls` / `.triangles`, `renderer.info.memory`, Spector.js.
 
+**A product model in the first screen of a flat page** (learned replacing a CSS-box pedal that read as cheap, Nov 2026)
+- Tone mapping: `NeutralToneMapping` keeps a brand colour as drawn. ACES pushed a cream enclosure to white and washed the print.
+- Shade on the page: draw the model's outline into a small render target (override material, orthographic camera straight on), blur it in two or three separable passes, lay it on a plane behind the model and push it along the light. It stays soft at any size, and a press can pull it closer and tighten it. A shadow map on a `ShadowMaterial` plane banded and showed every part's own outline. Keep the shadow map for the model's own parts only.
+- Printed faces: draw the lettering on a 2D canvas at 4 px per unit and use it as the map. Print again after `document.fonts.load()` resolves, or the first paint uses a fallback face without saying so. Bake a faint darker ring under every part that sits on the paint; the light never reaches there and the parts stop floating.
+- A raking key light puts its highlight across the print and the labels fade. Check legibility at every tilt the pointer can reach; lower `specularIntensity` before moving the light.
+- `LatheGeometry` profiles run from the bottom centre, out, up and back to the centre. The other way round the faces are culled and you look through the part.
+- Still and live must be the same picture: render the still from the same module at the same canvas shape (Playwright, `omitBackground`), then diff a no-WebGL load against a live one. Chromium draws WebGL headless with `--use-angle=swiftshader --enable-unsafe-swiftshader`.
+- The canvas reaches past the object only where its shade falls. inspect counts the whole canvas box as paint, so a generous box over a headline is a `covered-text` FAIL even where it is transparent.
+- Scroll: read `scrollY` inside the render loop instead of adding a scroll listener (preflight refuses one), and stop the loop off-screen and in hidden tabs.
+
 **Image to Three.js (procedural model from one reference)**
 - Keep a state file of pass, targets and scores; it is authoritative over chat memory. Validate the image suits 3D, rate complexity (simple / moderate / complex / ultra), write a quality contract before code.
 - Spec hierarchy, materials, pivots, sockets: ≤5 critical + ≤3 important feature targets per pass; a detail inventory of ≥9 details, each mapped to a local feature. Reject a spec that could describe many objects.

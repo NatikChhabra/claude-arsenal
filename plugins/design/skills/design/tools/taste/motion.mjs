@@ -69,6 +69,8 @@ const SHIM = `(() => {
   window.cancelAnimationFrame = (i) => { rafs = rafs.filter((r) => r.i !== i); };
   performance.now = () => T; Date.now = () => base + T;
   const sync = () => { for (const a of document.getAnimations()) {
+    // scroll and view timelines run on progress, not on the clock: the scroll position drives them, so leave them alone
+    if (a.timeline && !(a.timeline instanceof DocumentTimeline)) continue;
     if (!seen.has(a)) seen.set(a, T - (a.currentTime || 0));
     if (a.playState === 'finished') continue;
     const t = (T - seen.get(a)) * (a.playbackRate || 1), end = a.effect ? a.effect.getComputedTiming().endTime : Infinity;

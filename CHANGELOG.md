@@ -1,6 +1,11 @@
 # Changelog
 
 ## Unreleased
+- design: experience.md 3D section gains "A product model in the first screen of a flat page", from rebuilding a hero
+  pedal as a three.js model: neutral tone mapping for brand colours, a blurred-outline shade instead of a shadow map,
+  printed faces from a canvas that reprints when the font arrives, a still that matches the live canvas, scroll read
+  inside the render loop. lint.mjs no longer fails the word "shadow" in comment prose or `light.shadow` in scene code
+  (a class string still fails). motion.mjs leaves scroll and view timelines alone while it steps the clock.
 - workflow: app-release-gate gains steps 11-12 from an app's next release, after its owner found the settings window
   left him at the driver's default 24 ms while setup tuned to the lowest clean delay, pages cut off at the right edge
   on wide windows, and a now-playing strip covering a page's button: every road to the same state ends tuned, a
