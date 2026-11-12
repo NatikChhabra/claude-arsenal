@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- design: inspect.mjs walks a page to its end. It photographed the first 12 screens and stopped scrolling there, so on
+  a long phone page the reveals further down never fired and the measure reported an empty stretch that no visitor
+  sees. experience.md sound section gains the before and after player (one element per version, place carried across,
+  shape from real peaks) and the rule to test seeking on a server that answers Range requests.
 - design: experience.md 3D section gains "A product model in the first screen of a flat page", from rebuilding a hero
   pedal as a three.js model: neutral tone mapping for brand colours, a blurred-outline shade instead of a shadow map,
   printed faces from a canvas that reprints when the font arrives, a still that matches the live canvas, scroll read
