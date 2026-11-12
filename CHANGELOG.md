@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+- workflow: app-release-gate gains steps 11-12 from an app's next release, after its owner found the settings window
+  left him at the driver's default 24 ms while setup tuned to the lowest clean delay, pages cut off at the right edge
+  on wide windows, and a now-playing strip covering a page's button: every road to the same state ends tuned, a
+  fallback says why in plain words, and snapshots cover every window shape with every bar showing.
+- design: systems.md says how to answer "the logo looks AI-made": 3-4 marks with a maker's trace each, SVG with the
+  product's own fonts and turbulence filters, rendered at 16-512 px, the owner picks.
 - workflow: new skill `app-release-gate` (beta), from a real app release that passed every unit and screenshot test and
   still crashed at the end of its own setup and froze on the first real computers. Ten steps: list the real flows,
   rehearse each one's end (and prove the rehearsal fails on the old bug), start the installed build in CI and check

@@ -40,6 +40,14 @@ its own setup and froze its window on the first real computers. The tests had dr
 10. **One click to publish.** Version bump and changelog only in the release commit, wait for green CI on that exact
     commit, then hand over the link. Push nothing to the release branch between green and publish.
 
+11. **Every road to the same state ends the same.** A setup wizard and a settings window that both open a device must
+    both finish tuned (lowest clean buffer, best mode); a hand-picked choice that keeps the driver's default leaves the
+    user at 24 ms while setup would have found 6. When the app falls back (shared mode, a slower driver), it says why in
+    one plain sentence and names the change that fixes it, and the user can still choose any option by hand.
+12. **Every window shape, every bar showing.** Snapshot the app at 16:9, 16:10, 21:9, 4:3, tall and small, and each
+    page with every persistent strip (now playing, notices) visible. A fixed aspect ratio that letterboxes reads as
+    content cut off; a page that ignores a strip hides its own buttons behind it.
+
 ## Review before delivery
 - Every flow from step 1 has a rehearsal that ran in CI on the release commit, and one was shown to fail on a real bug.
 - The start-and-close check ran on the installed build, not the build tree.
