@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- design: two checker fixes from a real build. motion.mjs crashed on any page with a scroll-driven animation
+  (`animation-timeline: view()` or `scroll()`): the clock shim set a time on it, which Chrome refuses. The shim now
+  leaves those to the scroll position. lint.mjs reported `box-shadow: none` and `text-shadow: none` as shadows: the
+  space before `none` let the pattern backtrack past its own exception, so a rule that removes a shadow failed the gate.
 - design: inspect.mjs walks a page to its end. It photographed the first 12 screens and stopped scrolling there, so on
   a long phone page the reveals further down never fired and the measure reported an empty stretch that no visitor
   sees. experience.md sound section gains the before and after player (one element per version, place carried across,
