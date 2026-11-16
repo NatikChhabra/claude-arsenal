@@ -2,6 +2,10 @@
 
 ## Unreleased
 - registry: MiniMax H3 / H3-Image open weights (WATCH: 33B DiT, does not fit a 16 GB AMD card on Windows).
+- registry: superpowers (ADOPT, owner request, with the note to skip its subagent skill when usage is tight).
+- registry: openfilm (TRIAL) under Video, an HTML-frames film format for overlays.
+- marketing-studio: skill reddit-browser (draft): manage Reddit through the signed-in browser with a yes per post, since
+  Reddit closed new API apps. Registry row for the Reddit MCP servers (SKIP for writes).
 - registry: cli-printing-press (WATCH: printed CLIs exist for youtube, producthunt, discord; gh covers GitHub).
 - registry: pluginval (ADOPT, passed on a real amp plugin), code-review-graph (SKIP on C++), context-mode, clangd-lsp
   and pedalboard (WATCH/TRIAL), five duplicate-of-what-we-have tools (SKIP).
