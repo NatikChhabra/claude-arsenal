@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- design: two checker fixes from a real build. motion.mjs crashed on any page with a scroll-driven animation
+  (`animation-timeline: view()` or `scroll()`): the clock shim set a time on it, which Chrome refuses. The shim now
+  leaves those to the scroll position. lint.mjs reported `box-shadow: none` and `text-shadow: none` as shadows: the
+  space before `none` let the pattern backtrack past its own exception, so a rule that removes a shadow failed the gate.
 - registry: MiniMax H3 / H3-Image open weights (WATCH: 33B DiT, does not fit a 16 GB AMD card on Windows).
 - registry: superpowers (ADOPT, owner request, with the note to skip its subagent skill when usage is tight).
 - registry: openfilm (TRIAL) under Video, an HTML-frames film format for overlays.
