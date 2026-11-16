@@ -5,6 +5,17 @@
   (`animation-timeline: view()` or `scroll()`): the clock shim set a time on it, which Chrome refuses. The shim now
   leaves those to the scroll position. lint.mjs reported `box-shadow: none` and `text-shadow: none` as shadows: the
   space before `none` let the pattern backtrack past its own exception, so a rule that removes a shadow failed the gate.
+- registry: superpowers (ADOPT, owner request, with the note to skip its subagent skill when usage is tight).
+- registry: openfilm (TRIAL) under Video, an HTML-frames film format for overlays.
+- marketing-studio: skill reddit-browser (draft): manage Reddit through the signed-in browser with a yes per post, since
+  Reddit closed new API apps. Registry row for the Reddit MCP servers (SKIP for writes).
+- registry: cli-printing-press (WATCH: printed CLIs exist for youtube, producthunt, discord; gh covers GitHub).
+- registry: pluginval (ADOPT, passed on a real amp plugin), code-review-graph (SKIP on C++), context-mode, clangd-lsp
+  and pedalboard (WATCH/TRIAL), five duplicate-of-what-we-have tools (SKIP).
+- registry: codegraph (SKIP for now: no clear token saving in a real lookup, telemetry on by default), Claude Code on a
+  local Ollama model (SKIP: failed a one-line edit), Aider on a local model (ADOPT as the offline edit fallback).
+- registry: linkedin-mcp-server (TRIAL) under Marketing, with a pinned install line, the sign-in step and the
+  account-ban warning from its own README.
 - design: inspect.mjs walks a page to its end. It photographed the first 12 screens and stopped scrolling there, so on
   a long phone page the reveals further down never fired and the measure reported an empty stretch that no visitor
   sees. experience.md sound section gains the before and after player (one element per version, place carried across,
