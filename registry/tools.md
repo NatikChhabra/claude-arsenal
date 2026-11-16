@@ -74,6 +74,7 @@ anything here (video-edit README, "The full engine").
 | name | what it does for us | licence | runs on | verdict | recheck | source |
 |---|---|---|---|---|---|---|
 | coreyhaines31/marketingskills | ~40 marketing skills: copywriting, social, launch, ad-creative, marketing-psychology, ab-testing | MIT | `npx skills add coreyhaines31/marketingskills -a claude-code` | TRIAL (depth for campaign-plan; our voice rules win) | 2026-12-01 | github.com/coreyhaines31/marketingskills |
+| linkedin-mcp-server (stickerdaniel), PyPI `mcp-server-linkedin` | Claude reads LinkedIn profiles, companies, jobs and messages through a real signed-in browser session (Patchright Chromium); 4.2k stars, v4.30.0; checked 16 Nov 2026 | Apache-2.0 | `claude mcp add linkedin --scope user -e UV_HTTP_TIMEOUT=300 -- uvx mcp-server-linkedin==4.30.0`, then `uvx mcp-server-linkedin==4.30.0 --login` (the owner signs in; tested on Windows 11). Session lives in `~/.linkedin-mcp/` | TRIAL (pin a version: the README's `@latest` auto-updates code that holds the session; its own README says LinkedIn's User Agreement bans automated access and accounts "can be restricted or banned", so read-only, low volume, never bulk actions) | 2027-01-15 | github.com/stickerdaniel/linkedin-mcp-server |
 
 ## Developer tools
 | name | what it does for us | licence | runs on | verdict | recheck | source |

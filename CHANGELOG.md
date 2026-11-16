@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- registry: linkedin-mcp-server (TRIAL) under Marketing, with a pinned install line, the sign-in step and the
+  account-ban warning from its own README.
 - design: inspect.mjs walks a page to its end. It photographed the first 12 screens and stopped scrolling there, so on
   a long phone page the reveals further down never fired and the measure reported an empty stretch that no visitor
   sees. experience.md sound section gains the before and after player (one element per version, place carried across,
