@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- registry: codegraph (SKIP for now: no clear token saving in a real lookup, telemetry on by default), Claude Code on a
+  local Ollama model (SKIP: failed a one-line edit), Aider on a local model (ADOPT as the offline edit fallback).
 - registry: linkedin-mcp-server (TRIAL) under Marketing, with a pinned install line, the sign-in step and the
   account-ban warning from its own README.
 - design: inspect.mjs walks a page to its end. It photographed the first 12 screens and stopped scrolling there, so on
