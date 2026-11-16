@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- registry: cli-printing-press (WATCH: printed CLIs exist for youtube, producthunt, discord; gh covers GitHub).
 - registry: pluginval (ADOPT, passed on a real amp plugin), code-review-graph (SKIP on C++), context-mode, clangd-lsp
   and pedalboard (WATCH/TRIAL), five duplicate-of-what-we-have tools (SKIP).
 - registry: codegraph (SKIP for now: no clear token saving in a real lookup, telemetry on by default), Claude Code on a
