@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- registry: MiniMax H3 / H3-Image open weights (WATCH: 33B DiT, does not fit a 16 GB AMD card on Windows).
 - registry: cli-printing-press (WATCH: printed CLIs exist for youtube, producthunt, discord; gh covers GitHub).
 - registry: pluginval (ADOPT, passed on a real amp plugin), code-review-graph (SKIP on C++), context-mode, clangd-lsp
   and pedalboard (WATCH/TRIAL), five duplicate-of-what-we-have tools (SKIP).
