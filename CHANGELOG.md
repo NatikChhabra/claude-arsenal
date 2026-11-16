@@ -4,6 +4,7 @@
 - music-studio: `guitar-capture` 0a, lessons from the audition retries: a room that only hears him (voice call)
   makes visual tricks worthless, so the wow is a known song plus the soft-build-silence-explode shape; pick the song
   from his own listening history (he did not know the famous pick); move riffs to an easier string over an open drone.
+- registry: MiniMax H3 / H3-Image open weights (WATCH: 33B DiT, does not fit a 16 GB AMD card on Windows).
 - registry: superpowers (ADOPT, owner request, with the note to skip its subagent skill when usage is tight).
 - registry: openfilm (TRIAL) under Video, an HTML-frames film format for overlays.
 - marketing-studio: skill reddit-browser (draft): manage Reddit through the signed-in browser with a yes per post, since
