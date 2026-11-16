@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- registry: pluginval (ADOPT, passed on a real amp plugin), code-review-graph (SKIP on C++), context-mode, clangd-lsp
+  and pedalboard (WATCH/TRIAL), five duplicate-of-what-we-have tools (SKIP).
 - registry: codegraph (SKIP for now: no clear token saving in a real lookup, telemetry on by default), Claude Code on a
   local Ollama model (SKIP: failed a one-line edit), Aider on a local model (ADOPT as the offline edit fallback).
 - registry: linkedin-mcp-server (TRIAL) under Marketing, with a pinned install line, the sign-in step and the
