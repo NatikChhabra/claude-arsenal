@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- marketing-studio: skill reddit-browser (draft): manage Reddit through the signed-in browser with a yes per post, since
+  Reddit closed new API apps. Registry row for the Reddit MCP servers (SKIP for writes).
 - registry: cli-printing-press (WATCH: printed CLIs exist for youtube, producthunt, discord; gh covers GitHub).
 - registry: pluginval (ADOPT, passed on a real amp plugin), code-review-graph (SKIP on C++), context-mode, clangd-lsp
   and pedalboard (WATCH/TRIAL), five duplicate-of-what-we-have tools (SKIP).
