@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- registry: superpowers (ADOPT, owner request, with the note to skip its subagent skill when usage is tight).
 - registry: openfilm (TRIAL) under Video, an HTML-frames film format for overlays.
 - marketing-studio: skill reddit-browser (draft): manage Reddit through the signed-in browser with a yes per post, since
   Reddit closed new API apps. Registry row for the Reddit MCP servers (SKIP for writes).
