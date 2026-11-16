@@ -15,6 +15,12 @@ Use when: creating a brand identity (wordmark, symbol, app icons), building or d
 
 - Never redraw or imitate a real company's logo (process.md §14). For a new brand, derive the mark from the inventory (the name's meaning, the product's object, the place), never from the category (no lightbulbs, rockets, abstract swooshes, gradient orbs).
 - Start with a wordmark: the brand name set in the chosen display face, then hand-tuned (kerning pairs, one custom letter or ligature at most, tracking tightened for the display size). A symbol is earned only when the product needs an app icon, favicon or avatar that the wordmark cannot fill.
+- When the owner calls a mark "AI-looking": the fix is a hand, not more polish. Make 3-4 marks that each carry a different
+  maker's trace (a stencil with real bridges, a script with one swash, a hand-inked object plus a plain lowercase word,
+  marker on masking tape), build them as SVG in one HTML page with the product's own bundled fonts, roughen edges with
+  `feTurbulence` + `feDisplacementMap` (spray, ink bleed, torn tape) rather than drawing wobble by hand, render with
+  Playwright at 512, 64, 32 and 16 px on the real dark and light grounds, and let the owner pick before anything ships.
+  Stencil cuts: measure each glyph's stems, not its box, since the box includes side bearings.
 - Symbol: one idea, built on a grid from simple geometry, readable as a silhouette at 16px, same stroke and corner logic as the icon set (components.md §18). Test in one colour, reversed, and at 16 / 32 / 64px before adding colour.
 - Lockups: horizontal (symbol left of wordmark) and stacked; symbol height ≈ cap height × 1.5-2; gap ≈ the wordmark's x-height. Clear space on every side ≥ the symbol's height × 0.25-0.5. Minimum size: wordmark ≥ 16px cap height on screen, symbol ≥ 16px.
 - Colour: the brand works in one colour first (ink on ground, ground on ink); the accent is the brand colour only if it passes 3:1 as a mark on both themes. Supply light and dark versions as SVG with `currentColor` where the mark is one colour.

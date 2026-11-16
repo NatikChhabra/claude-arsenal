@@ -4,6 +4,56 @@
 - music-studio: `guitar-capture` 0a, lessons from the audition retries: a room that only hears him (voice call)
   makes visual tricks worthless, so the wow is a known song plus the soft-build-silence-explode shape; pick the song
   from his own listening history (he did not know the famous pick); move riffs to an easier string over an open drone.
+- registry: superpowers (ADOPT, owner request, with the note to skip its subagent skill when usage is tight).
+- registry: openfilm (TRIAL) under Video, an HTML-frames film format for overlays.
+- marketing-studio: skill reddit-browser (draft): manage Reddit through the signed-in browser with a yes per post, since
+  Reddit closed new API apps. Registry row for the Reddit MCP servers (SKIP for writes).
+- registry: cli-printing-press (WATCH: printed CLIs exist for youtube, producthunt, discord; gh covers GitHub).
+- registry: pluginval (ADOPT, passed on a real amp plugin), code-review-graph (SKIP on C++), context-mode, clangd-lsp
+  and pedalboard (WATCH/TRIAL), five duplicate-of-what-we-have tools (SKIP).
+- registry: codegraph (SKIP for now: no clear token saving in a real lookup, telemetry on by default), Claude Code on a
+  local Ollama model (SKIP: failed a one-line edit), Aider on a local model (ADOPT as the offline edit fallback).
+- registry: linkedin-mcp-server (TRIAL) under Marketing, with a pinned install line, the sign-in step and the
+  account-ban warning from its own README.
+- design: inspect.mjs walks a page to its end. It photographed the first 12 screens and stopped scrolling there, so on
+  a long phone page the reveals further down never fired and the measure reported an empty stretch that no visitor
+  sees. experience.md sound section gains the before and after player (one element per version, place carried across,
+  shape from real peaks) and the rule to test seeking on a server that answers Range requests.
+- design: experience.md 3D section gains "A product model in the first screen of a flat page", from rebuilding a hero
+  pedal as a three.js model: neutral tone mapping for brand colours, a blurred-outline shade instead of a shadow map,
+  printed faces from a canvas that reprints when the font arrives, a still that matches the live canvas, scroll read
+  inside the render loop. lint.mjs no longer fails the word "shadow" in comment prose or `light.shadow` in scene code
+  (a class string still fails). motion.mjs leaves scroll and view timelines alone while it steps the clock.
+- workflow: app-release-gate gains steps 11-12 from an app's next release, after its owner found the settings window
+  left him at the driver's default 24 ms while setup tuned to the lowest clean delay, pages cut off at the right edge
+  on wide windows, and a now-playing strip covering a page's button: every road to the same state ends tuned, a
+  fallback says why in plain words, and snapshots cover every window shape with every bar showing.
+- design: systems.md says how to answer "the logo looks AI-made": 3-4 marks with a maker's trace each, SVG with the
+  product's own fonts and turbulence filters, rendered at 16-512 px, the owner picks.
+- workflow: new skill `app-release-gate` (beta), from a real app release that passed every unit and screenshot test and
+  still crashed at the end of its own setup and froze on the first real computers. Ten steps: list the real flows,
+  rehearse each one's end (and prove the rehearsal fails on the old bug), start the installed build in CI and check
+  the window answers, pretend hardware with asserted retry budgets, bounded retries off the change callback, a local
+  diary with a freeze watch and crash note for bug reports, a memory checker, testers a day early, one-click publish.
+- design: every checker run end to end on a test page and a real cover (11 Nov). Two fixes: `inspect.mjs` and
+  `motion.mjs` would not start Chrome as root on Linux (cloud containers), now `--no-sandbox` is added there only;
+  `motion.mjs` let CSS animations run on the real clock during page load, so a 300 ms entrance had already finished
+  by frame 0 and the sheet showed no motion (a check that lied), now each animation is held from its first frame.
+  Sheet labels show 2 decimals above 10 fps. tools.md: hallmark `--render` needs `puppeteer-core`
+  (`HALLMARK_PUPPETEER`) and silently skips the render tier without it, plus the cloud wrapper for Chrome.
+- design: hallmark v2 (MIT) registered as a TRIAL companion for Persuade pages and site redesigns (theme and
+  page-shape dealer, credited open photos, `sloplint --before/--kept` redesign check); tools.md says how it runs under
+  the house rules, with its paid image key and edit hook off.
+- registry: new Video section with five repos read and tested 10 Nov: raea (TRIAL, GPU React/3D renderer), earshot
+  (TRIAL; `find` measured, `realness` too noisy for a gate), huashu-art-motion (TRIAL), argo (TRIAL, web-app demo
+  videos), Director (SKIP, paid hosted index). video-edit README: "The full engine" says to call the owner's existing
+  PC video tools before building new ones.
+- marketing-studio: release-rollout platforms.md gains a hands-on RouteNote upload section from a real Free-plan
+  release: FLAC or MP3 at exactly 44.1 kHz only (no WAV, 48 kHz refused) with a tested ffmpeg route, the 14-day
+  earliest date, required fields, YouTube Content ID ticked by default, audio locked after Distribute, and the Claude
+  in Chrome limits (10 MB upload cap, date-picker refs that hit "Clear Date").
+- registry: Rune IDE (SKIP: no Windows build, no C++ tier, own agent instead of Claude Code) and Meta's Astryx
+  React design system (WATCH: MIT and agent-readable CLI, but no current build has a React front end).
 - music-studio: `guitar-capture` gains section 0a, a piece to play live that is easy but makes the room go "wow"
   (audition): recognisable one-string riff played left hand only while the right hand drums on the body, a 1-minute
   show shape, a speed ladder with three practice tempos, softer picked opening (left-hand notes are quieter), riffs

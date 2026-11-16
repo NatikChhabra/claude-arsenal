@@ -108,6 +108,8 @@ animate(el, { scaleY:[1,.85,1.12,1], scaleX:[1,1.15,.92,1] },
 - Music tools: never play reward sounds over the user's own playing or a mic input being analysed. Use visuals mid-phrase; sound between attempts, in key if tonal.
 - Mic input for pitch or onset analysis: `getUserMedia({audio:{echoCancellation:false, noiseSuppression:false, autoGainControl:false}})`; the defaults are tuned for speech and mangle instruments. Show a live input meter so the player knows they are heard, and state plainly when detection is unsure instead of guessing.
 - Rhythm and music timing: drive visuals from the audio clock (heard time ≈ `ctx.currentTime - ctx.baseLatency - ctx.outputLatency`, or map with `ctx.getOutputTimestamp()`), never rAF time. Schedule sounds with `source.start(when)` about 100ms ahead from a short look-ahead timer, never fire them from `setTimeout` on the beat. Offer a latency calibration (tap-along offset). Feedback under ~50ms reads as caused; over ~100ms reads as lag. Typical hit windows: perfect ±25-45ms, good ±70-90ms.
+- A before and after player on a page (one recording through several settings): one `<audio>` element per version, all the same length and loudness matched (LUFS, not peak), `preload="none"` until the first play, then warm the rest unless Save-Data is on. Switching pauses one, hands its `currentTime` to the next and plays it; an element that has not loaded forgets a place set before `loadedmetadata`, so set it again in that event. Draw each version's shape from its own measured peaks on one common scale, so a squashed version looks squashed. Seeking is a real `<input type="range">` laid over the picture, for keys and screen readers.
+- Test seeking against a server that answers Range requests. `python3 -m http.server` does not: every `currentTime` you set snaps back to 0 and the player looks broken when it is not. A 40-line handler that answers `206` with `Content-Range` is enough.
 - Haptics web: `navigator.vibrate(10-20)` tick, `[20,40,20]` success, `[40,60,40]` error. Android only; iOS Safari ignores it, so haptics never carry meaning alone.
 - Haptics native: iOS `UIImpactFeedbackGenerator` light/medium/heavy, `UINotificationFeedbackGenerator` success/warning/error (call `prepare()` before); Android `HapticFeedbackConstants.CONFIRM` / `REJECT`.
 
@@ -252,6 +254,16 @@ scene.environment = new THREE.PMREMGenerator(renderer)
 - InstancedMesh for >50 identical objects; `mergeGeometries` for static; LOD; `matrixAutoUpdate=false` on static objects.
 - Mobile: no antialias, minimal shadows, no post-processing, Lambert, <1000 particles.
 - Profile: `renderer.info.render.calls` / `.triangles`, `renderer.info.memory`, Spector.js.
+
+**A product model in the first screen of a flat page** (learned replacing a CSS-box pedal that read as cheap, Nov 2026)
+- Tone mapping: `NeutralToneMapping` keeps a brand colour as drawn. ACES pushed a cream enclosure to white and washed the print.
+- Shade on the page: draw the model's outline into a small render target (override material, orthographic camera straight on), blur it in two or three separable passes, lay it on a plane behind the model and push it along the light. It stays soft at any size, and a press can pull it closer and tighten it. A shadow map on a `ShadowMaterial` plane banded and showed every part's own outline. Keep the shadow map for the model's own parts only.
+- Printed faces: draw the lettering on a 2D canvas at 4 px per unit and use it as the map. Print again after `document.fonts.load()` resolves, or the first paint uses a fallback face without saying so. Bake a faint darker ring under every part that sits on the paint; the light never reaches there and the parts stop floating.
+- A raking key light puts its highlight across the print and the labels fade. Check legibility at every tilt the pointer can reach; lower `specularIntensity` before moving the light.
+- `LatheGeometry` profiles run from the bottom centre, out, up and back to the centre. The other way round the faces are culled and you look through the part.
+- Still and live must be the same picture: render the still from the same module at the same canvas shape (Playwright, `omitBackground`), then diff a no-WebGL load against a live one. Chromium draws WebGL headless with `--use-angle=swiftshader --enable-unsafe-swiftshader`.
+- The canvas reaches past the object only where its shade falls. inspect counts the whole canvas box as paint, so a generous box over a headline is a `covered-text` FAIL even where it is transparent.
+- Scroll: read `scrollY` inside the render loop instead of adding a scroll listener (preflight refuses one), and stop the loop off-screen and in hidden tabs.
 
 **Image to Three.js (procedural model from one reference)**
 - Keep a state file of pass, targets and scores; it is authoritative over chat memory. Validate the image suits 3D, rate complexity (simple / moderate / complex / ultra), write a quality contract before code.

@@ -153,6 +153,12 @@ try {
       frameChecks.push(await page.eval(frame).catch(() => null));
       await page.eval('window.__motionSample && window.__motionSample()').catch(() => {});
     }
+    // a page longer than the photographed screens is still walked to its end, so the reveals down there fire before the page is measured
+    for (let i = screens + 1; i <= Math.min(48, Math.ceil(metrics.page.height / h) - 1); i++) {
+      await page.eval(`window.scrollTo({ top: ${i * h}, behavior: 'instant' })`).catch(() => {});
+      await page.wheel(2);
+      await sleep(300);
+    }
     const motion = await page.eval('window.__motion ? window.__motion() : null').catch(() => null);
     // re-measure after everything has revealed (catches content that only exists post-reveal)
     await page.eval(`window.scrollTo({ top: 0, behavior: 'instant' })`).catch(() => {});

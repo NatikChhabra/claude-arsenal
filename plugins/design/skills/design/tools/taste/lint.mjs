@@ -47,7 +47,7 @@ const R = [
   ['FAIL', 'mono', /\bfont-mono\b|font-family\s*:[^;{}]*(mono\b|monospace|Courier|Consolas|Menlo|Monaco)|(JetBrains|Geist|IBM\+?Plex|Space|DM|Roboto|Fragment|Azeret|Red\+?Hat|Martian|Commit|Departure|Fira)[+_ ]?Mono|Geist_Mono|GeistMono|Fira[+ ]Code|ui-monospace/i, 'Monospace type. Only literal code may be monospace.'],
   ['FAIL', 'gradient', /(linear|radial|conic)-gradient\(|\bbg-(gradient|linear|radial|conic)-|\b(from|via)-(?!\[?0)[a-z]+-\d{2,3}\b/, 'Gradient fill. Use a flat colour or a real image (a neutral scrim over a photo is the one exception).'],
   ['FAIL', 'gradient-text', /bg-clip-text|background-clip\s*:\s*text|text-transparent/, 'Gradient / clipped text. Use solid colour.'],
-  ['FAIL', 'shadow', /box-shadow\s*:\s*(?!none|0 0 #0000|var\(--tw)|\bshadow(-(sm|md|lg|xl|2xl|inner|\[[^\]]+\]))?(?=["'\s`])(?<!-shadow)|drop-shadow\(|\bdrop-shadow(-|\b)|text-shadow\s*:\s*(?!none)/, 'Shadow. Elements at rest carry none; only real overlays (menu, dialog, sticky bar) may.'],
+  ['FAIL', 'shadow', /box-shadow\s*:\s*(?!none|0 0 #0000|var\(--tw)|(?<![.$])\bshadow(-(sm|md|lg|xl|2xl|inner|\[[^\]]+\]))?(?=["'\s`])(?<!-shadow)|drop-shadow\(|\bdrop-shadow(-|\b)|text-shadow\s*:\s*(?!none)/, 'Shadow. Elements at rest carry none; only real overlays (menu, dialog, sticky bar) may.'],
   ['FAIL', 'numbering', />\s*[(\[]?0[1-9][)\]]?\.?\s*<|["'`]\s*0[1-9]\s*["'`]|decimal-leading-zero|>\s*(Step|Phase|No\.?|Chapter)\s*0?\d\s*</i, 'Decorative index numbering (01 / 02 / 03).'],
   ['WARN', 'numbering', /padStart\(\s*2\s*,\s*["']0["']\s*\)/, 'Zero-padding in script. Fine for a clock, a date or a price; if it builds 01 / 02 / 03 labels, remove it.'],
   ['FAIL', 'eyebrow', /class(Name)?\s*=\s*["'`{][^"'`}]*\b(eyebrow|kicker|overline|pretitle|pre-title|suptitle|sup-title|tagline-label|section-label|section-tag)\b|\.(eyebrow|kicker|overline|pretitle|section-label|section-tag)\b\s*[{,]/i, 'Eyebrow / kicker label above a heading.'],
@@ -77,7 +77,7 @@ if (appMode) {
 if (videoMode) {
   for (const r of R) {
     if (r[1] === 'shadow') {
-      r[2] = /box-shadow\s*:\s*(?!none|0 0 #0000|var\(--tw)|\bshadow(-(sm|md|lg|xl|2xl|inner|\[[^\]]+\]))?(?=["'\s`])(?<!-shadow)/;
+      r[2] = /box-shadow\s*:\s*(?!none|0 0 #0000|var\(--tw)|(?<![.$])\bshadow(-(sm|md|lg|xl|2xl|inner|\[[^\]]+\]))?(?=["'\s`])(?<!-shadow)/;
       r[3] = 'Box shadow. In video, text-shadow, a text stroke and drop-shadow filters carry text over footage; boxes at rest carry none.';
     }
     if (r[1] === 'ease-in') r[0] = null; // exits may accelerate away
@@ -112,8 +112,12 @@ let emDashes = 0;
 for (const file of files) {
   const rel = relative(process.cwd(), file).split('\\').join('/');
   const lines = readFileSync(file, 'utf8').split(/\r?\n/);
-  let inCode = false; let selector = ''; let pending = ''; let scrimUsed = false;
+  let inCode = false; let selector = ''; let pending = ''; let scrimUsed = false; let inBlock = false;
   lines.forEach((line, i) => {
+    // prose inside a /* block comment */ that runs over several lines is not code: the shadow rule reads past it
+    const wasInBlock = inBlock; const open = line.lastIndexOf('/*'), close = line.lastIndexOf('*/');
+    if (inBlock ? close >= 0 && close > open : false) inBlock = false; else if (open >= 0 && open > close) inBlock = true;
+    const noBlock = wasInBlock ? (close >= 0 ? line.slice(close + 2) : '') : line;
     // track the CSS selector we are inside, so rules scoped to [data-ui] (interface fragments) keep their own lines
     if (line.includes('{')) { selector = pending + line.slice(0, line.indexOf('{')); pending = ''; } else if (!line.includes('}')) pending = (pending + ' ' + line).slice(-300);
     const inUi = /data-ui/.test(selector) || /data-ui/.test(line);
@@ -131,7 +135,7 @@ for (const file of files) {
       if (inUi && (id === 'hairline' || id === 'outlined-box' || id === 'shadow')) continue;
       if (id === 'hairline' && /sr-only|visually-hidden|clip(-path)?\s*:|outline/i.test(line + selector)) continue; // screen-reader helpers and focus outlines are not rules
       if ((id === 'copy' || id === 'cta-copy' || id === 'emoji') && /^\s*(\/\/|\/\*|\*|import |@import|<!--)/.test(line)) continue;
-      const m = (videoMode && id === 'shadow' ? line.replace(/\/\*.*?\*\/|<!--.*?-->|(^|\s)\/\/.*$/g, '') : line).match(re); // a comment that says "shadow" is not a class
+      const m = (id === 'shadow' ? noBlock.replace(/\/\*.*?\*\/|<!--.*?-->|(^|\s)\/\/.*$|^\s*(\/\*|\*).*$/g, '') : line).match(re); // a comment that says "shadow" is not a class, and neither is light.shadow in a 3D scene
       if (!m) continue;
       if (id === 'gradient' && videoMode && !scrimUsed && neutral(line)) { scrimUsed = true; continue; } // the one scrim or vignette
       findings.push({ level, id, file: rel, line: i + 1, match: m[0].trim().slice(0, 70), message });
