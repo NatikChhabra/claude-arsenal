@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- music-studio: `guitar-capture` 0a, lessons from the audition retries: a room that only hears him (voice call)
+  makes visual tricks worthless, so the wow is a known song plus the soft-build-silence-explode shape; pick the song
+  from his own listening history (he did not know the famous pick); move riffs to an easier string over an open drone.
 - design: two checker fixes from a real build. motion.mjs crashed on any page with a scroll-driven animation
   (`animation-timeline: view()` or `scroll()`): the clock shim set a time on it, which Chrome refuses. The shim now
   leaves those to the scroll position. lint.mjs reported `box-shadow: none` and `text-shadow: none` as shadows: the
