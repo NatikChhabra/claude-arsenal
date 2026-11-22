@@ -253,6 +253,10 @@ comes from two things at once: the room knows the tune within two seconds, and t
   NAM captures and IRs) into a cab IR. If NAM crashes before its window opens, set it (or the DAW) to the dedicated GPU.
 - Match the reference songs' tone by ear and by A/B at equal loudness, never by "louder sounds better".
 - Commit the tone only at mix time: keep the DI so the tone can change.
+- The owner sets the tone, not Claude (Nov 2026: on the first single "the toning you did for the guitar, that's where
+  it felt bad"; everything else passed). Tone comes from his amp or his amp-sim plugin, dialled by him or set up by
+  Claude in the plugin's controls for him to pick. The exciter and air chains in section 1 are a repair kit for a dull
+  pickup take, used only when he picks them in a level-matched A/B, never a default.
 
 ## 5. Hand-off
 Clean comp of the take (edits on the grid, crossfades, no clicks), DI and amped versions, beat map JSON, chord chart.
