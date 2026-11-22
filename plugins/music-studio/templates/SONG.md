@@ -2,6 +2,11 @@
 
 <!-- songs/<slug>/SONG.md: the one sheet every music-studio skill reads and updates. Keep it true; never let a field go stale. -->
 
+## Cycle
+<!-- song-cycle keeps this current. One line per stage when it closes: date, gate result, the owner's words. -->
+- Started: | Day 14 target: | Stage: Idea | Next:
+- Made by: every sound and word by <owner>; Claude: setup, sheets, measuring, assembly of his takes
+
 ## Brief
 - Who sings it (character / the owner / a guest), to whom, about what, and why NOW (the story beat or moment):
 - Purpose and where it plays: (character theme, in-city event, diss, ad jingle for an in-world business, personal)

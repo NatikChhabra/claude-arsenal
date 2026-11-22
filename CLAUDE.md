@@ -5,6 +5,8 @@ This repo is the owner's growing toolkit. Read this file before changing anythin
 ## Who it is for
 - Owner: GitHub `NatikChhabra`. Plays guitar. Loves singing but can't sing well, so every music
   workflow must offer a vocal route that does not depend on his own sung pitch (see `research/01_vocals_for_non_singers.md`).
+  Since 22 Nov 2026 his default is his own voice and his own playing on every part: music must feel like his art, so
+  AI-sung or generated parts are used only when he asks (music-studio `song-cycle`).
 - Uses: **GTA V roleplay (RP)** music, music videos, design and marketing for his characters and in-world businesses;
   a YouTube channel (creator, video-edit); personal edits; exam study; and the design and workflow rules every project shares.
 - He runs many side projects through Claude. Each one should be able to install these plugins and improve them.

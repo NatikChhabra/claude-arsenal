@@ -8,7 +8,7 @@ description: >-
 
 # produce-arrange
 
-status: draft (full workflow; promote to beta after the first real song)
+status: beta (used on a real single, Nov 2026: energy map, different lead-ins to each chorus, the stitched-backing and sample-library stopgaps)
 
 DAWs, MCP servers and stem tools with their real abilities: [references/daw-and-stems.md](references/daw-and-stems.md).
 

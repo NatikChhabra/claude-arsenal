@@ -15,6 +15,12 @@ The owner loves singing and can't sing well. The vocal must sound great AND keep
 his phrasing. Every tool's real abilities, prices and terms: [references/routes.md](references/routes.md). Sources:
 research/03_vocal_tools.md.
 
+**The owner's default (22 Nov 2026): route F, his own voice.** He said AI singing "feels fake" and that every song
+should feel like his own art. Use routes A, B, C or E only when he asks for one in that song, in his words; never
+offer them unprompted. Route D (rap or spoken, his own voice) stays open. If he says his voice isn't good enough,
+write the melody into his measured range, talk-sing the verses, and comp his best phrases (route F) before anything
+else.
+
 ## 0. Inputs
 SONG.md (lyrics passing lyric_lint, melody guide, language, release intent) and the guitar take if one exists. No
 SONG.md = run skill song-from-idea first.
