@@ -26,6 +26,10 @@ soft-clipped the loudest chucks near 0.98. A passive magnetic pickup wants a hig
 computer's mic or line jack is far lower, which dulls the top end (INFERRED from the measured roll-off, not tested
 side by side). Until an instrument input is available: record in the DAW, not the Windows Sound Recorder (it saved
 16-bit takes), turn off Windows "audio enhancements" and any mic boost or auto gain, and keep peaks under -6 dBFS.
+If the owner's amp sim has an input treble fix for mic jacks (it measures how much top end the jack loses and puts it
+back), run its setup once and put the sim on the guitar track as a track effect, not an input effect: the DAW still
+records the bare pickup, so the tone stays his to change after the take. Its standalone app usually takes the sound
+card for itself, so close the DAW before opening it.
 
 **B. Electric (or the acoustic's pickup) into a USB practice amp.** Guitar -> guitar cable -> amp Input; amp USB-C
 -> a rear USB port on the PC (front ports and hubs cause dropouts; the manual says the same). Checked in the

@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+- music-studio studio-setup: chain A notes the amp-sim input treble fix for mic jacks, used as a track effect so the bare pickup is still recorded.
 - music-studio: new skill `song-cycle` (start here): a song every two weeks as a 14-day plan, with whose hands each
   step is in (the owner writes, plays and sings everything; Claude sets up, teaches, measures and assembles his own
   takes), the skill, tool and gate per stage, overlap to keep the pace, and what to do when a song stalls.
