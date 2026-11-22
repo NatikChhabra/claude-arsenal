@@ -25,7 +25,9 @@ voice, film loudness) live in the design skill, references/edit.md §4 and §7: 
 ## 2. Mix (in order; save a version after each)
 1. Static balance with faders only, vocal first: the lead sits on top, the guitar right under it (his instrument is
    central), drums and bass glued under both.
-2. Subtractive EQ for space: high-pass everything that isn't bass or kick; carve 1-4 kHz in dense parts where the
+2. On the owner's guitar: corrective moves only (song-cycle, "The tone is his"). Anything that changes its character
+   (exciter, saturation, big EQ) goes to him as a level-matched before and after first.
+   Subtractive EQ for space: high-pass everything that isn't bass or kick; carve 1-4 kHz in dense parts where the
    vocal sings.
 3. Vocal chain: clean (no stacking of denoise on an already processed or converted voice: it goes robotic), EQ,
    de-ess, compression in two gentle stages, short plate or room plus a tempo-synced delay on sends.

@@ -47,7 +47,7 @@ Blackstar ID:Core V4 manual (Feb 2026 edition):
 - 48 kHz, 24-bit, WAV. Buffer 128 samples (256 if it crackles). Same rate on the device and the project.
 - Tracks for each guitar take: **AMP** (stereo, inputs 1+2, panned hard left and right as the manual advises for its
   wide stereo effects), **DI** (mono, input 4, always armed: it is the safety copy and lets the tone change later
-  with an amp-sim plugin or reamp mode), **PRE** (mono, input 3) only when a cab plugin will be used. Acoustic through
+  with an amp-sim plugin or reamp mode; the owner picks that tone, see song-cycle), **PRE** (mono, input 3) only when a cab plugin will be used. Acoustic through
   the computer's jack: one mono track from the live input (check both channels: a mono source on a stereo input once
   left one side 45 dB down).
 - Voice: one mono track from the mic, 24-bit, peaks -12 to -6 dBFS, a pop filter, 15-20 cm away.

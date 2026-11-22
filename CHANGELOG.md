@@ -10,6 +10,10 @@
 - music-studio: new tool `take_check.py` (selftest in CI): checks a raw take right after recording (format, dead
   channel, peak, clipping and flat tops, noise floor gap, mains hum, DC offset) and says what to change. On real
   takes it flagged 16-bit Windows recorder files and hot peaks.
+- music-studio: the tone is the owner's. After a real single he said only the guitar tone processing felt wrong, so
+  song-cycle, guitar-capture, studio-setup and mix-master now say: he picks the tone on his amp or amp-sim, Claude
+  only cleans up after the take, and any character change is a level-matched A/B he approves. Guitar only (beats from
+  the guitar body), and two weeks is a rough plan, never a deadline.
 - music-studio: `vocal-route` records the owner's default, his own voice (route F), with the other routes only on
   his request; `SONG.md` gains a `## Cycle` block; `guitar-capture`, `produce-arrange` and `mix-master` move to beta
   after a real single.
