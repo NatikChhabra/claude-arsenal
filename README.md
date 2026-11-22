@@ -102,6 +102,8 @@ Each skill carries `status: draft` (outline, untested), `beta` (used on real wor
 ### music-studio
 | Skill | What it does |
 |---|---|
+| [song-cycle](plugins/music-studio/skills/song-cycle/SKILL.md) | Start here: a song every two weeks, the owner's hands on every creative step, the skill, tool and gate per stage |
+| [studio-setup](plugins/music-studio/skills/studio-setup/SKILL.md) | The home rig (acoustic pickup or a USB practice amp with dry DI), DAW tracks, monitoring with no delay, levels, folder layout, a 1-minute check with take_check.py |
 | [song-from-idea](plugins/music-studio/skills/song-from-idea/SKILL.md) | From a character, story beat or riff to a SONG.md: inventory, form with first-chorus time, chords, hook first, lyrics through lyric_lint and a blind reader |
 | [vocal-route](plugins/music-studio/skills/vocal-route/SKILL.md) | Five vocal routes picked by language, melody fidelity and release terms (Hindi included), proved on one chorus with blind listeners |
 | [guitar-capture](plugins/music-studio/skills/guitar-capture/SKILL.md) | Record to a click, beat and bar map (beatmap.py), chord chart, MIDI sketch, NAM/TONE3000 tone |

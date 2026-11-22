@@ -9,7 +9,7 @@ description: >-
 
 # guitar-capture
 
-status: draft (full workflow; beat map tool tested; promote to beta after the first real take)
+status: beta (used end to end on a real instrumental single, Nov 2026: play sheet, record once, hit-by-hit re-play, a drum kit from his own guitar, re-taken choruses)
 
 Sources and licences: research/04_production_and_video.md §2. The guitar is his voice in every song: it stays audible
 and central.

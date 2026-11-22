@@ -1,6 +1,18 @@
 # Changelog
 
 ## Unreleased
+- music-studio: new skill `song-cycle` (start here): a song every two weeks as a 14-day plan, with whose hands each
+  step is in (the owner writes, plays and sings everything; Claude sets up, teaches, measures and assembles his own
+  takes), the skill, tool and gate per stage, overlap to keep the pace, and what to do when a song stalls.
+- music-studio: new skill `studio-setup`: the acoustic pickup chain and a USB practice amp chain (the Blackstar
+  ID:Core V4 manual's four USB channels: stereo amp sound, preamp, dry DI; reamp mode), DAW tracks and template,
+  monitoring through the amp with no delay, levels, a song folder layout, and a 1-minute rig check.
+- music-studio: new tool `take_check.py` (selftest in CI): checks a raw take right after recording (format, dead
+  channel, peak, clipping and flat tops, noise floor gap, mains hum, DC offset) and says what to change. On real
+  takes it flagged 16-bit Windows recorder files and hot peaks.
+- music-studio: `vocal-route` records the owner's default, his own voice (route F), with the other routes only on
+  his request; `SONG.md` gains a `## Cycle` block; `guitar-capture`, `produce-arrange` and `mix-master` move to beta
+  after a real single.
 - music-studio: `guitar-capture` 0a, lessons from the audition retries: a room that only hears him (voice call)
   makes visual tricks worthless, so the wow is a known song plus the soft-build-silence-explode shape; pick the song
   from his own listening history (he did not know the famous pick); move riffs to an easier string over an open drone.

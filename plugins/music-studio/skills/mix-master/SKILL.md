@@ -8,7 +8,7 @@ description: >-
 
 # mix-master
 
-status: draft (full workflow; loudness tool tested; promote to beta after the first real master)
+status: beta (used on a real single, Nov 2026: four masters, the forward-only limiter, the harshness and click checks, the embedded cover)
 
 Targets, commands and sources: [references/targets.md](references/targets.md). Video-side levels (music under
 voice, film loudness) live in the design skill, references/edit.md §4 and §7: this skill owns the song itself.

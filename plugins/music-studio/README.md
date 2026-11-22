@@ -4,11 +4,15 @@ Songs from an idea to a released music video, built for a guitarist who loves si
 offers a vocal route that keeps his melody and phrasing, in English, Hindi or Hinglish. Sourced research behind every
 tool choice: research/03_vocal_tools.md, research/04_production_and_video.md.
 
-Start with `song-from-idea`; it writes `songs/<slug>/SONG.md` (from `templates/SONG.md`), the one sheet every other
+Start with `song-cycle`: the two-week plan from idea to release, who does what at each stage (the owner writes,
+plays and sings everything; Claude sets up, teaches, measures and assembles his own takes), and the gate that ends each
+stage. `studio-setup` gets the rig right before the first take. Then `song-from-idea` writes `songs/<slug>/SONG.md` (from `templates/SONG.md`), the one sheet every other
 song skill reads and updates. `gear-pick` stands apart: buying an instrument or a playing setup.
 
 | Skill | What it does |
 |---|---|
+| `song-cycle` | Start here: the 14-day song plan, whose hands each step is in, the skill and tool per stage, the gate to move on, the song board |
+| `studio-setup` | The rig: acoustic pickup or a USB practice amp (4 channels: amp sound, preamp, dry DI), drivers, DAW tracks, monitoring with no delay, levels, folder layout, a 1-minute check |
 | `song-from-idea` | Brief, inventory, form with first-chorus time, chords, hook first, lyrics gated by lyric_lint and a blind reader |
 | `vocal-route` | Five routes picked by language, melody fidelity and release terms; one chorus proved with blind listeners first |
 | `guitar-capture` | Record to a click, beat and bar map, chord chart, MIDI sketch, tone |
@@ -25,12 +29,15 @@ Tools (`tools/`, each has `--selftest`):
   peak, the loudest 3 s, and the phone-speaker vocal check. Needs ffmpeg.
 - `beatmap.py map <audio>` / `beatmap.py cuts <map.json> <cuts>`: tempo, beats, downbeats, bars, sections, energy,
   a click track to listen-check, and the share of edit cuts on the grid. `uv run --with librosa --with soundfile`.
+- `take_check.py <take.wav ...>`: right after recording, in plain words: format, a dead channel, peak, clipping and
+  flat tops, noise floor gap, mains hum, DC offset; PASS, WARN or FIX with what to change. `uv run --with numpy --with soundfile`.
 - `listening_taste.py <player-data-dir | file ...>`: the songs and artists he really plays, read from a desktop
   player's local cache (Feishin: play queue JSON and the Snappy + V8 query cache). Stdlib.
 
 Claude cannot hear audio: anything audible is judged by people (the owner and blind listeners) and by the measurements
 above, never by Claude's opinion. Picture, text and motion rules for videos and covers live in the `design` plugin.
-Skills are `status: draft` until used on real work (`gear-pick` is `beta`).
+Skills are `status: draft` until used on real work (`gear-pick`, `guitar-capture`, `produce-arrange` and `mix-master`
+are `beta` after a real single).
 
 ## Install
 
