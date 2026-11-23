@@ -47,6 +47,14 @@ its own setup and froze its window on the first real computers. The tests had dr
 12. **Every window shape, every bar showing.** Snapshot the app at 16:9, 16:10, 21:9, 4:3, tall and small, and each
     page with every persistent strip (now playing, notices) visible. A fixed aspect ratio that letterboxes reads as
     content cut off; a page that ignores a strip hides its own buttons behind it.
+13. **A web or AI-backed app: the fake must behave like the real service.** A stand-in that answers instantly hides
+    every timing bug. Give it the real reply time (5 to 10 s for a model), a voice that takes seconds to speak and can
+    be cut off, mic events, injected errors (usage limit, network blip, a call that never returns) and storage that
+    survives a reload. Then rehearse what people actually do: talk or type while it is still thinking, close the page
+    mid-flow and reopen it (mid-step, mid-quiz, on a break screen, hours later), switch tasks while a reply is in
+    flight. Finish with a seeded random-action run that checks invariants the whole time (never two requests in
+    flight, no exceptions, the status label never contradicts the mic or the network for more than a few seconds),
+    and a second reviewer told to break the new patches, since fixes add their own bugs.
 
 ## Review before delivery
 - Every flow from step 1 has a rehearsal that ran in CI on the release commit, and one was shown to fail on a real bug.
