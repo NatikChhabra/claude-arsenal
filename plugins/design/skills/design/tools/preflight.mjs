@@ -160,6 +160,8 @@ function checkFile(path) {
   lines.forEach((line, idx) => {
     const n = idx + 1;
     const trimmed = line.trim();
+    // A deliberate exception, stated on its own line (references/tools.md): skip it, like lint.mjs does.
+    if (/design-ignore|taste-skill-ignore/.test(line)) return;
 
     if (line.includes(EM_DASH) || EM_DASH_ALIASES.test(line)) {
       hard.push({ n, rule: "EM_DASH", snippet: snippet(line) });

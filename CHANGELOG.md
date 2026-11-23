@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- design: `preflight.mjs` now skips a line carrying `design-ignore` (or `taste-skill-ignore`), as references/tools.md
+  already promised; before this a stated exception still counted as a hard violation.
+- workflow app-release-gate: step 13, web and AI-backed apps: a realistic fake (real reply time, voice, mic, errors,
+  storage that survives reload), close-and-reopen and talk-while-thinking rehearsals, a seeded random-action run with
+  invariants, and an adversarial second review of the patches. From a tutor app whose instant-reply tests passed while
+  real use was slow, forgot progress on reload and dropped answers.
 - music-studio studio-setup: chain A notes the amp-sim input treble fix for mic jacks, used as a track effect so the bare pickup is still recorded.
 - music-studio: new skill `song-cycle` (start here): a song every two weeks as a 14-day plan, with whose hands each
   step is in (the owner writes, plays and sings everything; Claude sets up, teaches, measures and assembles his own
